@@ -1,14 +1,10 @@
 * {
-    font-family: sans-serif;
+    font-family: "Open Sans", helvetica, arial, sans-serif;
+    font-size: 1rem;
 }
 
-body {
-}
 
 /* Toolbar */
-#toolbar-wrapper {
-    background-color: white;
-}
 .toolbar-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -22,6 +18,9 @@ body {
     padding: 24px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
+.toolbar-item a {
+    font-size: 1.25rem;
+}
 
 /* Topic */
 #topic-wrapper {
@@ -30,13 +29,19 @@ body {
 .topic-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
     place-self: center;
     align-content: center;
+    
     column-gap: 48px;
     row-gap: 40px;
     width: 992px;
 }
 .topic-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 300px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 .topic-item img {
@@ -49,6 +54,29 @@ body {
 }
 .topic-content-block {
     margin-top: 12px;
+}
+.topic-content-title {
+    font-size: 1.25rem;
+}
+.topic-content-fine {
+    font-size: 0.75rem;
+}
+.topic-content-paragraph {
+    font-size: 1rem;
+}
+.topic-action {
+    margin-top: auto;
+    padding: 0px 24px 24px;
+}
+.topic-content-link {
+    display: flex;
+    width: fit-content;
+    padding-bottom: 4px;
+    box-shadow: currentColor 0px -1px inset;
+    color: #2671D3;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.004em;
 }
 
 
