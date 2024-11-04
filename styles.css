@@ -1,5 +1,7 @@
 * {
     margin: 0px 0px;
+    appearance: none;
+    color: #021b41;
 }
 html {
     font-family: "Open Sans", helvetica, arial, sans-serif;
@@ -58,21 +60,35 @@ html {
     padding: 0px 0px;
     align-items: center;
 }
+#banner_header_list {
+    display: flex;
+    list-style: none;
+    padding: 0px 0px;
+    align-items: center;
+}
 .banner_header_nav_button {
     display: flex;
     flex-direction: row;
     width: auto;
     height: 48px;
-    padding: 12px;
+    padding: 0px 12px;
     background-color: white;
     border: none;
     align-items: center;
 }
 
+#banner_header_list li:first-child .banner_header_nav_button{
+    padding-left: 0px;
+}
+
+.banner_header_nav_button span {
+    font-size: 1rem;
+}
+
 .banner_header_nav_button svg {
     width: 15px;
     height: 15px;
-    padding-left: 5px;
+    padding-left: 8px;
     padding-top: 2.5px;
 }
 
@@ -99,13 +115,57 @@ html {
 }
 
 /* Scheduling Menu */
-.booking{
+
+#scheduling-wrapper {
     background-image: url("./img/hero.jpg");
-    width: 100%;
-    height: 300px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
+    padding: 64px 0px ;
+}
+.booking {
+    background-color: white;
+    box-sizing: border-box;
+    max-width: 992px;
+    height: 333px;
+    padding: 24px;
+    margin: auto;
+}
+
+.booking form fieldset {
+    border: 0;
+    margin-left: 2px;
+    padding: 0px 0px;
+}
+
+.booking form fieldset legend{
+    font-size: 0.75rem;
+    padding: 0px 2px;
+    margin-bottom: 17px;
+    line-height: 1.67;
+}
+
+#booking-radio-group {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #b6b7bd;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+.booking-radio-wrapper {
+    display: flex;
+    width: 1fr;
+    align-items: center;
+}
+.booking-radio-wrapper input{
+    appearance: auto;
+    width: 30px;
+    height: 30px;
+    margin-right: 16px;
 }
 
 .search-flights{
@@ -128,6 +188,64 @@ html {
     border: 1px solid white;
 }
 
+/* Schedule Grids */
+.schedule-grid {
+    display: grid;
+}
+
+#schedule-flight {
+    grid-template-rows: repeat(3, 59px);
+    row-gap: 24px;
+}
+#schedule-flight-grp1 {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr;
+    column-gap: 24px;
+}
+
+.option-label-top {
+    font-size: 0.875rem;
+    position: absolute;
+}
+.option-label-inside {
+    position: absolute;
+    top: 20px;
+    font-size: 1.75rem;
+    transition: 0.2s;
+}
+.option-label-inside span{
+    font-size: 12px;
+    padding-left: 8px;
+}
+
+#schedule-flight select,  #schedule-flight input{
+    padding: 20px 20px 8px 0px;
+    border: none;
+}
+
+.option-container {
+    position: relative;
+    padding-top: 0px;
+    border-bottom: 1px solid black;
+}
+.option-container select {
+    font-size: 20px;
+    line-height: 30px;
+}
+.option-container input {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
+.option-container:focus-within .option-label-inside {
+    font-size: 14px;
+    line-height: 20px;
+    top: 0px;
+}
+.option-container:focus-within .option-label-inside span {
+    display: none;
+}
 
 /* London */
 #london-wrapper {

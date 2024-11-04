@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>British Airways</title>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -61,23 +62,80 @@
             </ul>
 
             <div id="banner_header_countryselector">
-                <img src="./img/pt.png">
+                <img src="./img/pt.png" alt="Portuguese Flag">
                 <span>Portugal - Português</span>
             </div>
         </nav>
     </header>
     <main>
     <!-- Scheduling Travels Menu -->
-    <section id="scheduling-travels-menu">
-        <div class="booking">
-            <div>
-                <div class="schedule-flight"></div>
-                <div class="schedule-flight+hotel"></div>
-                <div class="schedule-flight+vehicle"></div>
-                <div class="schedule-hotel"></div>
-                <div class="schedule-vehicle"></div>
+        <section id="scheduling-travels-menu">
+            <div class="block-wrapper" id="scheduling-wrapper">
+                <div class="booking">
+                    <form action="">
+                        <!-- Radio Buttons -->
+                         <fieldset>
+                            <legend>Estou a pesquisar para:</legend>
+                            <div id="booking-radio-group">
+                                <div class="booking-radio-wrapper">
+                                    <input type="radio" id="schedule_input_fly" name="schedule_input_fly">
+                                    <label for="schedule_input_fly">Voo</label>
+                                </div>
+                                
+                                <div class="booking-radio-wrapper">
+                                    <input type="radio" id="schedule_input_flyhotel" name="schedule_input_fly">
+                                    <label for="schedule_input_fly">Voo + hotel</label>
+                                </div>
+                                
+
+                                <div class="booking-radio-wrapper">
+                                    <input type="radio" id="schedule_input_flyvehicle" name="schedule_input_fly">
+                                    <label for="schedule_input_fly">Voo + Veículo</label>
+                                </div>
+                                
+                                <div class="booking-radio-wrapper">
+                                    <input type="radio" id="schedule_input_hotel" name="schedule_input_fly">
+                                    <label for="schedule_input_fly">Hotel</label>
+                                </div>
+                                
+                                <div class="booking-radio-wrapper">
+                                    <input type="radio" id="schedule_input_vehicle" name="schedule_input_fly">
+                                    <label for="schedule_input_fly">Veículo</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <!-- Flight Grid -->
+                        <div id="schedule-flight" class="schedule-grid">
+                            <div id="schedule-flight-grp1">
+                                <div class="option-container">
+                                    <label for="option-tariff" class="option-label-top">Tarifa</label>
+                                    <select id="option-tariff" name="option-tariff">
+                                        <option value="return">Regresso</option>
+                                        <option value="oneway">Só ida</option>
+                                    </select>
+                                </div>
+                                
+                                
+                                <div class="option-container">
+                                    <label for="option-from" class="option-label-inside">De<span>Digite 3 letras</span></label>
+                                    <input type="text" id="option-from" name="option-from">
+                                </div>
+                                
+                                <div class="option-container">
+                                    <label for="option-to" class="option-label-inside">Para<span>Digite 3 letras</span></label>
+                                    <input type="text" id="option-to" name="option-to">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="schedule-flight+hotel"></div>
+                        <div id="schedule-flight+vehicle"></div>
+                        <div id="schedule-hotel"></div>
+                        <div id="schedule-vehicle"></div>
+                    </form>
+                </div>
             </div>
-        </div>
+        </section>
         <section>
             <div class="block-wrapper" id="london-wrapper">
                 <div class="london-calling">
@@ -93,9 +151,7 @@
                     <span>Os passageiros são responsáveis por verificar os requisitos de entrada no Reino Unido| Aplicam-se Termos e Condições</span>
                 </div>
             </div>
-        <section>
-
-    </div>
+        </section>
     <!-- Toolbar -->
         <section>
             <div class="block-wrapper" id="toolbar-wrapper">
@@ -104,12 +160,12 @@
                         <a href="" class="toolbar_item_link"><span>Gerir a minha reserva</span></a>
                         <p>Faça alterações aos seus planos de viagem e veja os seus dados de reserva</p>
                     </div>
-                    <div class="toolbar-item" class="toolbar_item_link">
-                        <a href=""><span>Check-in online</span></a>
+                    <div class="toolbar-item">
+                        <a href="" class="toolbar_item_link"><span>Check-in online</span></a>
                         <p>O check-in online abre 24 horas antes da partida do voo</p>
                     </div>
-                    <div class="toolbar-item" class="toolbar_item_link">
-                        <a href=""><span>Estado do voo</span></a>
+                    <div class="toolbar-item">
+                        <a href="" class="toolbar_item_link"><span>Estado do voo</span></a>
                         <p>Verifique o estado mais recente dos nossos voos nos próximos 10 dias</p>
                     </div>
                 </div>
@@ -122,7 +178,7 @@
                 <div class="topic-grid">
                 <!-- Topic 1 (Explore Londres)-->
                 <div class="topic-item">
-                    <img src="./img/topic1.jpg">
+                    <img src="./img/topic1.jpg" alt="Topic 1">
                     <div class="topic-content">
                         <div class="topic-content-block">
                             <span class="topic-content-title">Descubra tudo o que Londres tem para oferecer</span>
@@ -147,7 +203,7 @@
                 </div>
                 <!-- Topic 2 (BA Better World)-->
                     <div class="topic-item">
-                        <img src="./img/topic2.jpg">
+                        <img src="./img/topic2.jpg" alt="Topic 2">
                         <div class="topic-content">
                             <div class="topic-content-block">
                                 <span class="topic-content-title">A sustentabilidade é o nosso foco</span>
@@ -164,7 +220,7 @@
                     </div>
                 <!-- Topic 3 (Férias)-->
                 <div class="topic-item">
-                    <img src="./img/topic3.jpg">
+                    <img src="./img/topic3.jpg" alt="Topic 3">
                     <div class="topic-content">
                         <div class="topic-content-block">
                             <span class="topic-content-title">Férias nos EUA</span>
@@ -184,7 +240,7 @@
                 </div>
                 <!-- Topic 4 (Fly-Drive)-->
                 <div class="topic-item">
-                    <img src="./img/topic4.jpg">
+                    <img src="./img/topic4.jpg" alt="Topic 4">
                     <div class="topic-content">
                         <div class="topic-content-block">
                             <span class="topic-content-title">Aventuras Fly-drive</span>
@@ -204,7 +260,7 @@
                 </div>
                 <!-- Topic 5 (Novos Lugares)-->
                 <div class="topic-item">
-                    <img src="./img/topic5.jpg">
+                    <img src="./img/topic5.jpg" alt="Topic 5">
                     <div class="topic-content">
                         <div class="topic-content-block">
                             <span class="topic-content-title">Descubra novos lugares</span>
@@ -224,7 +280,7 @@
                 </div>
                 <!-- Topic 6 (Económica Premium)-->
                 <div class="topic-item">
-                    <img src="./img/topic6.jpg">
+                    <img src="./img/topic6.jpg" alt="Topic 6">
                     <div class="topic-content">
                         <div class="topic-content-block">
                             <span class="topic-content-title">Viaje em Económica premium</span>
@@ -244,7 +300,7 @@
                 </div>
                 <!-- Topic 7 (Contactar)-->
                 <div class="topic-item">
-                    <img src="./img/topic7.jpg">
+                    <img src="./img/topic7.jpg" alt="Topic 7">
                     <div class="topic-content">
                         <div class="topic-content-block">
                             <span class="topic-content-title">Se precisar de nos contactar</span>
@@ -261,7 +317,7 @@
                 </div>
                 <!-- Topic 8 (Singular)-->
                 <div class="topic-item">
-                    <img src="./img/topic8.jpg">
+                    <img src="./img/topic8.jpg" alt="Topic 8">
                     <div class="topic-content">
                         <div class="topic-content-block">
                             <span class="topic-content-title">Singular em todos os sentidos</span>
@@ -278,7 +334,7 @@
                 </div>
                 <!-- Topic 9 (Exevutive Club)-->
                 <div class="topic-item">
-                    <img src="./img/topic9.jpg">
+                    <img src="./img/topic9.jpg" alt="Topic 9">
                     <div class="topic-content">
                         <div class="topic-content-block">
                             <span class="topic-content-title">Junte-se ao nosso Executive Club</span>
