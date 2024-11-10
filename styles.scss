@@ -61,7 +61,12 @@ html {
     margin-top: auto;
     vertical-align: center;
 }
+#header_account_controls span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: $main-color
 
+}
 #banner_header_nav {
     display: flex;
     flex-direction: row;
@@ -185,6 +190,7 @@ html {
     width: 30px;
     height: 30px;
     margin-right: 16px;
+    accent-color: black;
 }
 
 
@@ -371,6 +377,11 @@ html {
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.004em;
+}
+.topic-content-link:hover {
+    transition-duration: 0.25s;
+    color: black;
+    cursor: pointer;
 }
 .topic-a-link{
     padding-top: 10px;
