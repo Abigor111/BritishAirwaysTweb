@@ -12,13 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const iconTemplate = document.getElementById('arrow-icon-template');
     if (iconTemplate) {
-        document.querySelectorAll('.banner_header_nav_button').forEach(link => {
+        document.querySelectorAll('.banner_header_nav_button').forEach(button => {
             const iconInstance = document.importNode(iconTemplate.content, true);
-            link.appendChild(iconInstance);
+            button.appendChild(iconInstance);
         });
-        document.querySelectorAll('.option-label-top').forEach(link => {
+        document.querySelectorAll('.option-label-top').forEach(option => {
             const iconInstance = document.importNode(iconTemplate.content, true);
-            link.appendChild(iconInstance);
+            option.appendChild(iconInstance);
         });
     } else {
         console.error("Template with id 'arrow-icon-template' not found.");

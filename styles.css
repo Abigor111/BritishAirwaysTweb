@@ -7,7 +7,7 @@
 }
 
 html {
-  font-family: "Open Sans", helvetica, arial, sans-serif;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-size: 16px;
   font-weight: 300;
 }
@@ -107,6 +107,13 @@ html {
   align-items: center;
 }
 
+#banner_header_countryselector:hover {
+  transition: transform 400ms cubic-bezier(0.645, 0.045, 0.355, 1), background-color 400ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-color: #2e5c99;
+  transform: scaleX(0);
+  transform-origin: 100% 50% 0px;
+}
+
 #banner_header_countryselector img {
   width: 22px;
   height: 16px;
@@ -190,9 +197,11 @@ html {
   accent-color: black;
 }
 
-#scheduling-travels-menu h1 {
-  font-size: 48px;
-  font-weight: normal;
+#scheduling-travels-menu h2 {
+  font-size: 2.75rem;
+  font-weight: 300;
+  line-height: 1.27;
+  letter-spacing: 0.012em;
 }
 
 .booking-search-button {
@@ -334,6 +343,16 @@ html {
   font-size: 1.25rem;
 }
 
+.toolbar_item_link span {
+  color: #2671d3;
+  text-decoration-thickness: 0.001px;
+}
+
+.toolbar_item_link span:hover {
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  color: #021b41;
+}
+
 /* Topic */
 #topic-wrapper {
   background-color: white;
@@ -413,6 +432,11 @@ html {
   transform: rotate(270deg);
   width: 15px;
   height: 15px;
+}
+
+/* On page load setting */
+#schedule-flight-hotel, #schedule-flight-vehicle, #schedule-hotel, #schedule-vehicle {
+  display: none;
 }
 
 /* Footer */

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>British Airways</title>
+    
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css">
-    <script src="logic.js"></script>
 </head>
 
 <body>
@@ -173,25 +173,96 @@
                                     </select>
                                 </div>
                             </div>
+                            <span class="topic-content-fine">Quer fazer mais escalas?</span>
+                            <a class="topic-content-link">Várias cidades e À volta do mundo</a>
+                            <span class="topic-content-fine">Precisa de inspiração?</span>
+                            <a class="topic-content-link">Encontre a sua próxima semana</a>
+                            <button class="booking-search-button">Procurar voos</button>
                         </div>
-                        <button class="booking-search-button">Procurar voos</button>
 
 
+                    <!-- Flight + Hotel Grid -->
+                    <div id="schedule-flight-hotel">
+                        <div class="option-container">
+                            <label for="option-from" class="option-label-inside">De</label>
+                            <input type="text" id="option-from" name="option-from"
+                                placeholder="Digite 3 letras">
+                        </div>
 
-                        <!--
-                    <div id="schedule-flight+hotel">
+                        <div class="option-container">
+                            <label for="option-to" class="option-label-inside">Para</label>
+                            <input type="text" id="option-to" name="option-to" placeholder="Digite 3 letras">
+                        </div>
+                        <div class="option-container">
+                            <label for="option-to" class="option-label-inside">Partida</label>
+                            <input type="date" id="option-to" name="option-to">
+                        </div>
+                        <div class="option-container">
+                            <label for="option-to" class="option-label-inside">Regresso</label>
+                            <input type="date" id="option-to" name="option-to">
+                        </div>
+                        <div class="option-container">
+                            <label for="option-tariff" class="option-label-top">Cabine</label>
+                            <select name="option-tariff">
+                                <option value="return">Económica</option>
+                                <option value="oneway">Executiva</option>
+                                <!-- Inserir Dropdown menu -->
+                            </select>
+                        </div>
+                        <span class="topic-content-fine">Quer viajar pelo mundo?</span>
+                        <a class="topic-content-link">Crie viagem personalizada</a>
                         <button class="booking-search-button">Procurar voo + hotel</button>
                     </div>
-                    
-                        <div id="schedule-flight+vehicle">
+                    <!-- Flight + Vehicle Grid -->
+                        <div id="schedule-flight-vehicle">
+                            <div class="option-container">
+                                <label for="option-from" class="option-label-inside">De</label>
+                                <input type="text" id="option-from" name="option-from"
+                                    placeholder="Digite 3 letras">
+                            </div>
+
+                            <div class="option-container">
+                                <label for="option-to" class="option-label-inside">Para</label>
+                                <input type="text" id="option-to" name="option-to" placeholder="Digite 3 letras">
+                            </div>
+                            <div class="option-container">
+                                <label for="option-to" class="option-label-inside">Partida</label>
+                                <input type="date" id="option-to" name="option-to">
+                            </div>
+                            <div class="option-container">
+                                <label for="option-to" class="option-label-inside">Regresso</label>
+                                <input type="date" id="option-to" name="option-to">
+                            </div>
+                            <div class="option-container">
+                                <label for="option-tariff" class="option-label-top">Cabine</label>
+                                <select name="option-tariff">
+                                    <option value="return">Económica</option>
+                                    <option value="oneway">Executiva</option>
+                                    <!-- Inserir Dropdown menu -->
+                                </select>
+                            </div>
+                            <span class="topic-content-fine">Quer viajar pelo mundo?</span>
+                            <a class="topic-content-link">Crie viagem personalizada</a>
+                            <span class="topic-content-fine">Em parceria com</span>
+                            <img src="img/avis_rgb_pos.svg" alt="" srcset="">
+                            <img src="img/budget-logo.svg" alt="">
                             <button class="booking-search-button">Procurar voo + carro</button>
                         </div>
+                    <!-- Hotel Grid -->
                         <div id="schedule-hotel">
+                            <span class="topic-content-fine">Quer viajar pelo mundo?</span>
+                            <a class="topic-content-link">Crie viagem personalizada</a>
                             <button class="booking-search-button">Procurar hotéis</button>
                         </div>
+                    <!-- Vehicle Grid -->
                         <div id="schedule-vehicle">
+                            <span class="topic-content-fine">Quer viajar pelo mundo?</span>
+                            <a class="topic-content-link">Crie viagem personalizada</a>
+                            <span class="topic-content-fine">Em parceria com</span>
+                            <img src="img/avis_rgb_pos.svg" alt="" srcset="">
+                            <img src="img/budget-logo.svg" alt="">
                             <button class="booking-search-button">Procurar automóveis</button>
-                        </div>-->
+                        </div>
                     </form>
                 </div>
             </div>
@@ -199,13 +270,13 @@
         <section>
             <div class="block-wrapper" id="london-wrapper">
                 <div class="london-calling">
-                    <h1>Sonha com Londres?</h1>
+                    <h2>Sonha com Londres?</h2>
                     <p>Planeie uma emocionante escapadinha à cidade e explore sítios culturais icónicos. Reserve a sua
                         viagem a Londres agora.</p>
 
                     <a class="topic-content-link">Voos para Londres a partir</a>
-                    <span class="topic-content-fine">a partir de Funchal, March
-                        2025</span><!-- Dar get ao preço minimo e localização (JS)-->
+                    <span class="topic-content-fine">a partir de Funchal, March 2025</span>
+                    <!-- Dar get ao preço minimo e localização (JS)-->
                     <br>
                     <button class="london-calling-button">Procurar voos para Londres</button>
                     <br>
@@ -298,7 +369,8 @@
                             <a class="topic-content-link">Procure oportunidades de férias </a>
                         </div>
                     </div>
-                    <!-- Topic 4 (Fly-Drive)-->
+                    <!-- Topic 4 (Fly    <script src="logic.js"></script>
+-Drive)-->
                     <div class="topic-item">
                         <img src="./img/topic4.jpg" alt="Topic 4">
                         <div class="topic-content">
@@ -466,6 +538,7 @@
         <span id="footer-legal">© British Airways - todos os direitos reservados</span>
         <img src="./img/footerlogo.png" alt="" id="footer_ba_logo">
     </footer>
+    <script src="logic.js"></script>
 </body>
 
 </html>
