@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>British Airways</title>
-    
+
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <!-- Arrow Templates -->
     <template id="link-arrow-icon-template">
         <svg id="link-arrow-icon-template" class="topic-a-link" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true" focusable="false">
@@ -27,6 +28,7 @@
             </path>
         </svg>
     </template>
+    <!-- Arrow Templates End -->
 
     <header>
         <!-- Header Logos -->
@@ -46,6 +48,8 @@
                 </a>
             </div>
         </div>
+        <!-- Header Logos End -->
+
         <!-- Header Nav -->
         <nav id="banner_header_nav">
             <ul id="banner_header_list">
@@ -91,102 +95,96 @@
             </div>
         </nav>
     </header>
+    <!-- Header Nav End -->
+
+    <!-- Scheduling Travels Menu -->
     <main>
-        <!-- Scheduling Travels Menu -->
         <section id="scheduling-travels-menu">
             <div class="block-wrapper" id="scheduling-wrapper">
                 <div class="booking">
                     <form action="">
-                        <!-- Radio Buttons -->
-                        <fieldset>
-                            <legend>Estou a pesquisar para:</legend>
-                            <div id="booking-radio-group">
-                                <div class="booking-radio-wrapper">
-                                    <input type="radio" id="schedule_input_fly" name="schedule_input_fly" checked>
-                                    <label for="schedule_input_fly">Voo</label>
-                                </div>
-
-                                <div class="booking-radio-wrapper">
-                                    <input type="radio" id="schedule_input_flyhotel" name="schedule_input_fly">
-                                    <label for="schedule_input_fly">Voo + hotel</label>
-                                </div>
-
-
-                                <div class="booking-radio-wrapper">
-                                    <input type="radio" id="schedule_input_flyvehicle" name="schedule_input_fly">
-                                    <label for="schedule_input_fly">Voo + Veículo</label>
-                                </div>
-
-                                <div class="booking-radio-wrapper">
-                                    <input type="radio" id="schedule_input_hotel" name="schedule_input_fly">
-                                    <label for="schedule_input_fly">Hotel</label>
-                                </div>
-
-                                <div class="booking-radio-wrapper">
-                                    <input type="radio" id="schedule_input_vehicle" name="schedule_input_fly">
-                                    <label for="schedule_input_fly">Veículo</label>
-                                </div>
+                    <!-- Form Options -->
+                    <fieldset>
+                        <legend>Estou a pesquisar para:</legend>
+                        <div id="booking-radio-group">
+                            <div class="booking-radio-wrapper">
+                                <input type="radio" id="schedule_input_fly" name="schedule_input_fly" checked>
+                                <label for="schedule_input_fly">Voo</label>
                             </div>
-                        </fieldset>
-                        <!-- Flight Grid -->
-                        <div id="schedule-flight" class="schedule-grid">
-                            <div id="schedule-flight-grp1">
-                                <div class="option-container">
-                                    <label for="option-tariff" class="option-label-top">Tarifa</label>
-                                    <select id="option-tariff" name="option-tariff">
-                                        <option value="return">Regresso</option>
-                                        <option value="oneway">Só ida</option>
-                                    </select>
-                                </div>
 
-
-                                <div class="option-container">
-                                    <label for="option-from" class="option-label-inside">De</label>
-                                    <input type="text" id="option-from" name="option-from"
-                                        placeholder="Digite 3 letras">
-                                </div>
-
-                                <div class="option-container">
-                                    <label for="option-to" class="option-label-inside">Para</label>
-                                    <input type="text" id="option-to" name="option-to" placeholder="Digite 3 letras">
-                                </div>
-                                <div class="option-container">
-                                    <label for="option-to" class="option-label-inside">Partida</label>
-                                    <input type="date" id="option-to" name="option-to">
-                                </div>
-                                <div class="option-container">
-                                    <label for="option-to" class="option-label-inside">Regresso</label>
-                                    <input type="date" id="option-to" name="option-to">
-                                </div>
-                                <div class="option-container">
-                                    <label for="option-tariff" class="option-label-top">Cabine</label>
-                                    <select name="option-tariff">
-                                        <option value="return">Económica</option>
-                                        <option value="oneway">Executiva</option>
-                                        <!-- Inserir Dropdown menu -->
-                                    </select>
-                                </div>
-                                <div class="option-container">
-                                    <label for="option-tariff" class="option-label-top">Passageiros</label>
-                                    <select id="option-tariff" name="option-tariff">
-                                        <!-- Inserir Dropdown menu -->
-                                    </select>
-                                </div>
+                            <div class="booking-radio-wrapper">
+                                <input type="radio" id="schedule_input_flyhotel" name="schedule_input_fly">
+                                <label for="schedule_input_fly">Voo + hotel</label>
                             </div>
-                            <span class="topic-content-fine">Quer fazer mais escalas?</span>
-                            <a class="topic-content-link">Várias cidades e À volta do mundo</a>
-                            <span class="topic-content-fine">Precisa de inspiração?</span>
-                            <a class="topic-content-link">Encontre a sua próxima semana</a>
-                            <button class="booking-search-button">Procurar voos</button>
+
+
+                            <div class="booking-radio-wrapper">
+                                <input type="radio" id="schedule_input_flyvehicle" name="schedule_input_fly">
+                                <label for="schedule_input_fly">Voo + Veículo</label>
+                            </div>
+
+                            <div class="booking-radio-wrapper">
+                                <input type="radio" id="schedule_input_hotel" name="schedule_input_fly">
+                                <label for="schedule_input_fly">Hotel</label>
+                            </div>
+
+                            <div class="booking-radio-wrapper">
+                                <input type="radio" id="schedule_input_vehicle" name="schedule_input_fly">
+                                <label for="schedule_input_fly">Veículo</label>
+                            </div>
                         </div>
+                    </fieldset>
+                    <!-- Form Options End -->
+
+                    <!-- Flight Form -->
+                    <div id="schedule-flight" class="schedule-grid">
+                        <div id="schedule-flight-grp1">
+                            <div class="option-container">
+                                <label for="option-tariff" class="option-label-top">Tarifa</label>
+                                <select id="option-tariff" name="option-tariff">
+                                    <option value="return">Regresso</option>
+                                    <option value="oneway">Só ida</option>
+                                </select>
+                            </div>
 
 
-                    <!-- Flight + Hotel Grid -->
+                            <div class="option-container">
+                                <label for="option-from" class="option-label-inside">De</label>
+                                <input type="text" id="option-from" name="option-from" placeholder="Digite 3 letras">
+                            </div>
+
+                            <div class="option-container">
+                                <label for="option-to" class="option-label-inside">Para</label>
+                                <input type="text" id="option-to" name="option-to" placeholder="Digite 3 letras">
+                            </div>
+                            <div class="option-container">
+                                <label for="option-to"
+                                    class="option-label-inside">Partida</label>Formlue="return">Económica</option>
+                                <option value="oneway">Executiva</option>
+                                <!-- Inserir Dropdown menu -->
+                                </select>
+                            </div>
+                            <div class="option-container">
+                                <label for="option-tariff" class="option-label-top">Passageiros</label>
+                                <select id="option-tariff" name="option-tariff">
+                                    <!-- Inserir Dropdown menu -->
+                                </select>
+                            </div>
+                        </div>
+                        <span class="topic-content-fine">Quer fazer mais escalas?</span>
+                        <a class="topic-content-link">Várias cidades e À volta do mundo</a>
+                        <span class="topic-content-fine">Precisa de inspiração?</span>
+                        <a class="topic-content-link">Encontre a sua próxima semana</a>
+                        <button class="booking-search-button">Procurar voos</button>
+                    </div>
+
+                    <!-- Flight Form End -->
+
+                    <!-- Flight + Hotel Form -->
                     <div id="schedule-flight-hotel">
                         <div class="option-container">
                             <label for="option-from" class="option-label-inside">De</label>
-                            <input type="text" id="option-from" name="option-from"
-                                placeholder="Digite 3 letras">
+                            <input type="text" id="option-from" name="option-from" placeholder="Digite 3 letras">
                         </div>
 
                         <div class="option-container">
@@ -213,60 +211,68 @@
                         <a class="topic-content-link">Crie viagem personalizada</a>
                         <button class="booking-search-button">Procurar voo + hotel</button>
                     </div>
-                    <!-- Flight + Vehicle Grid -->
-                        <div id="schedule-flight-vehicle">
-                            <div class="option-container">
-                                <label for="option-from" class="option-label-inside">De</label>
-                                <input type="text" id="option-from" name="option-from"
-                                    placeholder="Digite 3 letras">
-                            </div>
+                    <!-- Flight + Hotel Form End -->
 
-                            <div class="option-container">
-                                <label for="option-to" class="option-label-inside">Para</label>
-                                <input type="text" id="option-to" name="option-to" placeholder="Digite 3 letras">
-                            </div>
-                            <div class="option-container">
-                                <label for="option-to" class="option-label-inside">Partida</label>
-                                <input type="date" id="option-to" name="option-to">
-                            </div>
-                            <div class="option-container">
-                                <label for="option-to" class="option-label-inside">Regresso</label>
-                                <input type="date" id="option-to" name="option-to">
-                            </div>
-                            <div class="option-container">
-                                <label for="option-tariff" class="option-label-top">Cabine</label>
-                                <select name="option-tariff">
-                                    <option value="return">Económica</option>
-                                    <option value="oneway">Executiva</option>
-                                    <!-- Inserir Dropdown menu -->
-                                </select>
-                            </div>
-                            <span class="topic-content-fine">Quer viajar pelo mundo?</span>
-                            <a class="topic-content-link">Crie viagem personalizada</a>
-                            <span class="topic-content-fine">Em parceria com</span>
-                            <img src="img/avis_rgb_pos.svg" alt="" srcset="">
-                            <img src="img/budget-logo.svg" alt="">
-                            <button class="booking-search-button">Procurar voo + carro</button>
+                    <!-- Flight + Vehicle Form -->
+                    <div id="schedule-flight-vehicle">
+                        <div class="option-container">
+                            <label for="option-from" class="option-label-inside">De</label>
+                            <input type="text" id="option-from" name="option-from" placeholder="Digite 3 letras">
                         </div>
-                    <!-- Hotel Grid -->
-                        <div id="schedule-hotel">
-                            <span class="topic-content-fine">Quer viajar pelo mundo?</span>
-                            <a class="topic-content-link">Crie viagem personalizada</a>
-                            <button class="booking-search-button">Procurar hotéis</button>
+
+                        <div class="option-container">
+                            <label for="option-to" class="option-label-inside">Para</label>
+                            <input type="text" id="option-to" name="option-to" placeholder="Digite 3 letras">
                         </div>
-                    <!-- Vehicle Grid -->
-                        <div id="schedule-vehicle">
-                            <span class="topic-content-fine">Quer viajar pelo mundo?</span>
-                            <a class="topic-content-link">Crie viagem personalizada</a>
-                            <span class="topic-content-fine">Em parceria com</span>
-                            <img src="img/avis_rgb_pos.svg" alt="" srcset="">
-                            <img src="img/budget-logo.svg" alt="">
-                            <button class="booking-search-button">Procurar automóveis</button>
+                        <div class="option-container">
+                            <label for="option-to" class="option-label-inside">Partida</label>
+                            <input type="date" id="option-to" name="option-to">
                         </div>
-                    </form>
+                        <div class="option-container">
+                            <label for="option-to" class="option-label-inside">Regresso</label>
+                            <input type="date" id="option-to" name="option-to">
+                        </div>
+                        <div class="option-container">
+                            <label for="option-tariff" class="option-label-top">Cabine</label>
+                            <select name="option-tariff">
+                                <option value="return">Económica</option>
+                                <option value="oneway">Executiva</option>
+                                <!-- Inserir Dropdown menu -->
+                            </select>
+                        </div>
+                        <span class="topic-content-fine">Quer viajar pelo mundo?</span>
+                        <a class="topic-content-link">Crie viagem personalizada</a>
+                        <span class="topic-content-fine">Em parceria com</span>
+                        <img src="img/avis_rgb_pos.svg" alt="" srcset="">
+                        <img src="img/budget-logo.svg" alt="">
+                        <button class="booking-search-button">Procurar voo + carro</button>
+                    </div>
+                    <!-- Flight + Vehicle Form End -->
+
+                    <!-- Hotel Form -->
+                    <div id="schedule-hotel">
+                        <span class="topic-content-fine">Quer viajar pelo mundo?</span>
+                        <a class="topic-content-link">Crie viagem personalizada</a>
+                        <button class="booking-search-button">Procurar hotéis</button>
+                    </div>
+                    <!-- Hotel Form End -->
+
+                    <!-- Vehicle Form -->
+                    <div id="schedule-vehicle">
+                        <span class="topic-content-fine">Quer viajar pelo mundo?</span>
+                        <a class="topic-content-link">Crie viagem personalizada</a>
+                        <span class="topic-content-fine">Em parceria com</span>
+                        <img src="img/avis_rgb_pos.svg" alt="" srcset="">
+                        <img src="img/budget-logo.svg" alt="">
+                        <button class="booking-search-button">Procurar automóveis</button>
+                    </div>
+                    <!-- Vehicle Form End -->
                 </div>
+            </form>
             </div>
         </section>
+        <!-- Scheduling Travels Menu End -->
+        <!-- London Calling -->
         <section>
             <div class="block-wrapper" id="london-wrapper">
                 <div class="london-calling">
@@ -275,8 +281,7 @@
                         viagem a Londres agora.</p>
 
                     <a class="topic-content-link">Voos para Londres a partir</a>
-                    <span class="topic-content-fine">a partir de Funchal, March 2025</span>
-                    <!-- Dar get ao preço minimo e localização (JS)-->
+                    <span class="topic-content-fine">a partir de Funchal, January 2025</span>
                     <br>
                     <button class="london-calling-button">Procurar voos para Londres</button>
                     <br>
@@ -286,6 +291,8 @@
                 </div>
             </div>
         </section>
+        <!-- London Calling End -->
+
         <!-- Toolbar -->
         <section>
             <div class="block-wrapper" id="toolbar-wrapper">
@@ -305,8 +312,9 @@
                 </div>
             </div>
         </section>
+        <!-- Toolbar End -->
 
-        <!-- Topic -->
+        <!-- Topics -->
         <section id="section-topic">
             <div class="block-wrapper" id="topic-wrapper">
                 <div class="topic-grid">
@@ -319,9 +327,8 @@
                             </div>
                             <div class="topic-content-block">
 
-                                <a class="topic-content-link">Voos a partir de €49 só ida
-                                    <!-- Dar get ao preço minimo e localização (JS)--></a>
-                                <span class="topic-content-fine">a partir de Porto, March 2025</span>
+                                <a class="topic-content-link">Voos a partir de €83 só ida</a>
+                                <span class="topic-content-fine">a partir de Funchal, January 2025</span>
                             </div>
                             <div class="topic-content-block">
                                 <span class="topic-content-fine">O preço das férias inclui voos de retorno e um generoso
@@ -332,6 +339,8 @@
                             <a class="topic-content-link">Explore Londres </a>
                         </div>
                     </div>
+                    <!-- Topic 1 (Explore Londres) End-->
+
                     <!-- Topic 2 (BA Better World)-->
                     <div class="topic-item">
                         <img src="./img/topic2.jpg" alt="Topic 2">
@@ -349,6 +358,8 @@
                             <a class="topic-content-link">Sobre o BA Better World </a>
                         </div>
                     </div>
+                    <!-- Topic 2 (BA Better World) End-->
+
                     <!-- Topic 3 (Férias)-->
                     <div class="topic-item">
                         <img src="./img/topic3.jpg" alt="Topic 3">
@@ -369,8 +380,9 @@
                             <a class="topic-content-link">Procure oportunidades de férias </a>
                         </div>
                     </div>
-                    <!-- Topic 4 (Fly    <script src="logic.js"></script>
--Drive)-->
+                    <!-- Topic 3 (Férias) End -->
+
+                    <!-- Topic 4 (Fly-Drive)-->
                     <div class="topic-item">
                         <img src="./img/topic4.jpg" alt="Topic 4">
                         <div class="topic-content">
@@ -392,6 +404,8 @@
                             <a class="topic-content-link">Vamos lá </a>
                         </div>
                     </div>
+                    <!-- Topic 4 (Fly-Drive) End -->
+
                     <!-- Topic 5 (Novos Lugares)-->
                     <div class="topic-item">
                         <img src="./img/topic5.jpg" alt="Topic 5">
@@ -412,6 +426,8 @@
                             <a class="topic-content-link">Inspire-se </a>
                         </div>
                     </div>
+                    <!-- Topic 5 (Novos Lugares) End -->
+
                     <!-- Topic 6 (Económica Premium)-->
                     <div class="topic-item">
                         <img src="./img/topic6.jpg" alt="Topic 6">
@@ -431,6 +447,8 @@
                             <a class="topic-content-link">Faça reserva em Económica premium </a>
                         </div>
                     </div>
+                    <!-- Topic 6 (Económica Premium) End -->
+
                     <!-- Topic 7 (Contactar)-->
                     <div class="topic-item">
                         <img src="./img/topic7.jpg" alt="Topic 7">
@@ -447,6 +465,8 @@
                             <a class="topic-content-link">Como contactar-nos </a>
                         </div>
                     </div>
+                    <!-- Topic 7 (Contactar) End -->
+
                     <!-- Topic 8 (Singular)-->
                     <div class="topic-item">
                         <img src="./img/topic8.jpg" alt="Topic 8">
@@ -464,6 +484,8 @@
                             <a class="topic-content-link">Obtenha mais informações </a>
                         </div>
                     </div>
+                    <!-- Topic 8 (Singular) End -->
+
                     <!-- Topic 9 (Exevutive Club)-->
                     <div class="topic-item">
                         <img src="./img/topic9.jpg" alt="Topic 9">
@@ -481,12 +503,17 @@
                             <a class="topic-content-link">Adira agora </a>
                         </div>
                     </div>
+                    <!-- Topic 9 (Exevutive Club) End -->
+
                 </div>
             </div>
-
         </section>
+        <!-- Topics End -->
+
     </main>
     <footer>
+        <!-- Footer Links -->
+
         <nav class="footer-links">
             <a href="">Ajuda e contactos</a>
             <a href="">Acessibilidade e ajuda do site</a>
@@ -502,6 +529,8 @@
             <a href="">Declaração de escravatura moderna</a>
             <a href="">Iberia.com</a>
         </nav>
+        <!-- Footer Links End -->
+        <!-- Footer Icons -->
         <ul class="footer-icons">
             <li><a>
                     <svg width="22px" height="22px" role="img" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
@@ -537,6 +566,8 @@
         </ul>
         <span id="footer-legal">© British Airways - todos os direitos reservados</span>
         <img src="./img/footerlogo.png" alt="" id="footer_ba_logo">
+        <!-- Footer Icons -->
+
     </footer>
     <script src="logic.js"></script>
 </body>
