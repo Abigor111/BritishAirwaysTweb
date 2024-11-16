@@ -58,6 +58,7 @@
                         <span class="banner_header_nav_span">Descubra</span>
 
                     </button>
+                    
                 </li>
 
                 <li>
@@ -103,172 +104,421 @@
             <div class="block-wrapper" id="scheduling-wrapper">
                 <div class="booking">
                     <form action="">
-                    <!-- Form Options -->
-                    <fieldset>
-                        <legend>Estou a pesquisar para:</legend>
-                        <div id="booking-radio-group">
-                            <div class="booking-radio-wrapper">
-                                <input type="radio" id="schedule_input_fly" name="schedule_input_fly" checked>
-                                <label for="schedule_input_fly">Voo</label>
-                            </div>
+                        <!-- Form Options -->
+                        <fieldset>
+                            <legend>Estou a pesquisar para:</legend>
+                            <div id="booking-radio-group">
+                                <div class="booking-radio-wrapper">
+                                    <input type="radio" id="schedule_input_fly" name="schedule_input_fly" checked>
+                                    <label for="schedule_input_fly">Voo</label>
+                                </div>
 
-                            <div class="booking-radio-wrapper">
-                                <input type="radio" id="schedule_input_flyhotel" name="schedule_input_fly">
-                                <label for="schedule_input_fly">Voo + hotel</label>
-                            </div>
+                                <div class="booking-radio-wrapper">
+                                    <input type="radio" id="schedule_input_flyhotel" name="schedule_input_fly">
+                                    <label for="schedule_input_fly">Voo + hotel</label>
+                                </div>
 
 
-                            <div class="booking-radio-wrapper">
-                                <input type="radio" id="schedule_input_flyvehicle" name="schedule_input_fly">
-                                <label for="schedule_input_fly">Voo + Veículo</label>
-                            </div>
+                                <div class="booking-radio-wrapper">
+                                    <input type="radio" id="schedule_input_flyvehicle" name="schedule_input_fly">
+                                    <label for="schedule_input_fly">Voo + Veículo</label>
+                                </div>
 
-                            <div class="booking-radio-wrapper">
-                                <input type="radio" id="schedule_input_hotel" name="schedule_input_fly">
-                                <label for="schedule_input_fly">Hotel</label>
-                            </div>
+                                <div class="booking-radio-wrapper">
+                                    <input type="radio" id="schedule_input_hotel" name="schedule_input_fly">
+                                    <label for="schedule_input_fly">Hotel</label>
+                                </div>
 
-                            <div class="booking-radio-wrapper">
-                                <input type="radio" id="schedule_input_vehicle" name="schedule_input_fly">
-                                <label for="schedule_input_fly">Veículo</label>
+                                <div class="booking-radio-wrapper">
+                                    <input type="radio" id="schedule_input_vehicle" name="schedule_input_fly">
+                                    <label for="schedule_input_fly">Veículo</label>
+                                </div>
                             </div>
+                        </fieldset>
+                        <!-- Form Options End -->
+
+                        <!-- Flight Form -->
+                        <div id="schedule-flight" class="schedule-grid">
+                            <div id="schedule-flight-grp1">
+                                <div class="option-container" hidden>
+                                    <label for="option-tariff" class="option-label-top">Tarifa</label>
+                                    <select id="option-tariff" name="option-tariff" required>
+                                        <option value="return">Regresso</option>
+                                        <option value="oneway">Só ida</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="option-container" hidden>
+                                    <label for="option-from" class="option-label-inside">De</label>
+                                    <input type="text" id="option-from" name="option-from" placeholder="Digite 3 letras"
+                                        required>
+                                </div>
+
+                                <div class="option-container" hidden>
+                                    <label for="option-to" class="option-label-inside">Para</label>
+                                    <input type="text" id="option-to" name="option-to" placeholder="Digite 3 letras"
+                                        required>
+                                </div>
+
+                                <div class="option-container" hidden>
+                                    <label for="option-tariff" class="option-label-top">Partida</label>
+                                    <input type="date" required>
+                                </div>
+                                <div class="option-container" hidden>
+                                    <label for="option-tariff" class="option-label-top">Regresso</label>
+                                    <input type="date">
+                                </div>
+                                <div class="option-container" hidden>
+                                    <label for="option-tariff" class="option-label-top">Cabine</label>
+                                    <select id="option-tariff" name="option-tariff" required>
+                                        <option value="economic">Económica</option>
+                                        <option value="executive">Executiva</option>
+                                        <span class="topic-content-fine">Gostaria de um bilhete flexivel?</span>
+                                        <option value="executive"><input type="checkbox">Bilhete flexível</option>
+                                    </select>
+                                </div>
+                                <div class="option-container" hidden>
+                                    <label for="option-tariff" class="option-label-top">Passageiros</label>
+                                    <select id="option-tariff" name="option-tariff" required>
+                                        <!-- Inserir Dropdown menu -->
+                                    </select>
+                                </div>
+                            </div>
+                            <span class="topic-content-fine" hidden>Quer fazer mais escalas?</span>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/travel/book/public/pt_pt/flightSearch">Várias
+                                cidades e À volta do mundo</a>
+                            <span class="topic-content-fine" hidden>Precisa de inspiração?</span>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/travel/flexible-search/public/pt_pt/">Encontre a
+                                sua próxima semana</a>
+                            <button class="booking-search-button">Procurar voos</button>
                         </div>
-                    </fieldset>
-                    <!-- Form Options End -->
+                        <!-- Flight Form End -->
 
-                    <!-- Flight Form -->
-                    <div id="schedule-flight" class="schedule-grid">
-                        <div id="schedule-flight-grp1">
-                            <div class="option-container">
-                                <label for="option-tariff" class="option-label-top">Tarifa</label>
-                                <select id="option-tariff" name="option-tariff">
-                                    <option value="return">Regresso</option>
-                                    <option value="oneway">Só ida</option>
-                                </select>
-                            </div>
-
-
-                            <div class="option-container">
+                        <!-- Flight + Hotel Form -->
+                        <div id="schedule-flight-hotel">
+                            <div class="option-container" hidden>
                                 <label for="option-from" class="option-label-inside">De</label>
-                                <input type="text" id="option-from" name="option-from" placeholder="Digite 3 letras">
+                                <input type="text" id="option-from" name="option-from" placeholder="Digite 3 letras"
+                                    required>
                             </div>
 
-                            <div class="option-container">
+                            <div class="option-container" hidden>
                                 <label for="option-to" class="option-label-inside">Para</label>
-                                <input type="text" id="option-to" name="option-to" placeholder="Digite 3 letras">
+                                <input type="text" id="option-to" name="option-to" placeholder="Digite 3 letras"
+                                    required>
                             </div>
-                            <div class="option-container">
-                                <label for="option-to"
-                                    class="option-label-inside">Partida</label>Económica</option>
-                                <option value="oneway">Executiva</option>
-                                <!-- Inserir Dropdown menu -->
+                            <div class="option-container" hidden>
+                                <label for="option-to" class="option-label-inside">Partida</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-to" class="option-label-inside">Regresso</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Cabine</label>
+                                <select id="option-tariff" name="option-tariff" required>
+                                    <option value="economic">Económica</option>
+                                    <option value="executive">Executiva</option>
+                                    <span class="topic-content-fine">Gostaria de um bilhete flexivel?</span>
+                                    <option value="executive">
+                                        <input type="checkbox">Bilhete flexível
+                                    </option>
                                 </select>
                             </div>
-                            <div class="option-container">
-                                <label for="option-tariff" class="option-label-top">Passageiros</label>
-                                <select id="option-tariff" name="option-tariff">
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Quartos</label>
+                                <select id="option-tariff" name="option-tariff" required>
+                                    <option value="oneroom">1 quarto</option>
+                                    <option value="tworoom">2 quartos</option>
+                                    <option value="threeroom">3 quartos</option>
+                                    <option value="fourroom">4 quartos</option>
+                                </select>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Quarto 1</label>
+                                <select id="option-tariff" name="option-tariff" required>
                                     <!-- Inserir Dropdown menu -->
                                 </select>
                             </div>
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Quarto 2</label>
+                                <select id="option-tariff" name="option-tariff" required>
+                                    <!-- Inserir Dropdown menu -->
+                                </select>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Quarto 3</label>
+                                <select id="option-tariff" name="option-tariff" required>
+                                    <!-- Inserir Dropdown menu -->
+                                </select>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Quarto 4</label>
+                                <select id="option-tariff" name="option-tariff" required>
+                                    <!-- Inserir Dropdown menu -->
+                                </select>
+                            </div>
+                            <span class="topic-content-fine">Quer viajar pelo mundo?</span>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/badp/complexItineraries/search.do?fromBAEntryPoint=true">Crie
+                                viagem personalizada</a>
+                            <button class="booking-search-button">Procurar voo + hotel</button>
                         </div>
-                        <span class="topic-content-fine">Quer fazer mais escalas?</span>
-                        <a class="topic-content-link" href="https://www.britishairways.com/travel/book/public/pt_pt/flightSearch">Várias cidades e À volta do mundo</a>
-                        <span class="topic-content-fine">Precisa de inspiração?</span>
-                        <a class="topic-content-link" href="https://www.britishairways.com/travel/flexible-search/public/pt_pt/">Encontre a sua próxima semana</a>
-                        <button class="booking-search-button">Procurar voos</button>
-                    </div>
+                        <!-- Flight + Hotel Form End -->
 
-                    <!-- Flight Form End -->
+                        <!-- Flight + Vehicle Form -->
+                        <div id="schedule-flight-vehicle">
+                            <div class="option-container" hidden>
+                                <label for="option-from" class="option-label-inside">De</label>
+                                <input type="text" id="option-from" name="option-from" placeholder="Digite 3 letras"
+                                    required>
+                            </div>
 
-                    <!-- Flight + Hotel Form -->
-                    <div id="schedule-flight-hotel">
-                        <div class="option-container">
-                            <label for="option-from" class="option-label-inside">De</label>
-                            <input type="text" id="option-from" name="option-from" placeholder="Digite 3 letras">
+                            <div class="option-container" hidden>
+                                <label for="option-to" class="option-label-inside">Para</label>
+                                <input type="text" id="option-to" name="option-to" placeholder="Digite 3 letras"
+                                    required>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-to" class="option-label-inside">Partida</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-to" class="option-label-inside">Regresso</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Cabine</label>
+                                <select id="option-tariff" name="option-tariff" required>
+                                    <option value="economic">Económica</option>
+                                    <option value="executive">Executiva</option>
+                                    <span class="topic-content-fine">Gostaria de um bilhete flexivel?</span>
+                                    <option value="executive">
+                                        <input type="checkbox">Bilhete flexível
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Passageiros</label>
+                                <select id="option-tariff" name="option-tariff" required>
+                                    <!-- Inserir Dropdown menu -->
+                                </select>
+                            </div>
+                            <span class="topic-content-fine">Quer viajar pelo mundo?</span>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/badp/complexItineraries/search.do?fromBAEntryPoint=true">Crie
+                                viagem personalizada</a>
+                            <span class="topic-content-fine">Em parceria com</span>
+                            <img src="img/avis_rgb_pos.svg" hidden>
+                            <img src="img/budget-logo.svg" hidden>
+                            <button class="booking-search-button">Procurar voo + carro</button>
                         </div>
+                        <!-- Flight + Vehicle Form End -->
 
-                        <div class="option-container">
-                            <label for="option-to" class="option-label-inside">Para</label>
-                            <input type="text" id="option-to" name="option-to" placeholder="Digite 3 letras">
+                        <!-- Hotel Form -->
+                        <div id="schedule-hotel">
+                            <div class="option-container" hidden>
+                                <label for="option-from" class="option-label-inside">Destino</label>
+                                <input type="text" id="option-from" name="option-from" placeholder="Digite 3 letras"
+                                    required>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-to" class="option-label-inside">Check-in</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-to" class="option-label-inside">Check-out</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Quartos</label>
+                                <select id="option-tariff" name="option-tariff" required>
+                                    <option value="oneroom">1 quarto</option>
+                                    <option value="tworoom">2 quartos</option>
+                                    <option value="threeroom">3 quartos</option>
+                                    <option value="fourroom">4 quartos</option>
+                                </select>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Quarto 1</label>
+                                <select id="option-tariff" name="option-tariff" required>
+                                    <!-- Inserir Dropdown menu -->
+                                </select>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Quarto 2</label>
+                                <select id="option-tariff" name="option-tariff" required>
+                                    <!-- Inserir Dropdown menu -->
+                                </select>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Quarto 3</label>
+                                <select id="option-tariff" name="option-tariff" required>
+                                    <!-- Inserir Dropdown menu -->
+                                </select>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Quarto 4</label>
+                                <select id="option-tariff" name="option-tariff" required>
+                                    <!-- Inserir Dropdown menu -->
+                                </select>
+                            </div>
+                            <span class="topic-content-fine">Quer viajar pelo mundo?</span>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/badp/complexItineraries/search.do?fromBAEntryPoint=true">Crie
+                                viagem personalizada</a>
+                            <button class="booking-search-button">Procurar hotéis</button>
                         </div>
-                        <div class="option-container">
-                            <label for="option-to" class="option-label-inside">Partida</label>
-                            <input type="date" id="option-to" name="option-to">
-                        </div>
-                        <div class="option-container">
-                            <label for="option-to" class="option-label-inside">Regresso</label>
-                            <input type="date" id="option-to" name="option-to">
-                        </div>
-                        <div class="option-container">
-                            <label for="option-tariff" class="option-label-top">Cabine</label>
-                            <select name="option-tariff">
-                                <option value="return">Económica</option>
-                                <option value="oneway">Executiva</option>
-                                <!-- Inserir Dropdown menu -->
-                            </select>
-                        </div>
-                        <span class="topic-content-fine">Quer viajar pelo mundo?</span>
-                        <a class="topic-content-link" href="https://www.britishairways.com/badp/complexItineraries/search.do?fromBAEntryPoint=true">Crie viagem personalizada</a>
-                        <button class="booking-search-button">Procurar voo + hotel</button>
-                    </div>
-                    <!-- Flight + Hotel Form End -->
+                        <!-- Hotel Form End -->
 
-                    <!-- Flight + Vehicle Form -->
-                    <div id="schedule-flight-vehicle">
-                        <div class="option-container">
-                            <label for="option-from" class="option-label-inside">De</label>
-                            <input type="text" id="option-from" name="option-from" placeholder="Digite 3 letras">
-                        </div>
+                        <!-- Vehicle Form -->
+                        <div id="schedule-vehicle">
+                            <input type="checkbox" hidden>
+                            <span class="topic-content-fine">Devolver o veículo numa outra localização</span>
+                            <div class="option-container" hidden>
+                                <label for="option-from" class="option-label-inside">Levantamento a partir das</label>
+                                <input type="text" id="option-from" name="option-from" placeholder="Digite 3 letras"
+                                    required>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-from" class="option-label-inside">Entrega às</label>
+                                <input type="text" id="option-from" name="option-from" placeholder="Digite 3 letras"
+                                    required>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-to" class="option-label-inside">Data de Recolha</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Hora de Recolha</label>
+                                <select id="option-tariff" name="option-tariff" required>
+                                    <option value="00:00">00:00</option>
+                                    <option value="00:30">00:30</option>
+                                    <option value="01:00">01:00</option>
+                                    <option value="01:30">01:30</option>
+                                    <option value="02:00">02:00</option>
+                                    <option value="02:30">02:30</option>
+                                    <option value="03:00">03:00</option>
+                                    <option value="03:30">03:30</option>
+                                    <option value="04:00">04:00</option>
+                                    <option value="04:30">04:30</option>
+                                    <option value="05:00">05:00</option>
+                                    <option value="05:30">05:30</option>
+                                    <option value="06:00">06:00</option>
+                                    <option value="06:30">06:30</option>
+                                    <option value="07:00">07:00</option>
+                                    <option value="07:30">07:30</option>
+                                    <option value="08:00">08:00</option>
+                                    <option value="08:30">08:30</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="09:30">09:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="20:30">20:30</option>
+                                    <option value="21:00">21:00</option>
+                                    <option value="21:30">21:30</option>
+                                    <option value="22:00">22:00</option>
+                                    <option value="22:30">22:30</option>
+                                    <option value="23:00">23:00</option>
+                                    <option value="23:30">23:30</option>
 
-                        <div class="option-container">
-                            <label for="option-to" class="option-label-inside">Para</label>
-                            <input type="text" id="option-to" name="option-to" placeholder="Digite 3 letras">
-                        </div>
-                        <div class="option-container">
-                            <label for="option-to" class="option-label-inside">Partida</label>
-                            <input type="date" id="option-to" name="option-to">
-                        </div>
-                        <div class="option-container">
-                            <label for="option-to" class="option-label-inside">Regresso</label>
-                            <input type="date" id="option-to" name="option-to">
-                        </div>
-                        <div class="option-container">
-                            <label for="option-tariff" class="option-label-top">Cabine</label>
-                            <select name="option-tariff">
-                                <option value="return">Económica</option>
-                                <option value="oneway">Executiva</option>
-                                <!-- Inserir Dropdown menu -->
-                            </select>
-                        </div>
-                        <span class="topic-content-fine">Quer viajar pelo mundo?</span>
-                        <a class="topic-content-link" href="https://www.britishairways.com/badp/complexItineraries/search.do?fromBAEntryPoint=true">Crie viagem personalizada</a>
-                        <span class="topic-content-fine">Em parceria com</span>
-                        <img src="img/avis_rgb_pos.svg" alt="" srcset="">
-                        <img src="img/budget-logo.svg" alt="">
-                        <button class="booking-search-button">Procurar voo + carro</button>
-                    </div>
-                    <!-- Flight + Vehicle Form End -->
+                                </select>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-to" class="option-label-inside">Data de Entrega</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="option-container" hidden>
+                                <label for="option-tariff" class="option-label-top">Hora de Entrega</label>
+                                <select id="option-tariff" name="option-tariff" required>
+                                    <option value="00:00">00:00</option>
+                                    <option value="00:30">00:30</option>
+                                    <option value="01:00">01:00</option>
+                                    <option value="01:30">01:30</option>
+                                    <option value="02:00">02:00</option>
+                                    <option value="02:30">02:30</option>
+                                    <option value="03:00">03:00</option>
+                                    <option value="03:30">03:30</option>
+                                    <option value="04:00">04:00</option>
+                                    <option value="04:30">04:30</option>
+                                    <option value="05:00">05:00</option>
+                                    <option value="05:30">05:30</option>
+                                    <option value="06:00">06:00</option>
+                                    <option value="06:30">06:30</option>
+                                    <option value="07:00">07:00</option>
+                                    <option value="07:30">07:30</option>
+                                    <option value="08:00">08:00</option>
+                                    <option value="08:30">08:30</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="09:30">09:30</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="11:30">11:30</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="12:30">12:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="13:30">13:30</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="15:30">15:30</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="16:30">16:30</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="17:30">17:30</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="20:30">20:30</option>
+                                    <option value="21:00">21:00</option>
+                                    <option value="21:30">21:30</option>
+                                    <option value="22:00">22:00</option>
+                                    <option value="22:30">22:30</option>
+                                    <option value="23:00">23:00</option>
+                                    <option value="23:30">23:30</option>
 
-                    <!-- Hotel Form -->
-                    <div id="schedule-hotel">
-                        <span class="topic-content-fine">Quer viajar pelo mundo?</span>
-                        <a class="topic-content-link" href="https://www.britishairways.com/badp/complexItineraries/search.do?fromBAEntryPoint=true">Crie viagem personalizada</a>
-                        <button class="booking-search-button">Procurar hotéis</button>
-                    </div>
-                    <!-- Hotel Form End -->
-
-                    <!-- Vehicle Form -->
-                    <div id="schedule-vehicle">
-                        <span class="topic-content-fine">Quer viajar pelo mundo?</span>
-                        <a class="topic-content-link" href="https://www.britishairways.com/badp/complexItineraries/search.do?fromBAEntryPoint=true">Crie viagem personalizada</a>
-                        <span class="topic-content-fine">Em parceria com</span>
-                        <img src="img/avis_rgb_pos.svg" alt="" srcset="">
-                        <img src="img/budget-logo.svg" alt="">
-                        <button class="booking-search-button">Procurar automóveis</button>
-                    </div>
-                    <!-- Vehicle Form End -->
+                                </select>
+                            </div>
+                            <input type="checkbox" checked hidden>
+                            <span class="topic-content-fine">Condutor entre 30 e 70 anos</span>
+                            <span class="topic-content-fine">Quer viajar pelo mundo?</span>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/badp/complexItineraries/search.do?fromBAEntryPoint=true">Crie
+                                viagem personalizada</a>
+                            <span class="topic-content-fine">Em parceria com</span>
+                            <img src="img/avis_rgb_pos.svg" hidden>
+                            <img src="img/budget-logo.svg" hidden>
+                            <button class="booking-search-button">Procurar automóveis</button>
+                        </div>
+                        <!-- Vehicle Form End -->
                 </div>
-            </form>
+                </form>
             </div>
         </section>
         <!-- Scheduling Travels Menu End -->
@@ -280,7 +530,9 @@
                     <p>Planeie uma emocionante escapadinha à cidade e explore sítios culturais icónicos. Reserve a sua
                         viagem a Londres agora.</p>
 
-                    <a class="topic-content-link" href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=false&cabin=M&destination=LGW&origin=FNC&numNights=7&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=e1a2221fc9e425ad237e44fa7933a6c5||HER|1|PRI1|1|EUR|89||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=HER-POS-1-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos para Londres a partir de €89 ambos os sentidos</a>
+                    <a class="topic-content-link"
+                        href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=false&cabin=M&destination=LGW&origin=FNC&numNights=7&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=e1a2221fc9e425ad237e44fa7933a6c5||HER|1|PRI1|1|EUR|89||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=HER-POS-1-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos
+                        para Londres a partir de €89 ambos os sentidos</a>
                     <span class="topic-content-fine">a partir de Funchal, January 2025</span>
                     <br>
                     <button class="london-calling-button" id="london-flight-search">Procurar voos para Londres</button>
@@ -298,15 +550,18 @@
             <div class="block-wrapper" id="toolbar-wrapper">
                 <div class="toolbar-grid">
                     <div class="toolbar-item">
-                        <a href="https://www.britishairways.com/travel/managebooking/public/pt_pt?dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=||TTB||MMB|1||||HOME||||L4||||anonymous-inspiration|||&source=TTB-MMB&KMtag=c&KMver=1.0&clickpage=HOMEPAGE" class="toolbar_item_link"><span>Gerir a minha reserva</span></a>
+                        <a href="https://www.britishairways.com/travel/managebooking/public/pt_pt?dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=||TTB||MMB|1||||HOME||||L4||||anonymous-inspiration|||&source=TTB-MMB&KMtag=c&KMver=1.0&clickpage=HOMEPAGE"
+                            class="toolbar_item_link"><span>Gerir a minha reserva</span></a>
                         <p>Faça alterações aos seus planos de viagem e veja os seus dados de reserva</p>
                     </div>
                     <div class="toolbar-item">
-                        <a href="https://www.britishairways.com/travel/olcilandingpageauthreq/public/pt_pt?dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=||TTB||OLCI|1||||HOME||||L4||||anonymous-inspiration|||&source=TTB-OLCI&KMtag=c&KMver=1.0&clickpage=HOMEPAGE" class="toolbar_item_link"><span>Check-in online</span></a>
+                        <a href="https://www.britishairways.com/travel/olcilandingpageauthreq/public/pt_pt?dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=||TTB||OLCI|1||||HOME||||L4||||anonymous-inspiration|||&source=TTB-OLCI&KMtag=c&KMver=1.0&clickpage=HOMEPAGE"
+                            class="toolbar_item_link"><span>Check-in online</span></a>
                         <p>O check-in online abre 24 horas antes da partida do voo</p>
                     </div>
                     <div class="toolbar-item">
-                        <a href="https://www.britishairways.com/travel/flightstatus/public/pt_pt/search?dt=British%20Airways%20%7C%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=%7C%7CTTB%7C%7CRTAD%7C1%7C%7C%7C%7CHOME%7C%7C%7C%7CL4%7C%7C%7C%7Canonymous-inspiration%7C%7C%7C&source=TTB-RTAD&KMtag=c&KMver=1.0&clickpage=HOMEPAGE" class="toolbar_item_link"><span>Estado do voo</span></a>
+                        <a href="https://www.britishairways.com/travel/flightstatus/public/pt_pt/search?dt=British%20Airways%20%7C%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=%7C%7CTTB%7C%7CRTAD%7C1%7C%7C%7C%7CHOME%7C%7C%7C%7CL4%7C%7C%7C%7Canonymous-inspiration%7C%7C%7C&source=TTB-RTAD&KMtag=c&KMver=1.0&clickpage=HOMEPAGE"
+                            class="toolbar_item_link"><span>Estado do voo</span></a>
                         <p>Verifique o estado mais recente dos nossos voos nos próximos 10 dias</p>
                     </div>
                 </div>
@@ -327,7 +582,9 @@
                             </div>
                             <div class="topic-content-block">
 
-                                <a class="topic-content-link" href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos a partir de €83 só ida</a>
+                                <a class="topic-content-link"
+                                    href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos
+                                    a partir de €83 só ida</a>
                                 <span class="topic-content-fine">a partir de Funchal, January 2025</span>
                             </div>
                             <div class="topic-content-block">
@@ -336,7 +593,9 @@
                             </div>
                         </div>
                         <div class="topic-action">
-                            <a class="topic-content-link" href="https://www.britishairways.com/content/pt/pt/flights/england/london?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||cam|3|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-3-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Explore Londres </a>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/content/pt/pt/flights/england/london?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||cam|3|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-3-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Explore
+                                Londres </a>
                         </div>
                     </div>
                     <!-- Topic 1 (Explore Londres) End-->
@@ -355,7 +614,9 @@
                             </div>
                         </div>
                         <div class="topic-action">
-                            <a class="topic-content-link" href="https://www.britishairways.com/content/pt/pt/information/about-ba/ba-better-world?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=ba9058e85e822fe6f5a6a9f0190d2553||cam|4|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-4-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Sobre o BA Better World </a>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/content/pt/pt/information/about-ba/ba-better-world?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=ba9058e85e822fe6f5a6a9f0190d2553||cam|4|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-4-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Sobre
+                                o BA Better World </a>
                         </div>
                     </div>
                     <!-- Topic 2 (BA Better World) End-->
@@ -377,7 +638,9 @@
                             </div>
                         </div>
                         <div class="topic-action">
-                            <a class="topic-content-link" href="https://www.britishairways.com/content/pt/pt/flights/cheap-flights?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=82bee58303e7e4a7482fe55715464630||cam|5|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-5-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Procure oportunidades de férias </a>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/content/pt/pt/flights/cheap-flights?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=82bee58303e7e4a7482fe55715464630||cam|5|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-5-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Procure
+                                oportunidades de férias </a>
                         </div>
                     </div>
                     <!-- Topic 3 (Férias) End -->
@@ -401,7 +664,9 @@
                             </div>
                         </div>
                         <div class="topic-action">
-                            <a class="topic-content-link" href="https://www.britishairways.com/content/pt/pt/holidays/holiday-types/fly-drive-holidays?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=cca52d939ebf8b0858554c2f058f7500||cam|6|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-6-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Vamos lá </a>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/content/pt/pt/holidays/holiday-types/fly-drive-holidays?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=cca52d939ebf8b0858554c2f058f7500||cam|6|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-6-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Vamos
+                                lá </a>
                         </div>
                     </div>
                     <!-- Topic 4 (Fly-Drive) End -->
@@ -423,7 +688,9 @@
                             </div>
                         </div>
                         <div class="topic-action">
-                            <a class="topic-content-link" href="https://www.britishairways.com/content/pt/pt/flights/cheap-flights?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=9122a9c96fb0ab146f5d09660921900e||cam|7|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-7-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Inspire-se </a>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/content/pt/pt/flights/cheap-flights?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=9122a9c96fb0ab146f5d09660921900e||cam|7|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-7-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Inspire-se
+                            </a>
                         </div>
                     </div>
                     <!-- Topic 5 (Novos Lugares) End -->
@@ -444,7 +711,9 @@
                             </div>
                         </div>
                         <div class="topic-action">
-                            <a class="topic-content-link" href="https://www.britishairways.com/content/pt/pt/flights?saleoption=fo&cabin=w&dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=ef5a55d03adee6bce6fbc09b435dfe90||cam|8|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-8-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Faça reserva em Económica premium </a>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/content/pt/pt/flights?saleoption=fo&cabin=w&dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=ef5a55d03adee6bce6fbc09b435dfe90||cam|8|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-8-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Faça
+                                reserva em Económica premium </a>
                         </div>
                     </div>
                     <!-- Topic 6 (Económica Premium) End -->
@@ -462,7 +731,9 @@
                             </div>
                         </div>
                         <div class="topic-action">
-                            <a class="topic-content-link" href="https://www.britishairways.com/content/pt/pt/information/help-and-contacts?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=733c5ad2de572d462b57956ae34f840a||cam|9|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-9-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Como contactar-nos </a>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/content/pt/pt/information/help-and-contacts?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=733c5ad2de572d462b57956ae34f840a||cam|9|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-9-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Como
+                                contactar-nos </a>
                         </div>
                     </div>
                     <!-- Topic 7 (Contactar) End -->
@@ -481,7 +752,9 @@
                             </div>
                         </div>
                         <div class="topic-action">
-                            <a class="topic-content-link" href="https://www.britishairways.com/content/pt/pt/information/about-ba/our-brand?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=3a8756d88eb8cabd52f906d08af94367||cam|10|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-10-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Obtenha mais informações </a>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/content/pt/pt/information/about-ba/our-brand?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=3a8756d88eb8cabd52f906d08af94367||cam|10|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-10-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Obtenha
+                                mais informações </a>
                         </div>
                     </div>
                     <!-- Topic 8 (Singular) End -->
@@ -500,7 +773,9 @@
                             </div>
                         </div>
                         <div class="topic-action">
-                            <a class="topic-content-link" href="https://www.britishairways.com/travel/execenrol/public/pt_pt?dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=8c6a4ad0afd06249e58ada363c1fd5b9||CAM|11|CTA1|1||||HOME||||L4||||anonymous-inspiration|||&source=CAM-POS-11-CTA1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Adira agora </a>
+                            <a class="topic-content-link"
+                                href="https://www.britishairways.com/travel/execenrol/public/pt_pt?dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=8c6a4ad0afd06249e58ada363c1fd5b9||CAM|11|CTA1|1||||HOME||||L4||||anonymous-inspiration|||&source=CAM-POS-11-CTA1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Adira
+                                agora </a>
                         </div>
                     </div>
                     <!-- Topic 9 (Exevutive Club) End -->
@@ -515,18 +790,31 @@
         <!-- Footer Links -->
 
         <nav class="footer-links">
-            <a href="https://www.britishairways.com/content/pt/pt/information/help-and-contacts?source=bot_help_and_contacts">Ajuda e contactos</a>
-            <a href="https://www.britishairways.com/content/pt/pt/information/accessibility-site-help?source=bot_accessibility">Acessibilidade e ajuda do site</a>
-            <a href="https://www.britishairways.com/content/pt/pt/information/legal/website-terms-conditions/website-security?source=bot_website-security">Segurança do site</a>
-            <a href="https://www.britishairways.com/content/pt/pt/information/legal/privacy-policy?source=bot_privacy-policy">Política de privacidade</a>
+            <a
+                href="https://www.britishairways.com/content/pt/pt/information/help-and-contacts?source=bot_help_and_contacts">Ajuda
+                e contactos</a>
+            <a
+                href="https://www.britishairways.com/content/pt/pt/information/accessibility-site-help?source=bot_accessibility">Acessibilidade
+                e ajuda do site</a>
+            <a
+                href="https://www.britishairways.com/content/pt/pt/information/legal/website-terms-conditions/website-security?source=bot_website-security">Segurança
+                do site</a>
+            <a
+                href="https://www.britishairways.com/content/pt/pt/information/legal/privacy-policy?source=bot_privacy-policy">Política
+                de privacidade</a>
             <a href="https://www.britishairways.com/content/pt/pt/information/legal/cookies">Política de Cookies</a>
-            <a href="https://www.britishairways.com/content/pt/pt/information/legal?source=bot_legal">Informação legal</a>
-            <a href="https://www.britishairways.com/content/pt/pt/information/about-ba?source=bot_about_ba">Sobre a BA</a>
+            <a href="https://www.britishairways.com/content/pt/pt/information/legal?source=bot_legal">Informação
+                legal</a>
+            <a href="https://www.britishairways.com/content/pt/pt/information/about-ba?source=bot_about_ba">Sobre a
+                BA</a>
             <a href="https://mediacentre.britishairways.com/">Media Centre</a>
-            <a href="https://www.britishairways.com/content/pt/pt/information/legal/our-customer-commitment">Compromisso com o cliente</a>
+            <a href="https://www.britishairways.com/content/pt/pt/information/legal/our-customer-commitment">Compromisso
+                com o cliente</a>
             <a href="https://careers.ba.com/">Careers</a>
-            <a href="https://www.britishairways.com/content/pt/pt/information/about-ba/ba-better-world?source=bot_corporate-responsibility">Sustentabilidade</a>
-            <a href="https://www.iairgroup.com/media/biypkhys/msht-statement-2024-final-canada-uk-280624.pdf">Declaração de escravatura moderna</a>
+            <a
+                href="https://www.britishairways.com/content/pt/pt/information/about-ba/ba-better-world?source=bot_corporate-responsibility">Sustentabilidade</a>
+            <a href="https://www.iairgroup.com/media/biypkhys/msht-statement-2024-final-canada-uk-280624.pdf">Declaração
+                de escravatura moderna</a>
             <a href="https://www.iberia.com/pt/">Iberia.com</a>
         </nav>
         <!-- Footer Links End -->
