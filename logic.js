@@ -1,3 +1,4 @@
+// Rendering the arrow templates
 document.addEventListener("DOMContentLoaded", () => {
     const iconTemplate = document.getElementById('link-arrow-icon-template');
     if (iconTemplate) {
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Template with id 'arrow-icon-template' not found.");
     }
 });
+// Dynamic Form
 const scheduleInputFly = document.getElementById('schedule_input_fly');
 const scheduleInputFlyHotel = document.getElementById('schedule_input_flyhotel');
 const scheduleInputFlyVehicle = document.getElementById('schedule_input_flyvehicle');
@@ -81,3 +83,8 @@ scheduleInputFlyHotel.addEventListener('change', checkFormChange);
 scheduleInputFlyVehicle.addEventListener('change', checkFormChange);
 scheduleInputHotel.addEventListener('change', checkFormChange);
 scheduleInputVehicle.addEventListener('change', checkFormChange);
+// London Calling Buttons
+const searchflightslondonbutton = document.getElementById("london-flight-search");
+searchflightslondonbutton.addEventListener('click', function() {
+    window.location.href = "https://www.britishairways.com/content/pt/pt/flights/england/london?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=e1a2221fc9e425ad237e44fa7933a6c5||her|1|cta1|1||||home||||l4||||anonymous-inspiration|||&source=her-pos-1-cta1&kmtag=c&kmver=1.0&clickpage=homepage";
+});
