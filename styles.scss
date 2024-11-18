@@ -1,3 +1,4 @@
+// Variables
 $main-color: #021b41;
 $secondary-color: #2e5c99;
 $terciary-color: white;
@@ -6,6 +7,7 @@ $search-buttons-width: 250px;
 $search-buttons-height: 50px;
 $main-fontsize: 16px;
 
+// Mix-ins
 @mixin no-internal-spacement {
     padding: 0px 0px;
 }
@@ -17,7 +19,14 @@ $main-fontsize: 16px;
 @mixin form-bottom-border {
     border-bottom: 1px solid #b6b7bd;
 }
-
+@mixin arrow-icon-sizing{
+    width: 15px;
+    height: 15px;
+}
+@mixin centralize {
+    margin: 0 auto;
+}
+// General Config
 * {
     @include no-external-spacement;
     appearance: none;
@@ -28,20 +37,42 @@ html {
     font-size: $main-fontsize;
     font-weight: 300;
 }
+// Template Icons
+#arrow-icon {
+    @include arrow-icon-sizing;
+    padding-left: 8px;
+    padding-top: 2.5px;
+}
 
-/* Banner */
-.banner_header {
+#arrow-icon:hover{
+    transform: rotate(180deg);
+    transition-duration: 0.25s;
+    cursor: pointer;
+}
+#arrow-icon:not(hover){
+    transform: rotate(0deg);
+    transition-duration: 0.25s;
+}
+
+#link-arrow-icon{
+    @include arrow-icon-sizing;
+    padding-top: 10px;
+    transform: rotate(270deg);
+}
+
+// Header
+#header {
     position: relative;
     height: 88px;
     max-width: 1200px;
-    margin: 0px auto;
+    @include centralize;
     padding: 0px 24px;
     display: flex;
     align-items: center;
     vertical-align: middle;
     justify-content: space-between;
 }
-#banner_header_logos{
+#header_logos{
     display: grid;
     grid-template-columns:  auto 1fr auto 1fr;
     grid-column-gap: 100px;
@@ -55,20 +86,22 @@ html {
     width: 40px;
     height: 40px;
 }
-#header_account_controls {
+#header_account_controls a {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#header_account_controls span{
-    margin-top: auto;
-    vertical-align: center;
+#header-span{
+    @include centralize;
+    text-align: center;
 }
-#header_account_controls span:hover {
+#header_account_controls a:hover {
     cursor: pointer;
     text-decoration: underline;
-    color: $main-color
+    color: $link-color
 
 }
-#banner_header_nav {
+#header_nav {
     display: flex;
     flex-direction: row;
     max-width: 1200px;
@@ -79,19 +112,19 @@ html {
     vertical-align: middle;
 
 }
-#banner_header_list {
+#header_list {
     @include no-internal-spacement;
     display: flex;
     list-style: none;
     align-items: center;
 }
-#banner_header_list {
+#header_list {
     @include no-internal-spacement;
     display: flex;
     list-style: none;
     align-items: center;
 }
-.banner_header_nav_button {
+.header_nav_button {
     display: flex;
     flex-direction: row;
     width: auto;
@@ -102,59 +135,70 @@ html {
     align-items: center;
 }
 
-#banner_header_list li:first-child .banner_header_nav_button{
+#header_list li:first-child .header_nav_button{
     padding-left: 0px;
 }
 
-.banner_header_nav_button span {
+.header_nav_button span {
     font-size: 1rem;
 }
 
-
-#banner_header_countryselector {
+#header_countryselector {
     display: flex;
     margin-left: auto;
     align-items: center;
 }
-#banner_header_countryselector:hover {
+#header_countryselector:hover {
     transition: transform 400ms cubic-bezier(0.645, 0.045, 0.355, 1), background-color 400ms cubic-bezier(0.645, 0.045, 0.355, 1), transform 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
     background-color: $secondary-color;
     transform: scaleX(0);
     transform-origin: 100% 50% 0px;
 }
-#banner_header_countryselector img{
+#header_countryselector img{
     width: 22px;
     height: 16px;
     margin-right: 10px;
     object-fit: cover;
 }
 
-.arrow-icon-template {
-    width: 15px;
-    height: 15px;
-    padding-left: 8px;
-    padding-top: 2.5px;
+#header-descubra:hover > #header_text_descubra {
+    background-color: $terciary-color;
+    // Dimensões do Menu descubra
 }
-
-.arrow-icon-template:hover{
-    transform: rotate(180deg);
-    transition-duration: 0.25s;
+#header-reservar:hover > #header_text_reservar {
+    background-color: $terciary-color;
+    // Dimensões do Menu reservar
 }
-.arrow-icon-template:not(hover){
-    transform: rotate(0deg);
-    transition-duration: 0.25s;
+#header-gerir:hover > #header_text_gerir {
+    background-color: $terciary-color;
+    // Dimensẽos do Menu gerir
 }
-
-
-/* Scheduling Menu */
-#scheduling-wrapper {
-    background-image: url("./img/hero.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    padding: 64px 0px ;
+#header-checkin:hover > #header_text_checkin {
+    background-color: $terciary-color;
+    // Dimensões do Menu checkin
 }
-.booking {
+#header-ajuda:hover > #header_text_ajuda {
+    background-color: $terciary-color;
+    // Dimensões do Menu ajuda
+}
+#header_text_title {
+    color: $main-color;
+    // Não finalizado
+}
+#header_text_list {
+    list-style-type: none;
+    // Não finalizado
+}
+#header_text_item {
+    color: $link-color;
+    // Não finalizado
+}
+// Banner
+// On page load setting 
+#schedule-flight-hotel, #schedule-flight-vehicle, #schedule-hotel, #schedule-vehicle {
+    display: none;
+}
+.banner {
     background-color: $terciary-color;
     box-sizing: border-box;
     max-width: 992px;
@@ -162,21 +206,28 @@ html {
     padding: 24px;
     margin: auto;
 }
+#scheduling-wrapper {
+    background-image: url("./img/hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding: 64px 0px ;
+}
 
-.booking form fieldset {
+.banner form fieldset {
     @include no-internal-spacement;
     border: 0;
     margin-left: 2px;
 }
 
-.booking form fieldset legend{
+.banner form fieldset legend{
     font-size: 0.75rem;
     padding: 0px 2px;
     margin-bottom: 17px;
     line-height: 1.67;
 }
 
-#booking-radio-group {
+#banner-radio-group {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     align-items: center;
@@ -187,12 +238,12 @@ html {
     @include form-bottom-border;
 }
 
-.booking-radio-wrapper {
+.banner-radio-wrapper {
     display: flex;
     width: 1fr;
     align-items: center;
 }
-.booking-radio-wrapper input{
+.banner-radio-wrapper input{
     appearance: auto;
     width: 30px;
     height: 30px;
@@ -207,7 +258,7 @@ html {
     line-height: 1.27;
     letter-spacing: 0.012em;
 }
-.booking-search-button{
+.banner-search-button{
     width: $search-buttons-width;
     height: $search-buttons-height;
     font-size: $main-fontsize;
@@ -217,7 +268,7 @@ html {
     border: none;
     border-radius: 2.5px;
 }
-/* Schedule Grids */
+// Banner Grids
 .schedule-grid {
     display: grid;
 }
@@ -288,7 +339,6 @@ html {
 }
 .london-calling  h1{
     @include no-external-spacement;
-
 }
 .london-calling-button{
     width: $search-buttons-width;
@@ -339,7 +389,7 @@ html {
     transition: color .2s cubic-bezier(.645,.045,.355,1);
     color: $main-color;
 }
-/* Topic */
+// Topics
 #topic-wrapper {
     background-color: $terciary-color;
 }
@@ -399,17 +449,8 @@ html {
     color: black;
     cursor: pointer;
 }
-.topic-a-link{
-    padding-top: 10px;
-    transform: rotate(270deg);
-    width: 15px;
-    height: 15px;
-}
-/* On page load setting */
 
-#schedule-flight-hotel, #schedule-flight-vehicle, #schedule-hotel, #schedule-vehicle {
-    display: none;
-}
+
 /* Footer */
 footer {
     display: grid;

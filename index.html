@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>British Airways</title>
-
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,7 +12,7 @@
 <body>
     <!-- Arrow Templates -->
     <template id="link-arrow-icon-template">
-        <svg id="link-arrow-icon-template" class="topic-a-link" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true" focusable="false">
             <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3"
                 d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
@@ -21,7 +20,7 @@
         </svg>
     </template>
     <template id="arrow-icon-template">
-        <svg class="arrow-icon-template" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+        <svg id="arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
             focusable="false">
             <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
@@ -32,8 +31,8 @@
 
     <header>
         <!-- Header Logos -->
-        <div class="banner_header">
-            <div id="banner_header_logos">
+        <div id="header">
+            <div id="header_logos">
                 <img id="header_ba_logo" src="./img/British_Airways_Logo.svg" alt="British Airways Logo">
                 <img id="header_ow_logo" src="./img/oneworld_logo.png" alt="One World Logo">
             </div>
@@ -44,92 +43,206 @@
                         <path
                             d="M53.133 54.537c.29.422.86.56 1.314.302a.998.998 0 00.38-1.363 26.621 26.621 0 00-4.099-5.466 26.18 26.18 0 00-5.45-4.22c-4.009-2.343-8.676-3.466-13.294-3.59-4.617-.04-9.364.908-13.535 3.145-4.175 2.21-7.704 5.568-10.16 9.614a1.999 1.999 0 003.406 2.098l.013-.02c2.12-3.393 5.118-6.267 8.628-8.21 3.515-1.957 7.543-2.946 11.648-3.028 4.101-.085 8.21.738 11.882 2.593 3.667 1.843 6.887 4.672 9.254 8.127l.013.018zM31.975 12c-5.502 0-9.978 4.475-9.978 9.977 0 5.501 4.476 9.977 9.978 9.977 5.501 0 9.976-4.476 9.976-9.977 0-5.502-4.475-9.977-9.976-9.977zm0 23.954c-7.707 0-13.978-6.27-13.978-13.977C17.997 14.27 24.268 8 31.975 8s13.976 6.27 13.976 13.977c0 7.707-6.269 13.977-13.976 13.977z" />
                     </svg>
-                    <span>Entrar</span>
+                    <span id="header-span">Entrar</span>
                 </a>
             </div>
         </div>
         <!-- Header Logos End -->
 
         <!-- Header Nav -->
-        <nav id="banner_header_nav">
-            <ul id="banner_header_list">
+        <nav id="header_nav">
+            <ul id="header_list">
                 <li>
-                    <button class="banner_header_nav_button">
-                        <span class="banner_header_nav_span">Descubra</span>
-
+                    <button class="header_nav_button" id="header-descubra">
+                        <span class="header_nav_span">Descubra</span>
                     </button>
-                    
+
                 </li>
 
                 <li>
-                    <button class="banner_header_nav_button">
-                        <span class="banner_header_nav_span">Reservar</span>
-
-                    </button>
-                </li>
-
-                <li>
-                    <button class="banner_header_nav_button">
-                        <span class="banner_header_nav_span">Gerir</span>
+                    <button class="header_nav_button" id="header-reservar">
+                        <span class="header_nav_span">Reservar</span>
 
                     </button>
                 </li>
 
                 <li>
-                    <button class="banner_header_nav_button">
-                        <span class="banner_header_nav_span">Check-in</span>
-
+                    <button class="header_nav_button" id="header-gerir">
+                        <span class="header_nav_span">Gerir</span>
                     </button>
                 </li>
 
                 <li>
-                    <button class="banner_header_nav_button">
-                        <span class="banner_header_nav_span">Ajuda</span>
+                    <button class="header_nav_button" id="header-checkin">
+                        <span class="header_nav_span">Check-in</span>
+                    </button>
+                </li>
 
+                <li>
+                    <button class="header_nav_button" id="header-ajuda">
+                        <span class="header_nav_span">Ajuda</span>
                     </button>
                 </li>
             </ul>
 
-            <div id="banner_header_countryselector">
+            <div id="header_countryselector">
                 <img src="./img/pt.png" alt="Portuguese Flag">
                 <span>Portugal - Português</span>
             </div>
         </nav>
     </header>
     <!-- Header Nav End -->
-
+    <!-- Navigation Bar Text -->
+    <div id="header_text_descubra" hidden>
+        <p id="header_text_title">BA</p>
+        <ul id="header_text_list">
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/about-ba">Sobre a BA</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/about-ba/ba-better-world">BA Better World</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/the-ba-experience">A experiência BA</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/travel-classes">Classes de Viagem</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/about-ba/whats-new">Novidades</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/business-travel">Viagens e Negócios</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/partners-and-alliances">Parceiros e alianças</a></li>
+        </ul>
+        <p id="header_text_title">Executive Club</p>
+        <ul id="header_text_list">
+            <li id="header_text_item"><a href="https://www.britishairways.com/travel/EXECENROL/public/pt_pt?source=MNVEXC1join_the_executive_club&campaignCode=DISNAV">Junta-se ao Clube</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/executive-club/about-the-club?source=mnvexc1about_the_executive_club">Sobre o Club</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/executive-club/avios?source=mnvexc2_avios_our_club_currency"></a>Sobre os Avios</li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/executive-club/avios/collecting-avios?source=mnvexc2_collecting_avios"></a>Acumular Avios</li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/executive-club/avios/spending-avios?source=mnvexc2_spend_avios"></a>Gastar Avios</li>
+        </ul>
+        <p id="header_text_title">Voos e destinos</p>
+        <ul id="header_text_list">
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/flights">Explore os nossos destinos</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/flights/england/london">Voos para Londres</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/flights/usa/new-york">Voos para Nova Iorque</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/flight-information">Rotas e horários</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/before-you-fly">Antes de viajar</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/pt-pt/information/baggage-essentials">Informações sobre bagagem</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/airport-information">Informações do aeroporto</a></li>
+        </ul>
+        <p id="header_text_title">Férias</p>
+        <ul id="header_text_list">
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/holidays">Descubra BA holidays</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/holidays/usa/new-york">Férias em Nova Iorque</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/holidays/england/london">Escapadinhas em Londres</a></li>
+        </ul>
+        <p id="header_text_title">Ofertas e oportunidades</p>
+        <ul id="header_text_list">
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/flights/cheap-flights">Descubra os nossos voos mais baratos</a></li>
+        </ul>
+        <p id="header_text_title">Extras</p>
+        <ul id="header_text_list">
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/airport-information/airport-hotels">Hóteis dos aeroportos de Londres</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/before-you-fly/travel-insurance">Seguro de viagem</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/travel-assistance#meet">Conheça e assista</a></li>
+        </ul>
+    </div>
+    <div id="header_text_reservar" hidden>
+        <p id="header_text_title">Voos</p>
+        <ul id="header_text_list">
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/flights">Reservar um voo</a></li>
+            <li id="header_text_item"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Reservar um voo com Avios</a></li>
+        </ul>
+        <p id="header_text_title">Voos e muito mais</p>
+        <ul id="header_text_list">
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/holidays">Voo + hotel</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/holidays/holiday-types/fly-drive-holidays">Voo + Veículo</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/holidays/hotels">Procure um hotel</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/holidays/holiday-types/fly-drive-holidays">Alugue um veículo</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/holidays/holiday-types/things-to-do">Reservar uma experiência</a></li>
+        </ul>
+    </div>
+    <div id="header_text_gerir" hidden>
+        <p id="header_text_title">A minha reserva</p>
+        <ul id="header_text_list">
+            <input type="text" placeholder="Referência de reserva" id="banner_text_input">
+            <input type="text" placeholder="Sobrenome do passageiro" id="banner_text_input">
+            <button id="banner_text_button1">Encontrar a minha reserva</button>
+            <button id="banner_text_button2">Check-in online</button>
+            <li id="header_text_item"><a href="https://www.britishairways.com/travel/flightstatus/public/pt_pt">Estado do voo</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/flight-information?source=mnvinf3flight_information">Informações de voos</a></li>
+        </ul>
+        <p id="header_text_title">Executive Club</p>
+        <ul id="header_text_list">
+            <li id="header_text_item"><a href="https://www.britishairways.com/travel/echome/public/pt_pt?source=MNVEXC3_my_executive_club">Iniciar sessão ao Executive Club</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/travel/execenrol/public/pt_pt?source=MNVEXC1join_the_executive_club&campaignCode=MMBNAV">Junte-se ao Clube</a></li>
+        </ul>
+    </div>
+    <div id="header_text_checkin" hidden>
+        <p id="header_text_title">A minha reserva</p>
+        <ul id="header_text_list">
+            <input type="text" placeholder="Referência de reserva" id="banner_text_input">
+            <input type="text" placeholder="Sobrenome do passageiro" id="banner_text_input">
+            <button id="banner_text_button2">Check-in online</button>
+            <li id="header_text_item"><a href="https://www.britishairways.com/travel/flightstatus/public/pt_pt">Estado do voo</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/flight-information?source=mnvinf3flight_information">Informações de voos</a></li>
+        </ul>
+    </div>
+    <div id="header_text_ajuda" hidden>
+        <p id="header_text_title">BA</p>
+        <ul id="header_text_list">
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/about-ba">Sobre a BA</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/about-ba/ba-better-world">BA Better World</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/the-ba-experience">A experiência BA</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/travel-classes">Classes de Viagem</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/about-ba/whats-new">Novidades</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/business-travel">Viagens e Negócios</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/partners-and-alliances">Parceiros e alianças</a></li>
+        </ul>
+        <p id="header_text_title">Executive Club</p>
+        <ul id="header_text_list">
+            <li id="header_text_item"><a href="https://www.britishairways.com/travel/EXECENROL/public/pt_pt?source=MNVEXC1join_the_executive_club&campaignCode=DISNAV">Junta-se ao Clube</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/executive-club/about-the-club?source=mnvexc1about_the_executive_club">Sobre o Club</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/executive-club/avios?source=mnvexc2_avios_our_club_currency"></a>Sobre os Avios</li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/executive-club/avios/collecting-avios?source=mnvexc2_collecting_avios"></a>Acumular Avios</li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/executive-club/avios/spending-avios?source=mnvexc2_spend_avios"></a>Gastar Avios</li>
+        </ul>
+        <p id="header_text_title">Voos e destinos</p>
+        <ul id="header_text_list">
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/flights">Explore os nossos destinos</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/flights/england/london">Voos para Londres</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/flights/usa/new-york">Voos para Nova Iorque</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/flight-information">Rotas e horários</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/before-you-fly">Antes de viajar</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/pt-pt/information/baggage-essentials">Informações sobre bagagem</a></li>
+            <li id="header_text_item"><a href="https://www.britishairways.com/content/pt/pt/information/airport-information">Informações do aeroporto</a></li>
+        </ul>
+    </div>
+    <!-- Navigation Bar Text End -->
     <!-- Scheduling Travels Menu -->
     <main>
         <section id="scheduling-travels-menu">
             <div class="block-wrapper" id="scheduling-wrapper">
-                <div class="booking">
+                <div class="banner">
                     <form action="">
                         <!-- Form Options -->
                         <fieldset>
                             <legend>Estou a pesquisar para:</legend>
-                            <div id="booking-radio-group">
-                                <div class="booking-radio-wrapper">
+                            <div id="banner-radio-group">
+                                <div class="banner-radio-wrapper">
                                     <input type="radio" id="schedule_input_fly" name="schedule_input_fly" checked>
                                     <label for="schedule_input_fly">Voo</label>
                                 </div>
 
-                                <div class="booking-radio-wrapper">
+                                <div class="banner-radio-wrapper">
                                     <input type="radio" id="schedule_input_flyhotel" name="schedule_input_fly">
                                     <label for="schedule_input_fly">Voo + hotel</label>
                                 </div>
 
 
-                                <div class="booking-radio-wrapper">
+                                <div class="banner-radio-wrapper">
                                     <input type="radio" id="schedule_input_flyvehicle" name="schedule_input_fly">
                                     <label for="schedule_input_fly">Voo + Veículo</label>
                                 </div>
 
-                                <div class="booking-radio-wrapper">
+                                <div class="banner-radio-wrapper">
                                     <input type="radio" id="schedule_input_hotel" name="schedule_input_fly">
                                     <label for="schedule_input_fly">Hotel</label>
                                 </div>
 
-                                <div class="booking-radio-wrapper">
+                                <div class="banner-radio-wrapper">
                                     <input type="radio" id="schedule_input_vehicle" name="schedule_input_fly">
                                     <label for="schedule_input_fly">Veículo</label>
                                 </div>
@@ -180,9 +293,19 @@
                                 </div>
                                 <div class="option-container" hidden>
                                     <label for="option-tariff" class="option-label-top">Passageiros</label>
-                                    <select id="option-tariff" name="option-tariff" required>
-                                        <!-- Inserir Dropdown menu -->
-                                    </select>
+                                    <input type="readonly">
+                                    <label for="">Adultos</label>
+                                    <span class="topic-content-fine">16 anos ou mais</span>
+                                    <input type="number" value="1">
+                                    <label for="">Jovens adultos</label>
+                                    <span class="topic-content-fine">12-15 anos</span>
+                                    <input type="number">
+                                    <label for="">Crianças</label>
+                                    <span class="topic-content-fine">2-11 anos</span>
+                                    <input type="number">
+                                    <label for="">Bebés</label>
+                                    <span class="topic-content-fine">Menos de 2 anos</span>
+                                    <input type="number">
                                 </div>
                             </div>
                             <span class="topic-content-fine" hidden>Quer fazer mais escalas?</span>
@@ -193,7 +316,7 @@
                             <a class="topic-content-link"
                                 href="https://www.britishairways.com/travel/flexible-search/public/pt_pt/">Encontre a
                                 sua próxima semana</a>
-                            <button class="booking-search-button">Procurar voos</button>
+                            <button class="banner-search-button">Procurar voos</button>
                         </div>
                         <!-- Flight Form End -->
 
@@ -240,33 +363,57 @@
                             </div>
                             <div class="option-container" hidden>
                                 <label for="option-tariff" class="option-label-top">Quarto 1</label>
-                                <select id="option-tariff" name="option-tariff" required>
-                                    <!-- Inserir Dropdown menu -->
-                                </select>
+                                <label for="">Adultos</label>
+                                <span class="topic-content-fine">18 anos ou mais</span>
+                                <input type="number" value="1">
+                                <label for="">Crianças</label>
+                                <span class="topic-content-fine">2-17 anos</span>
+                                <input type="number">
+                                <label for="">Bebés</label>
+                                <span class="topic-content-fine">Menos de 2 anos</span>
+                                <input type="number">
                             </div>
                             <div class="option-container" hidden>
                                 <label for="option-tariff" class="option-label-top">Quarto 2</label>
-                                <select id="option-tariff" name="option-tariff" required>
-                                    <!-- Inserir Dropdown menu -->
-                                </select>
+                                <label for="">Adultos</label>
+                                <span class="topic-content-fine">18 anos ou mais</span>
+                                <input type="number" value="1">
+                                <label for="">Crianças</label>
+                                <span class="topic-content-fine">2-17 anos</span>
+                                <input type="number">
+                                <label for="">Bebés</label>
+                                <span class="topic-content-fine">Menos de 2 anos</span>
+                                <input type="number">
                             </div>
                             <div class="option-container" hidden>
                                 <label for="option-tariff" class="option-label-top">Quarto 3</label>
-                                <select id="option-tariff" name="option-tariff" required>
-                                    <!-- Inserir Dropdown menu -->
-                                </select>
+                                <label for="">Adultos</label>
+                                <span class="topic-content-fine">18 anos ou mais</span>
+                                <input type="number" value="1">
+                                <label for="">Crianças</label>
+                                <span class="topic-content-fine">2-17 anos</span>
+                                <input type="number">
+                                <label for="">Bebés</label>
+                                <span class="topic-content-fine">Menos de 2 anos</span>
+                                <input type="number">
                             </div>
                             <div class="option-container" hidden>
                                 <label for="option-tariff" class="option-label-top">Quarto 4</label>
-                                <select id="option-tariff" name="option-tariff" required>
-                                    <!-- Inserir Dropdown menu -->
-                                </select>
+                                <label for="">Adultos</label>
+                                <span class="topic-content-fine">18 anos ou mais</span>
+                                <input type="number" value="1">
+                                <label for="">Crianças</label>
+                                <span class="topic-content-fine">2-17 anos</span>
+                                <input type="number">
+                                <label for="">Bebés</label>
+                                <span class="topic-content-fine">Menos de 2 anos</span>
+                                <input type="number">
                             </div>
                             <span class="topic-content-fine">Quer viajar pelo mundo?</span>
                             <a class="topic-content-link"
                                 href="https://www.britishairways.com/badp/complexItineraries/search.do?fromBAEntryPoint=true">Crie
                                 viagem personalizada</a>
-                            <button class="booking-search-button">Procurar voo + hotel</button>
+                            <button class="banner-search-button">Procurar voo + hotel</button>
                         </div>
                         <!-- Flight + Hotel Form End -->
 
@@ -304,9 +451,19 @@
                             </div>
                             <div class="option-container" hidden>
                                 <label for="option-tariff" class="option-label-top">Passageiros</label>
-                                <select id="option-tariff" name="option-tariff" required>
-                                    <!-- Inserir Dropdown menu -->
-                                </select>
+                                <input type="readonly">
+                                <label for="">Adultos</label>
+                                <span class="topic-content-fine">16 anos ou mais</span>
+                                <input type="number" value="1">
+                                <label for="">Jovens adultos</label>
+                                <span class="topic-content-fine">12-15 anos</span>
+                                <input type="number">
+                                <label for="">Crianças</label>
+                                <span class="topic-content-fine">2-11 anos</span>
+                                <input type="number">
+                                <label for="">Bebés</label>
+                                <span class="topic-content-fine">Menos de 2 anos</span>
+                                <input type="number">
                             </div>
                             <span class="topic-content-fine">Quer viajar pelo mundo?</span>
                             <a class="topic-content-link"
@@ -315,7 +472,7 @@
                             <span class="topic-content-fine">Em parceria com</span>
                             <img src="img/avis_rgb_pos.svg" hidden>
                             <img src="img/budget-logo.svg" hidden>
-                            <button class="booking-search-button">Procurar voo + carro</button>
+                            <button class="banner-search-button">Procurar voo + carro</button>
                         </div>
                         <!-- Flight + Vehicle Form End -->
 
@@ -346,32 +503,64 @@
                             <div class="option-container" hidden>
                                 <label for="option-tariff" class="option-label-top">Quarto 1</label>
                                 <select id="option-tariff" name="option-tariff" required>
-                                    <!-- Inserir Dropdown menu -->
+                                    <label for="">Adultos</label>
+                                    <span class="topic-content-fine">18 anos ou mais</span>
+                                    <input type="number" value="1">
+                                    <label for="">Crianças</label>
+                                    <span class="topic-content-fine">2-17 anos</span>
+                                    <input type="number">
+                                    <label for="">Bebés</label>
+                                    <span class="topic-content-fine">Menos de 2 anos</span>
+                                    <input type="number">
                                 </select>
                             </div>
                             <div class="option-container" hidden>
                                 <label for="option-tariff" class="option-label-top">Quarto 2</label>
                                 <select id="option-tariff" name="option-tariff" required>
-                                    <!-- Inserir Dropdown menu -->
+                                    <label for="">Adultos</label>
+                                    <span class="topic-content-fine">18 anos ou mais</span>
+                                    <input type="number" value="1">
+                                    <label for="">Crianças</label>
+                                    <span class="topic-content-fine">2-17 anos</span>
+                                    <input type="number">
+                                    <label for="">Bebés</label>
+                                    <span class="topic-content-fine">Menos de 2 anos</span>
+                                    <input type="number">
                                 </select>
                             </div>
                             <div class="option-container" hidden>
                                 <label for="option-tariff" class="option-label-top">Quarto 3</label>
                                 <select id="option-tariff" name="option-tariff" required>
-                                    <!-- Inserir Dropdown menu -->
+                                    <label for="">Adultos</label>
+                                    <span class="topic-content-fine">18 anos ou mais</span>
+                                    <input type="number" value="1">
+                                    <label for="">Crianças</label>
+                                    <span class="topic-content-fine">2-17 anos</span>
+                                    <input type="number">
+                                    <label for="">Bebés</label>
+                                    <span class="topic-content-fine">Menos de 2 anos</span>
+                                    <input type="number">
                                 </select>
                             </div>
                             <div class="option-container" hidden>
                                 <label for="option-tariff" class="option-label-top">Quarto 4</label>
                                 <select id="option-tariff" name="option-tariff" required>
-                                    <!-- Inserir Dropdown menu -->
+                                    <label for="">Adultos</label>
+                                    <span class="topic-content-fine">18 anos ou mais</span>
+                                    <input type="number" value="1">
+                                    <label for="">Crianças</label>
+                                    <span class="topic-content-fine">2-17 anos</span>
+                                    <input type="number">
+                                    <label for="">Bebés</label>
+                                    <span class="topic-content-fine">Menos de 2 anos</span>
+                                    <input type="number">
                                 </select>
                             </div>
                             <span class="topic-content-fine">Quer viajar pelo mundo?</span>
                             <a class="topic-content-link"
                                 href="https://www.britishairways.com/badp/complexItineraries/search.do?fromBAEntryPoint=true">Crie
                                 viagem personalizada</a>
-                            <button class="booking-search-button">Procurar hotéis</button>
+                            <button class="banner-search-button">Procurar hotéis</button>
                         </div>
                         <!-- Hotel Form End -->
 
@@ -506,7 +695,7 @@
                                 </select>
                             </div>
                             <input type="checkbox" checked hidden>
-                            <span class="topic-content-fine">Condutor entre 30 e 70 anos</span>
+                            <span>Condutor entre 30 e 70 anos</span>
                             <span class="topic-content-fine">Quer viajar pelo mundo?</span>
                             <a class="topic-content-link"
                                 href="https://www.britishairways.com/badp/complexItineraries/search.do?fromBAEntryPoint=true">Crie
@@ -514,7 +703,7 @@
                             <span class="topic-content-fine">Em parceria com</span>
                             <img src="img/avis_rgb_pos.svg" hidden>
                             <img src="img/budget-logo.svg" hidden>
-                            <button class="booking-search-button">Procurar automóveis</button>
+                            <button class="banner-search-button">Procurar automóveis</button>
                         </div>
                         <!-- Vehicle Form End -->
                 </div>

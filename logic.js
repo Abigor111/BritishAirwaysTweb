@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
             link.appendChild(iconInstance);
         });
     } else {
-        console.error("Template with id 'link-arrow-icon-template' not found.");
+        console.error("Template with id 'link-arrow-icon' not found.");
     }
 });
 document.addEventListener("DOMContentLoaded", () => {
     const iconTemplate = document.getElementById('arrow-icon-template');
     if (iconTemplate) {
-        document.querySelectorAll('.banner_header_nav_button').forEach(button => {
+        document.querySelectorAll('.header_nav_button').forEach(button => {
             const iconInstance = document.importNode(iconTemplate.content, true);
             button.appendChild(iconInstance);
         });
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             option.appendChild(iconInstance);
         });
     } else {
-        console.error("Template with id 'arrow-icon-template' not found.");
+        console.error("Template with id 'arrow-icon' not found.");
     }
 });
 // Dynamic Form
