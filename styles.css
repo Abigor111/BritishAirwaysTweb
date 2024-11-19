@@ -7,9 +7,11 @@
 }
 
 html {
-  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
+  font-family: "Open sans", "Helvetica", sans-serif;
   font-size: 16px;
   font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.004em;
 }
 
 #arrow-icon {
@@ -41,7 +43,7 @@ html {
   position: relative;
   height: 88px;
   max-width: 1200px;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 0px 24px;
   display: flex;
   align-items: center;
@@ -166,6 +168,18 @@ html {
 
 #header-ajuda:hover > #header_text_ajuda {
   background-color: white;
+}
+
+#header_text_title {
+  color: #021b41;
+}
+
+#header_text_list {
+  list-style-type: none;
+}
+
+#header_text_item {
+  color: #2671d3;
 }
 
 #schedule-flight-hotel, #schedule-flight-vehicle, #schedule-hotel, #schedule-vehicle {
@@ -432,6 +446,7 @@ html {
 
 .topic-content-paragraph {
   font-size: 1rem;
+  box-sizing: border-box;
 }
 
 .topic-action {

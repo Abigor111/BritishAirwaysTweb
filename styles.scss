@@ -33,9 +33,11 @@ $main-fontsize: 16px;
     color: $main-color;
 }
 html {
-    font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
+    font-family: "Open sans", "Helvetica",  sans-serif;
     font-size: $main-fontsize;
     font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0.004em;
 }
 // Template Icons
 #arrow-icon {
@@ -429,6 +431,7 @@ html {
 }
 .topic-content-paragraph {
     font-size: 1rem;
+    box-sizing: border-box;
 }
 .topic-action {
     margin-top: auto;
