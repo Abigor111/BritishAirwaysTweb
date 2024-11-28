@@ -206,7 +206,7 @@ html {
     color: $main-color;
     background-color: $terciary-color;
     width: 100%;
-
+    z-index: 3;
     .nav_dropdown_grid {
         background-color: $terciary-color;
         display: grid;
@@ -471,10 +471,43 @@ html {
 }
 
 .option-container-dropdown {
-    font-size: 20px;
-    line-height: 30px;
-    width: 100px;
+    position: relative;
+    display: inline-block;
 }
+
+.option-container-dropdown select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-family: $font-open-sans;
+    color: #000;
+    padding: 5px 30px 5px 5px;
+    cursor: pointer;
+}
+
+.option-container-dropdown::after {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+    color: #000;
+}
+
+.option-container-dropdown select {
+    border-bottom: 1px solid #000;
+}
+
+.option-label-top {
+    font-size: 12px;
+    color: $schedule-menu-text-color;
+    font-family: $font-open-sans;
+}
+
 
 .option-container-text {
     box-sizing: border-box;
