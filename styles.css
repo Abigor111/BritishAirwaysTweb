@@ -254,6 +254,7 @@ html {
 .header_text_item a {
   color: #2671d3;
   text-decoration: none;
+  margin-bottom: 5px;
 }
 
 #schedule-flight-hotel,
@@ -540,6 +541,8 @@ html {
 }
 
 .topic-grid {
+  margin: 0 auto;
+  margin-bottom: 60px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: auto;
@@ -623,6 +626,7 @@ footer {
   max-width: 75rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-links a {

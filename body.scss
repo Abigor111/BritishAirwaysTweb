@@ -1,0 +1,186 @@
+// Variables
+$main-color: #021b41;
+$secondary-color: #2e5c99;
+$terciary-color: white;
+$link-color: #2671d3;
+$schedule-menu-text-color: rgb(113, 115, 127);
+$font-open-sans: "Open sans", helvetica, arial, sans-serif;
+$font-mylius-modern: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
+$search-buttons-width: 250px;
+$search-buttons-height: 50px;
+$main-fontsize: 16px;
+
+// Mix-ins
+@mixin no-internal-spacement {
+    padding: 0px 0px;
+}
+
+@mixin no-external-spacement {
+    -ms-margin: 0 0px;
+    margin: 0px 0px;
+}
+
+@mixin form-bottom-border {
+    border-bottom: 1px solid #b6b7bd;
+}
+
+@mixin arrow-icon-sizing {
+    width: 15px;
+    height: 15px;
+}
+
+@mixin centralize {
+    margin: 0 auto;
+}
+/* London */
+#london-wrapper {
+    background-color: #ECECED;
+    display: flex;
+    justify-content: center;
+}
+
+.london-calling {
+    margin: 30px 0px;
+    width: 992px;
+    height: 300px;
+}
+
+.london-calling h2 {
+    @include no-external-spacement;
+    font-size: 44px;
+    font-weight: 300;
+    font-family: $font-mylius-modern;
+}
+
+.london-calling-button {
+    width: $search-buttons-width;
+    height: $search-buttons-height;
+    color: $secondary-color;
+    font-size: $main-fontsize;
+    border: 1px solid $secondary-color;
+    border-radius: 2px;
+    padding: 64px 0px;
+}
+
+.london-calling-button:hover {
+    transition-duration: 0.75s;
+    background-color: $secondary-color;
+    color: $terciary-color;
+    border: 1px solid $terciary-color;
+}
+
+/* Toolbar */
+.toolbar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-self: center;
+    align-content: center;
+    gap: 10px;
+    width: 992px;
+    padding: 64px;
+}
+
+.toolbar-item {
+    padding: 24px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar-item a {
+    display: flex;
+    width: fit-content;
+    padding-bottom: 4px;
+    /*box-shadow: currentColor 0px -1px inset;*/
+    color: $secondary-color;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.004em;
+}
+
+.toolbar-item a span {
+    font-size: 1.25rem;
+}
+
+.toolbar_item_link span {
+    color: $link-color;
+    text-decoration-thickness: 0.001px;
+}
+
+.toolbar_item_link span:hover {
+    transition: color .2s cubic-bezier(.645, .045, .355, 1);
+    color: $main-color;
+}
+
+// Topics
+#topic-wrapper {
+    background-color: $terciary-color;
+}
+
+.topic-grid {
+    @include centralize;
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    place-self: center;
+    align-content: center;
+
+    column-gap: 48px;
+    row-gap: 40px;
+    width: 992px;
+}
+
+.topic-item {
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+    min-height: 300px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.topic-item img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.topic-content {
+    padding: 24px;
+}
+
+.topic-content-block {
+    margin-top: 12px;
+}
+
+.topic-content-title {
+    font-size: 1.25rem;
+}
+
+.topic-content-fine {
+    font-size: 0.75rem;
+}
+
+.topic-content-paragraph {
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.topic-action {
+    margin-top: auto;
+    padding: 0px 24px 24px;
+}
+
+.topic-content-link {
+    display: flex;
+    width: fit-content;
+    padding-bottom: 4px;
+    box-shadow: currentColor 0px -1px inset;
+    color: $secondary-color;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.004em;
+}
+
+.topic-content-link:hover {
+    transition-duration: 0.25s;
+    color: black;
+    cursor: pointer;
+}

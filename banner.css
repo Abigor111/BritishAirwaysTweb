@@ -1,0 +1,198 @@
+#schedule-flight-hotel,
+#schedule-flight-vehicle,
+#schedule-hotel,
+#schedule-vehicle {
+  visibility: hidden;
+}
+
+.banner {
+  background-color: white;
+  box-sizing: border-box;
+  max-width: 992px;
+  height: 333px;
+  padding: 24px;
+  margin: auto;
+}
+
+#scheduling-wrapper {
+  background-image: url("./img/hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding: 64px 0px;
+}
+
+.banner form fieldset {
+  padding: 0px 0px;
+  border: 0;
+  margin-left: 2px;
+}
+
+.banner form fieldset legend {
+  font-size: 0.75rem;
+  padding: 0px 2px;
+  margin-bottom: 17px;
+  line-height: 1.67;
+}
+
+#banner-radio-group {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #b6b7bd;
+}
+
+.banner-radio-wrapper {
+  display: flex;
+  width: 1fr;
+  align-items: center;
+}
+
+.banner-radio-wrapper input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 30px;
+  height: 30px;
+  margin-right: 16px;
+  border: 1px solid rgb(113, 115, 127);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.banner-radio-wrapper input:checked::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.banner-radio-wrapper input:checked {
+  border-color: black;
+}
+
+#scheduling-travels-menu h2 {
+  font-size: 2.75rem;
+  font-weight: 300;
+  line-height: 1.27;
+  letter-spacing: 0.012em;
+}
+
+.banner-search-button {
+  width: 250px;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 2px;
+  background-color: #2e5c99;
+  color: white;
+  border: none;
+  border-radius: 2.5px;
+}
+
+.schedule-grid {
+  display: grid;
+}
+
+#schedule-flight {
+  display: grid;
+  grid-template-rows: repeat(3, 59px);
+  row-gap: 24px;
+}
+
+#schedule-flight-grp1 {
+  grid-template-columns: 1fr 3fr 3fr;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+}
+
+.option-label-top {
+  font-size: 0.875rem;
+  position: absolute;
+}
+
+.option-label-inside {
+  position: absolute;
+  top: 20px;
+  font-size: 1.75rem;
+  transition: 0.2s;
+}
+
+.option-label-inside span {
+  font-size: 12px;
+  padding-left: 8px;
+}
+
+#schedule-flight select,
+#schedule-flight input {
+  padding: 20px 20px 8px 0px;
+  border: none;
+}
+
+.option-container {
+  position: relative;
+  padding-top: 0px;
+  border-bottom: 1px solid #b6b7bd;
+}
+
+.option-container-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.option-container-dropdown select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-family: "Open sans", helvetica, arial, sans-serif;
+  color: #000;
+  padding: 5px 30px 5px 5px;
+  cursor: pointer;
+}
+
+.option-container-dropdown::after {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 12px;
+  color: #000;
+}
+
+.option-container-dropdown select {
+  border-bottom: 1px solid #000;
+}
+
+.option-label-top {
+  font-size: 12px;
+  color: rgb(113, 115, 127);
+  font-family: "Open sans", helvetica, arial, sans-serif;
+}
+
+.option-container-text {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.option-container:focus-within .option-label-inside {
+  font-size: 14px;
+  line-height: 20px;
+  top: 0px;
+}
+
+.option-container:focus-within .option-label-inside span {
+  display: none;
+}/*# sourceMappingURL=banner.css.map */
