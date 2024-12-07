@@ -141,7 +141,7 @@ nav {
         position: absolute;
         transition: opacity 1s;
         opacity: 100;
-        top:100%;
+        top: 100%;
         left: 0;
         color: $main-color;
         background-color: $terciary-color;
@@ -157,7 +157,6 @@ nav {
     }
         .nav_dropdown_grid {
             background-color: $terciary-color;
-            background-color: red;
             display: grid;
             grid-template-columns: repeat(auto-fill, 1fr);
             grid-template-rows: 1fr;

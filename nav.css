@@ -106,9 +106,8 @@ nav {
 }
 .nav_button .nav_dropdown_container .nav_dropdown_grid {
   background-color: white;
-  background-color: red;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fill, 1fr);
   grid-template-rows: 1fr;
   width: 1200px;
   gap: 10px;
