@@ -169,6 +169,8 @@ $main-fontsize: 16px;
 }
 
 .topic-content-link {
+    text-decoration: none;
+
     display: flex;
     width: fit-content;
     padding-bottom: 4px;

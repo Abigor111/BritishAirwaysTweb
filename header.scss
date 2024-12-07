@@ -35,6 +35,9 @@ $main-fontsize: 16px;
 * {
     @include no-external-spacement;
     appearance: none;
+    -webkit-appearance: none; /* Para navegadores baseados em WebKit, como Chrome e Safari */
+    -moz-appearance: none;    /* Para Firefox */
+    -ms-appearance: none;
     color: $main-color;
 }
 
@@ -44,13 +47,16 @@ html {
     font-weight: 300;
     line-height: 1.5;
     letter-spacing: 0.004em;
+    min-height: 100%;
+    height: 100%;
 }
+
 #header {
     position: relative;
     height: 88px;
-    max-width: 1200px;
-    @include centralize;
     padding: 0px 24px;
+    width: 1200px;
+    @include centralize;
     display: flex;
     align-items: center;
     vertical-align: middle;
@@ -92,224 +98,7 @@ html {
 
 }
 
-#header_nav {
-    display: flex;
-    flex-direction: row;
-    max-width: 1200px;
-    height: 48px;
-    margin: 0px auto;
-    padding: 0px 24px;
-    border-top: 1px solid rgb(236, 236, 237);
-    vertical-align: middle;
-
-}
-
-#header_list {
-    @include no-internal-spacement;
-    display: flex;
-    list-style: none;
-    align-items: center;
-}
-
-#header_list {
-    @include no-internal-spacement;
-    display: flex;
-    list-style: none;
-    align-items: center;
-}
-
-.header_nav_button {
-    display: flex;
-    flex-direction: row;
-    width: auto;
-    height: 48px;
-    padding: 0px 12px;
-    background-color: $terciary-color;
-    border: none;
-
-    align-items: center;
-    position: relative;
-}
-
-.header_nav_button::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 0;
-    height: 3px;
-    background: $secondary-color;
-    transition: width 0.5s ease, right 0.5s ease;
-}
-
-.header_nav_button:hover::after {
-    width: 80%;
-    right: auto;
-    left: 0;
-}
-
-#header_list li:first-child .header_nav_button {
-    padding-left: 0px;
-}
-
-.header_nav_button span {
-    font-size: 1rem;
-    font-weight: 300px;
-    font-family: $font-mylius-modern;
-}
-
-#header_countryselector {
-    display: flex;
-    margin-left: auto;
-    align-items: center;
-    position: relative;
-}
-
-#header_countryselector::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 0;
-    height: 4px;
-    background: $secondary-color;
-    transition: width 0.5s ease, right 0.5s ease;
-}
-
-#header_countryselector:hover::after {
-    width: 100%;
-    right: auto;
-    left: 0;
-}
-
-#header_countryselector img {
-    width: 22px;
-    height: 16px;
-    margin-right: 10px;
-    object-fit: cover;
-}
-.nav_dropdown_container {
-    transition: opacity 1s;
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    color: $main-color;
-    background-color: $terciary-color;
-    width: 100%;
-    z-index: 3;
-    .nav_dropdown_grid {
-        background-color: $terciary-color;
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: 1fr;
-        width: 1200px;
-        margin: 0 auto;
-        gap: 10px;
-
-        .nav_dropdown_grid_item {
-            margin-top: 20px;
-            p {
-                margin-bottom: 10px;
-            }
-
-            * {
-                display: block;
-                padding-left: 0px;
-            }
-        }
-    }
-}
 
 
 
-#arrow-icon {
-    @include arrow-icon-sizing;
-}
-
-#link-arrow-icon {
-    @include arrow-icon-sizing;
-    padding-top: 10px;
-    transform: rotate(270deg);
-}
-
-.header_nav_button {
-    .arrow-icon-container {
-        padding-left: 8px;
-    }
-
-    &:hover {
-        #arrow-icon {
-            transform: rotate(180deg);
-            transform-origin: center;
-            transition-duration: 0.25s;
-            cursor: pointer;
-        }
-    }
-
-    &:hover+.nav_dropdown_container {
-        visibility: visible;
-        opacity: 1;
-        display: block;
-    }
-
-    &:not(:hover) {
-        #arrow-icon {
-            transform: rotate(0deg);
-            transition-duration: 0.25s;
-        }
-    }
-
-    &:not(:hover)+.nav_dropdown_container {
-        opacity: 0;
-        position: absolute;
-        width: 100%;
-    }
-}
-
-
-
-
-
-#header-descubra:hover>#header_text_descubra {
-    background-color: $terciary-color;
-    // Dimensões do Menu descubra
-}
-
-#header-reservar:hover>#header_text_reservar {
-    background-color: $terciary-color;
-    // Dimensões do Menu reservar
-}
-
-#header-gerir:hover>#header_text_gerir {
-    background-color: $terciary-color;
-    // Dimensẽos do Menu gerir
-}
-
-#header-checkin:hover>#header_text_checkin {
-    background-color: $terciary-color;
-    // Dimensões do Menu checkin
-}
-
-#header-ajuda:hover>#header_text_ajuda {
-    background-color: $terciary-color;
-    // Dimensões do Menu ajuda
-}
-
-#header_text_title {
-    color: $main-color;
-    // Não finalizado
-}
-
-#header_text_list {
-    list-style-type: none;
-    
-    // Não finalizado
-}
-
-.header_text_item a {
-    color: $link-color;
-    text-decoration: none;
-    margin-bottom: 5px;
-    // Não finalizado
-}
 
