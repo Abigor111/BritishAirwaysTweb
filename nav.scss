@@ -32,7 +32,7 @@ $main-fontsize: 16px;
     margin: 0 auto;
 }
 
-nav {
+#nav {
     display: flex;
     flex-direction: row;
     width: 1200px;
@@ -53,7 +53,6 @@ nav {
 
 
 .nav_button {
-    position: relative;
     display: flex;
     flex-direction: row;
     width: auto;
@@ -61,8 +60,11 @@ nav {
     padding: 0px 12px;
     background-color: $terciary-color;
     border: none;
-
     align-items: center;
+
+    &:first-of-type {
+        padding-left: 0px;
+    }
 }
 
 // Select bar Animation
@@ -82,9 +84,7 @@ nav {
     right: auto;
 }
 
-#nav_list li:first-child .header_nav_button {
-    padding-left: 0px;
-}
+
 
 .nav_button span {
     font-size: 1rem;
@@ -106,13 +106,14 @@ nav {
 }
 
 .nav_button {
+    position: relative;
     .arrow-icon-container {
         padding-left: 8px;
     }
 
     &:hover {
         .nav_dropdown_container{
-            position: absolute;
+            background-color: red;
             display: block;
             opacity: 100;
             visibility: visible;
@@ -137,15 +138,16 @@ nav {
 
 
     .nav_dropdown_container {
-        display: block; //debug
-        position: absolute;
+        display: none;
+        position: fixed;
+        background-color: red;
         transition: opacity 1s;
-        opacity: 100;
-        top: 100%;
+        opacity: 1;
+        top: 138px;
         left: 0;
+        padding: 24px 0px;
         color: $main-color;
         background-color: $terciary-color;
-        //background-color: blue; //debug
         width: 100vw;
         z-index: 3;
 
@@ -155,25 +157,51 @@ nav {
         visibility: visible;
         opacity: 1;
     }
+        
         .nav_dropdown_grid {
-            background-color: $terciary-color;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fill, 1fr);
+            &.cl3{
+                grid-template-columns: repeat(3, 1fr);
+            }
+            &.cl5{
+                grid-template-columns: repeat(5, 1fr);
+            }
+            &.cl6{
+                grid-template-columns: repeat(6, 1fr);
+            }
+            background-color: $terciary-color;
             grid-template-rows: 1fr;
             width: 1200px;
-            gap: 10px;
+            gap: 40px;
     
             .nav_dropdown_grid_item {
-                padding: 0px 12px;
-                margin-top: 20px;
                 text-align: left;
-                p {
-                    margin-bottom: 10px;
+
+                h2 {
+                    margin: 0px;
+                    font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
+                    font-weight: 300;
+                    font-size: 1rem;
+                    line-height: 1.75;
+                    letter-spacing: 0.012em;
                 }
-    
-                * {
+
+                a {
                     display: block;
-                    padding-left: 0px;
+                    color: $link-color;
+                    text-decoration: none;
+                    font-family: Open Sans, helvetica, arial, sans-serif;
+                    font-weight: 300;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    letter-spacing: .004em;
+                    padding-top: 8px;
+                }
+                
+                ul {
+                    list-style-type: none;
+                    padding-left: 0;
                 }
             }
         }
@@ -218,45 +246,10 @@ nav {
 
 
 
-#nav-descubra:hover>#header_text_descubra {
-    background-color: $terciary-color;
-    // Dimensões do Menu descubra
-}
-
-#nav-reservar:hover>#header_text_reservar {
-    background-color: $terciary-color;
-    // Dimensões do Menu reservar
-}
-
-#nav-gerir:hover>#header_text_gerir {
-    background-color: $terciary-color;
-    // Dimensẽos do Menu gerir
-}
-
-#nav-checkin:hover>#header_text_checkin {
-    background-color: $terciary-color;
-    // Dimensões do Menu checkin
-}
-
-#nav-ajuda:hover>#header_text_ajuda {
-    background-color: $terciary-color;
-    // Dimensões do Menu ajuda
-}
 
 #nav_text_title {
     color: $main-color;
     // Não finalizado
 }
 
-#nav_text_list {
-    list-style-type: none;
-    
-    // Não finalizado
-}
 
-.nav_text_item a {
-    color: $link-color;
-    text-decoration: none;
-    margin-bottom: 5px;
-    // Não finalizado
-}
