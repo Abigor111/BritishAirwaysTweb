@@ -376,73 +376,73 @@
         <section id="scheduling-travels-menu">
             <div class="block-wrapper" id="scheduling-wrapper">
                 <div class="banner">
-                    <form action="">
-                        <!-- Form Options -->
-                        <fieldset>
-                            <legend>Estou a pesquisar para:</legend>
-                            <div id="banner-radio-group">
-                                <div class="banner-radio-wrapper">
-                                    <input type="radio" id="schedule_input_fly" name="schedule_input" checked>
-                                    <label for="schedule_input_fly">Voo</label>
-                                </div>
+                    <legend>Estou a pesquisar para:</legend>
+                    <div id="banner-radio-group">
+                        <div class="banner-radio-wrapper">
+                            <input type="radio" id="schedule_input_fly" name="schedule_input" checked>
+                            <label for="schedule_input_fly">Voo</label>
+                        </div>
 
-                                <div class="banner-radio-wrapper">
-                                    <input type="radio" id="schedule_input_flyhotel" name="schedule_input">
-                                    <label for="schedule_input_fly">Voo + hotel</label>
-                                </div>
+                        <div class="banner-radio-wrapper">
+                            <input type="radio" id="schedule_input_flyhotel" name="schedule_input">
+                            <label for="schedule_input_fly">Voo + hotel</label>
+                        </div>
 
 
-                                <div class="banner-radio-wrapper">
-                                    <input type="radio" id="schedule_input_flyvehicle" name="schedule_input">
-                                    <label for="schedule_input">Voo + Veículo</label>
-                                </div>
+                        <div class="banner-radio-wrapper">
+                            <input type="radio" id="schedule_input_flyvehicle" name="schedule_input">
+                            <label for="schedule_input">Voo + Veículo</label>
+                        </div>
 
-                                <div class="banner-radio-wrapper">
-                                    <input type="radio" id="schedule_input_hotel" name="schedule_input">
-                                    <label for="schedule_input_hotel">Hotel</label>
-                                </div>
+                        <div class="banner-radio-wrapper">
+                            <input type="radio" id="schedule_input_hotel" name="schedule_input">
+                            <label for="schedule_input_hotel">Hotel</label>
+                        </div>
 
-                                <div class="banner-radio-wrapper">
-                                    <input type="radio" id="schedule_input_vehicle" name="schedule_input">
-                                    <label for="schedule_input_vehicle">Veículo</label>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <!-- Form Options End -->
+                        <div class="banner-radio-wrapper">
+                            <input type="radio" id="schedule_input_vehicle" name="schedule_input">
+                            <label for="schedule_input_vehicle">Veículo</label>
+                        </div>
+                    </div>
+                    <!-- Form Options End -->
 
-                        <!-- Flight Form -->
-                        <div id="schedule-flight" class="schedule-grid">
-                            <div id="schedule-flight-grp1">
-                                <div class="option-container-dropdown">
+                    <!-- Flight Form -->
+                    <form id="flight-form">
+                        <div id="schedule-flight-grid" class="schedule-grid schedule-grid">
+                            <!-- First Row -->
+                            <div id="flight-grid-row1" class="schedule-grid schedule-grid-row">
+                                <!-- Span 1 -->
+                                <div class="option-container option-container-dropdown">
                                     <label for="option-tariff" class="option-label-top">Tarifa</label>
-                                    <select id="option-tariff" name="option-tariff" required>
+                                    <select class="schedule-select" id="option-tariff" name="option-tariff" required>
                                         <option value="return">Regresso</option>
                                         <option value="oneway">Só ida</option>
                                     </select>
                                 </div>
+                                <!-- Span 5 -->
+                                <div id="flight-grid-row1-span5" class="schedule-grid">
+                                    <div class="option-container option-container-text">
+                                        <label for="option-from" class="option-label-inside">De<span>Digite 3 letras</span></label>
+                                        <input type="text" class="schedule-input" id="option-from" name="option-from" required>
+                                    </div>
 
-
-                                <div class="option-container-text" hidden>
-                                    <label for="option-from" class="option-label-inside">De</label>
-                                    <input type="text" id="option-from" name="option-from" placeholder="Digite 3 letras"
-                                        required>
+                                    <div class="option-container option-container-text">
+                                        <label for="option-to" class="option-label-inside">Para<span>Digite 3 letras</span></label>
+                                        <input type="text" class="schedule-input" id="option-to" name="option-to" required>
+                                    </div>
                                 </div>
-
-                                <div class="option-container-text" hidden>
-                                    <label for="option-to" class="option-label-inside">Para</label>
-                                    <input type="text" id="option-to" name="option-to" placeholder="Digite 3 letras"
-                                        required>
-                                </div>
-
-                                <div class="option-container-date" hidden>
+                            </div>
+                                
+                                <!--
+                                <div class="option-container-date">
                                     <label for="option-tariff" class="option-label-top">Partida</label>
                                     <input type="date" required>
                                 </div>
-                                <div class="option-container-date" hidden>
+                                <div class="option-container-date">
                                     <label for="option-tariff" class="option-label-top">Regresso</label>
                                     <input type="date">
                                 </div>
-                                <div class="option-container-dropdown-checkbox" hidden>
+                                <div class="option-container-dropdown-checkbox">
                                     <label for="option-tariff" class="option-label-top">Cabine</label>
                                     <select id="option-tariff" name="option-tariff" required>
                                         <option value="economic">Económica</option>
@@ -451,7 +451,7 @@
                                         <option value="executive"><input type="checkbox">Bilhete flexível</option>
                                     </select>
                                 </div>
-                                <div class="option-container-dropdown-number" hidden>
+                                <div class="option-container-dropdown-number">
                                     <label for="option-tariff" class="option-label-top">Passageiros</label>
                                     <input type="readonly">
                                     <label for="">Adultos</label>
@@ -468,17 +468,19 @@
                                     <input type="number">
                                 </div>
                             </div>
-                            <span class="topic-content-fine" hidden>Quer fazer mais escalas?</span>
+                            <span class="topic-content-fine">Quer fazer mais escalas?</span>
                             <a class="topic-content-link"
                                 href="https://www.britishairways.com/travel/book/public/pt_pt/flightSearch">Várias
                                 cidades e À volta do mundo</a>
-                            <span class="topic-content-fine" hidden>Precisa de inspiração?</span>
+                            <span class="topic-content-fine">Precisa de inspiração?</span>
                             <a class="topic-content-link"
                                 href="https://www.britishairways.com/travel/flexible-search/public/pt_pt/">Encontre a
                                 sua próxima semana</a>
                             <button class="banner-search-button">Procurar voos</button>
+                        -->
                         </div>
-                        <!-- Flight Form End -->
+                    </form>
+                    <!-- Flight Form End -->
 
                         <!-- Flight + Hotel Form -->
                         <div id="schedule-flight-hotel">
@@ -867,7 +869,6 @@
                         </div>
                         <!-- Vehicle Form End -->
                 </div>
-                </form>
             </div>
         </section>
         <!-- Scheduling Travels Menu End -->
