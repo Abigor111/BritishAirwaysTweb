@@ -99,7 +99,7 @@
   color: #021b41;
   background-color: white;
   width: 100vw;
-  z-index: 3;
+  z-index: 1000;
 }
 .nav_button .nav_dropdown_container:hover {
   display: block;
