@@ -109,9 +109,6 @@ scheduleInputVehicle.addEventListener('change', function () {
 function alterarValor(botao, incremento, event) {
     
     if (event) event.preventDefault();
-    console.log("Incremento: ", incremento);  // Verifica se o valor de incremento está correto
-    console.log("Evento:", event);  // Verifica se o evento está a ser passado corretamente
-
     const input = botao.parentNode.querySelector('.contador');
     let valorAtual = parseInt(input.value, 10); // Converte a string para numero decimal logo estar la o 10
     const adulto = document.querySelector('.adulto');
@@ -121,28 +118,34 @@ function alterarValor(botao, incremento, event) {
     let nadolescente = parseInt(adolescente.value, 10);
     let ncrianca = parseInt(crianca.value, 10);
     const totalpassageiros = nadulto + ncrianca + nadolescente + incremento;
+    const warning1 = botao.parentNode.parentNode.querySelector('.warning-1');
+    const warning2 = botao.parentNode.parentNode.querySelector('.warning-2');
+    const warning3 = botao.parentNode.parentNode.querySelector('.warning-3');
     if (!input.classList.contains('bebe') && totalpassageiros > 9) { // "!" nega a expressão
-        alert("Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.");
+        warning1.style.display = 'block';
+        warning3.style.display = 'none';
         return;
     }
     const novoValor = valorAtual + incremento;
     if (input.classList.contains('adulto') && novoValor == 0 && nadulto == 1) {
         input.value = 1;
-        alert("Para fazer a sua reserva online, deve existir pelo menos um adulto a viajar. Para fazer uma reserva para jovens adultos que viajem sozinhos, contacte-nos.");
+        warning3.style.display = 'block';
     } else if (input.classList.contains('bebe') && novoValor > nadulto){
-        alert("Não podem haver mais bebes do que adultos.");
+        warning2.style.display = 'block';
+        warning3.style.display = 'none';
+
     } else if(novoValor < 0){
-        alert("0 é o número minimo");
+        warning3.style.display = 'block';
+
     }else {
         input.value = novoValor;
+        warning1.style.display = 'none';
+        warning2.style.display = 'none';
+        warning3.style.display = 'none';
+
     }
 }
-document.addEventListener("DOMContentLoaded", function() {
-    const minusButton = document.querySelector('.minus-image');
-    minusButton.addEventListener('click', function() {
-        alert('Botão de decremento clicado');
-    });
-});
+
 // TODO: Para cada numero de quartos escolhido pelo utilizador, adicionar um novo quarto ao formulário
 // TODO: Limitar a quantidade de pessoas que podem ser adicionadas
 // TODO: Se a tarifa for de apenas ida tirar a data de volta
