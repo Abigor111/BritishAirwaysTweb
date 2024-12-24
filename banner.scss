@@ -259,7 +259,7 @@ $main-fontsize: 16px;
         border-bottom: 1px solid #71737f;
         border-radius: 0;
         background: transparent;
-        font-family: "Open Sans", helvetica, arial, sans-serif;
+        font-family: $font-open-sans;
         font-size: 20px;
         font-weight: 300;
         line-height: 30px;
@@ -290,7 +290,7 @@ $main-fontsize: 16px;
         appearance: none;
         text-align: left;
         background-color: transparent;
-        font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
+        font-family: $font-mylius-modern;
         font-size: 18px;
         line-height: 28px;
     }
@@ -299,7 +299,7 @@ $main-fontsize: 16px;
         box-sizing: border-box;
         width: 100%;
         padding: 20px 0 8px;
-        font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
+        font-family: $font-mylius-modern;
         font-size: 18px;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -344,12 +344,12 @@ $main-fontsize: 16px;
         transition: border-bottom 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
         position: relative;
 
-        &:hover + .option_dropdown_container {
+        /*&:hover + .option_dropdown_container {
             display: block;
             padding: 16px 24px 24px 24px;
             filter: blur(0px);
             opacity: 1;
-        }
+        }*/
         &:not(hover) + .option_dropdown_container {
             display: none;
             padding: 16px 24px 24px 24px;
@@ -360,7 +360,7 @@ $main-fontsize: 16px;
             background-color: #2671d3;
             color: #ffffff;
             width: auto;
-            font-family: "Open Sans", helvetica, arial, sans-serif;
+            font-family: $font-open-sans;
             font-weight: 400;
             font-size: 1rem;
             line-height: 1.5;
@@ -498,7 +498,7 @@ $main-fontsize: 16px;
     overflow: hidden;
     font-weight: 200;
     color: black;
-    font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
+    font-family: $font-mylius-modern;
     font-size: 18px;
     line-height: 28px;
     pointer-events: none;
@@ -523,7 +523,7 @@ $main-fontsize: 16px;
     overflow: hidden;
     font-weight: 200;
     color: #71737f;
-    font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
+    font-family: $font-mylius-modern;
     font-size: 18px;
     line-height: 28px;
     pointer-events: none;

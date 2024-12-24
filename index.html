@@ -445,8 +445,8 @@
                                 </div>
                                 <div class="option-container"> <!-- This element creates a dropdown div with two radio buttons and a checkbox-->
                                     <label for="option-cabin" class="option-label-top">Cabine</label>
-                                    <button id="cabin-button" name="option-cabin"><span class="option-span-fill">Económica</span></button>
-                                    <div class="option_dropdown_container">
+                                    <button id="cabin-button" name="option-cabin" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">Económica</span></button>
+                                    <div class="option_dropdown_container" >
                                         <div class="option-dropdown-grid">
                                             <p>Estou a viajar em:</p>
                                             <div class="option-radio-flex">
@@ -464,7 +464,7 @@
                                 </div>
                                 <div class="option-container"> <!-- This is for selecting number of people -->
                                     <label for="option-passengers" class="option-label-top">Passageiros</label>
-                                    <button id="passenger-button" name="option-passengers"><span class="option-span-fill">1 Adulto</span></button>
+                                    <button id="passenger-button" name="option-passengers" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">1 Adulto</span></button>
                                     <div class="option_dropdown_container">
                                         <div class="option-dropdown-grid">
                                             <div>
@@ -472,19 +472,21 @@
                                                 <p>16 anos ou mais</p>
                                                 <div class="option-counter">
                                                     <div class="option-attention-symbol"></div>
-                                                    <button class="button-icon minus-image"></button>
-                                                    <input type="text" placeholder="1">
-                                                    <button class="button-icon plus-image"></button>
+                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
+                                                    <input type="text" value="1" class="contador adulto">
+                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
                                                 </div>
+                                                <p id="warning">Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+
                                             </div>
                                             <div>
                                                 <label>Jovens adultos</label>
                                                 <p>12-15 anos</p>
                                                 <div class="option-counter">
                                                     <div class="option-attention-symbol"></div>
-                                                    <button class="button-icon minus-image"></button>
-                                                    <input type="text" placeholder="1">
-                                                    <button class="button-icon plus-image"></button>
+                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
+                                                    <input type="text" value="0" class="contador adolescente">
+                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
                                                 </div>
                                             </div>
                                             <div>
@@ -492,9 +494,9 @@
                                                 <p>2-11 anos</p>
                                                 <div class="option-counter">
                                                     <div class="option-attention-symbol"></div>
-                                                    <button class="button-icon minus-image"></button>
-                                                    <input type="text" placeholder="1">
-                                                    <button class="button-icon plus-image"></button>
+                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
+                                                    <input type="text" value="0" class="contador crianca">
+                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
                                                 </div>
                                             </div>
                                             <div>
@@ -502,9 +504,9 @@
                                                 <p>Menos de 2 anos</p>
                                                 <div class="option-counter">
                                                     <div class="option-attention-symbol"></div>
-                                                    <button class="button-icon minus-image"></button>
-                                                    <input type="text" placeholder="1">
-                                                    <button class="button-icon plus-image"></button>
+                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
+                                                    <input type="text" value="0" class="contador bebe">
+                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -1272,7 +1274,7 @@
         <!-- Footer Icons -->
 
     </footer>
-    <!--<script src="logic.js"></script> -->
+    <script src="logic.js"></script>
 </body>
 
 </html>

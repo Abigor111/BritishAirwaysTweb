@@ -180,7 +180,7 @@ $main-fontsize: 16px;
 
                 h2 {
                     margin: 0px;
-                    font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
+                    font-family: $font-mylius-modern;
                     font-weight: 300;
                     font-size: 1rem;
                     line-height: 1.75;
@@ -191,7 +191,7 @@ $main-fontsize: 16px;
                     display: block;
                     color: $link-color;
                     text-decoration: none;
-                    font-family: Open Sans, helvetica, arial, sans-serif;
+                    font-family: $font-open-sans;
                     font-weight: 300;
                     font-size: 1rem;
                     line-height: 1.5;

@@ -17,16 +17,44 @@ document.addEventListener("DOMContentLoaded", () => {
             const iconInstance = document.importNode(iconTemplate.content, true);
             button.appendChild(iconInstance);
         });
-        document.querySelectorAll('.option-label-top').forEach(option => {
-            const iconInstance = document.importNode(iconTemplate.content, true);
-            option.appendChild(iconInstance);
-        });
+
     } else {
         console.error("Template with id 'arrow-icon' not found.");
     }
 });
+function appear_option_dropdown_container(event) {
+    event.preventDefault();
+
+    let optionDropdownContainer = event.target.closest('.option-container').querySelector('.option_dropdown_container');
+
+    // Verifica se o dropdown está visível ou não
+    if (optionDropdownContainer.style.display === 'block') {
+        // Se já estiver visível, escondê-lo
+        optionDropdownContainer.style.display = 'none';
+        optionDropdownContainer.style.opacity = '0';
+        optionDropdownContainer.style.filter = 'blur(0.1rem)';
+    } else {
+        // Se não estiver visível, mostrá-lo
+        optionDropdownContainer.style.display = 'block';
+        optionDropdownContainer.style.opacity = '1';
+        optionDropdownContainer.style.filter = 'blur(0px)';
+    }
+}
+
+// Adicionar um ouvinte de clique no documento para fechar o dropdown se o utilizador clicar fora
+document.addEventListener('click', function(event) {
+    let dropdownContainers = document.querySelectorAll('.option_dropdown_container');
+    dropdownContainers.forEach(container => {
+        if (!container.contains(event.target) && !event.target.closest('.option-container').contains(event.target)) {
+            container.style.display = 'none';
+            container.style.opacity = '0';
+            container.style.filter = 'blur(0.1rem)';
+        }
+    });
+});
+
 // Dynamic Form
-let scheduleInputFly = document.getElementById('schedule_input_fly');
+/*let scheduleInputFly = document.getElementById('schedule_input_fly');
 let scheduleInputFlyHotel = document.getElementById('schedule_input_flyhotel');
 let scheduleInputFlyVehicle = document.getElementById('schedule_input_flyvehicle');
 let scheduleInputHotel = document.getElementById('schedule_input_hotel');
@@ -77,14 +105,44 @@ scheduleInputVehicle.addEventListener('change', function () {
     schedule_flight_hotel.style.visibility = 'hidden';
     schedule_vehicle.style.visibility = 'visible';
 });
+*/
+function alterarValor(botao, incremento, event) {
+    
+    if (event) event.preventDefault();
+    console.log("Incremento: ", incremento);  // Verifica se o valor de incremento está correto
+    console.log("Evento:", event);  // Verifica se o evento está a ser passado corretamente
 
-// London Calling Buttons
-let searchflightslondonbutton = document.getElementById("london-flight-search");
-searchflightslondonbutton.addEventListener('click', function () {
-    window.location.href = "https://www.britishairways.com/content/pt/pt/flights/england/london?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=e1a2221fc9e425ad237e44fa7933a6c5||her|1|cta1|1||||home||||l4||||anonymous-inspiration|||&source=her-pos-1-cta1&kmtag=c&kmver=1.0&clickpage=homepage";
+    const input = botao.parentNode.querySelector('.contador');
+    let valorAtual = parseInt(input.value, 10); // Converte a string para numero decimal logo estar la o 10
+    const adulto = document.querySelector('.adulto');
+    const adolescente = document.querySelector('.adolescente');
+    const crianca = document.querySelector('.crianca');
+    let nadulto = parseInt(adulto.value, 10);
+    let nadolescente = parseInt(adolescente.value, 10);
+    let ncrianca = parseInt(crianca.value, 10);
+    const totalpassageiros = nadulto + ncrianca + nadolescente + incremento;
+    if (!input.classList.contains('bebe') && totalpassageiros > 9) { // "!" nega a expressão
+        alert("Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.");
+        return;
+    }
+    const novoValor = valorAtual + incremento;
+    if (input.classList.contains('adulto') && novoValor == 0 && nadulto == 1) {
+        input.value = 1;
+        alert("Para fazer a sua reserva online, deve existir pelo menos um adulto a viajar. Para fazer uma reserva para jovens adultos que viajem sozinhos, contacte-nos.");
+    } else if (input.classList.contains('bebe') && novoValor > nadulto){
+        alert("Não podem haver mais bebes do que adultos.");
+    } else if(novoValor < 0){
+        alert("0 é o número minimo");
+    }else {
+        input.value = novoValor;
+    }
+}
+document.addEventListener("DOMContentLoaded", function() {
+    const minusButton = document.querySelector('.minus-image');
+    minusButton.addEventListener('click', function() {
+        alert('Botão de decremento clicado');
+    });
 });
 // TODO: Para cada numero de quartos escolhido pelo utilizador, adicionar um novo quarto ao formulário
 // TODO: Limitar a quantidade de pessoas que podem ser adicionadas
-// TODO: Mudar o valor do input readonly consoante o tipo de pessoas nesse determinado input, por exemplo x adultos, y crianças etc.
-// Limites conhecidos: máx de 9 pessoas, não pode haver mais bebes do que adultos
 // TODO: Se a tarifa for de apenas ida tirar a data de volta
