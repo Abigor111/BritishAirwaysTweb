@@ -340,6 +340,7 @@ $main-fontsize: 16px;
         border-bottom-color: #71737f;
         cursor: pointer;
         display: block;
+
         -webkit-transition: border-bottom 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
         transition: border-bottom 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
         position: relative;
@@ -394,7 +395,7 @@ $main-fontsize: 16px;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
 
         p {
-            font-family: Open Sans, helvetica, arial, sans-serif;
+            font-family: $font-open-sans;
             font-weight: 300;
             font-size: 0.75rem;
             line-height: 1.67;
@@ -454,7 +455,7 @@ $main-fontsize: 16px;
             input {
                 font-size: 20px;
                 line-height: 30px;
-                font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
+                font-family: $font-mylius-modern;
                 font-size: 18px;
                 font-weight: 200;
                 line-height: 28px;
@@ -498,7 +499,7 @@ $main-fontsize: 16px;
     overflow: hidden;
     font-weight: 200;
     color: black;
-    font-family: $font-mylius-modern;
+    font-family: $font-open-sans;
     font-size: 18px;
     line-height: 28px;
     pointer-events: none;
@@ -524,7 +525,7 @@ $main-fontsize: 16px;
     font-weight: 200;
     color: #71737f;
     font-family: $font-mylius-modern;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 28px;
     pointer-events: none;
 

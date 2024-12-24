@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Template with id 'arrow-icon' not found.");
     }
 });
+// Aparecer container dropdown
 function appear_option_dropdown_container(event) {
     event.preventDefault();
 
@@ -41,7 +42,7 @@ function appear_option_dropdown_container(event) {
     }
 }
 
-// Adicionar um ouvinte de clique no documento para fechar o dropdown se o utilizador clicar fora
+// Fechar o dropdown container (só fechara se o utilizador clicar fora do container)
 document.addEventListener('click', function(event) {
     let dropdownContainers = document.querySelectorAll('.option_dropdown_container');
     dropdownContainers.forEach(container => {
@@ -106,20 +107,21 @@ scheduleInputVehicle.addEventListener('change', function () {
     schedule_vehicle.style.visibility = 'visible';
 });
 */
+// Passageiros contador
 function alterarValor(botao, incremento, event) {
-    
     if (event) event.preventDefault();
     const input = botao.parentNode.querySelector('.contador');
     let valorAtual = parseInt(input.value, 10); // Converte a string para numero decimal logo estar la o 10
     const adulto = document.querySelector('.adulto');
     const adolescente = document.querySelector('.adolescente');
     const crianca = document.querySelector('.crianca');
+    const bebe = document.querySelector('.bebe');
     let nadulto = parseInt(adulto.value, 10);
     let nadolescente = parseInt(adolescente.value, 10);
     let ncrianca = parseInt(crianca.value, 10);
     const totalpassageiros = nadulto + ncrianca + nadolescente + incremento;
     const warning1 = botao.parentNode.parentNode.querySelector('.warning-1');
-    const warning2 = botao.parentNode.parentNode.querySelector('.warning-2');
+    const warning2 = botao.parentNode.parentNode.querySelector('.warning-2') || botao.parentNode.parentNode.querySelector('.warning-3'); //Handler para caso warning 2 seja null
     const warning3 = botao.parentNode.parentNode.querySelector('.warning-3');
     if (!input.classList.contains('bebe') && totalpassageiros > 9) { // "!" nega a expressão
         warning1.style.display = 'block';
@@ -139,13 +141,76 @@ function alterarValor(botao, incremento, event) {
 
     }else {
         input.value = novoValor;
+        let span_fill = botao.closest('.option-container').querySelector('.option-span-fill');
         warning1.style.display = 'none';
         warning2.style.display = 'none';
         warning3.style.display = 'none';
-
+        let nadulto = parseInt(adulto.value, 10);
+        if (nadulto == 1){
+            span_fill.textContent = '1 Adulto'
+        }
+        else {
+            span_fill.textContent = nadulto + ' Adultos'
+        }
+        let nadolescente = parseInt(adolescente.value, 10);
+        if (nadolescente == 0){
+            span_fill.textContent += ''
+        }
+        else if (nadolescente == 1){
+            span_fill.textContent += ', 1 Jovem adulto'
+        } else {
+            span_fill.textContent += ', ' + nadolescente + ' Jovens adultos'
+        }
+        let ncrianca = parseInt(crianca.value, 10);
+        if (ncrianca == 0){
+            span_fill.textContent += ''
+        }
+        else if (ncrianca == 1){
+            span_fill.textContent += ', 1 Criança'
+        } else {
+            span_fill.textContent += ', ' + ncrianca + ' Crianças'
+        }
+        let nbebe = parseInt(bebe.value, 10);
+        if (nbebe == 0){
+            span_fill.textContent += ''
+        }
+        else if (nbebe == 1){
+            span_fill.textContent += ', 1 Bebé'
+        } else {
+            span_fill.textContent += ', ' + nbebe + ' Bebés'
+        }
     }
 }
+// Tarifa Ida e Volta
+const tariff = document.getElementById('option-tariff');
+tariff.addEventListener('change', function () {
+    if (tariff.value == 'oneway') {
+        document.querySelector('.return').style.display = 'none';
+    }
+    else {
+        document.querySelector('.return').style.display = 'block';
+    }
+});
+// Alterar o value do option-span-fill da cabine
+function atualizarCabine() {
+    const radios = document.querySelectorAll('input[name="cabin-type"]');
+    const span = document.querySelector('.option-span-fill');
+    const flexible_ticket = document.querySelector('.flexible_ticket');
+    radios.forEach((radio) => {
+        if (radio.checked) {
+            let textoCabine = radio.nextElementSibling.textContent;
+
+            if (flexible_ticket.checked) {
+                textoCabine += ', Flexible (change ticket with no fee)';
+            }
+
+            span.textContent = textoCabine;
+        }
+    });
+}
+document.querySelectorAll('input[name="cabin-type"]').forEach((radio) => {
+    radio.addEventListener('change', atualizarCabine);
+});
+document.querySelector('.flexible_ticket').addEventListener('change', atualizarCabine);
 
 // TODO: Para cada numero de quartos escolhido pelo utilizador, adicionar um novo quarto ao formulário
-// TODO: Limitar a quantidade de pessoas que podem ser adicionadas
-// TODO: Se a tarifa for de apenas ida tirar a data de volta

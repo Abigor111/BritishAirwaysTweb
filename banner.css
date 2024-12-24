@@ -325,7 +325,7 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
 }
 .option-container .option_dropdown_container p {
-  font-family: Open Sans, helvetica, arial, sans-serif;
+  font-family: "Open sans", helvetica, arial, sans-serif;
   font-weight: 300;
   font-size: 0.75rem;
   line-height: 1.67;
@@ -413,7 +413,7 @@
   overflow: hidden;
   font-weight: 200;
   color: black;
-  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
+  font-family: "Open sans", helvetica, arial, sans-serif;
   font-size: 18px;
   line-height: 28px;
   pointer-events: none;
@@ -438,7 +438,7 @@
   font-weight: 200;
   color: #71737f;
   font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 28px;
   pointer-events: none;
 }
