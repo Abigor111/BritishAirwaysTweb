@@ -4,72 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seleção de Passageiros</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .categoria {
-            margin-bottom: 20px;
-        }
-        .titulo {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .controlo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 5px;
-        }
-        .botao {
-            font-size: 20px;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            cursor: pointer;
-        }
-        .contador {
-            font-size: 18px;
-            width: 30px;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
-    <div class="categoria">
-        <div class="titulo">Adultos<br><small>16 anos ou mais</small></div>
-        <div class="controlo">
-            <button class="botao" onclick="alterarValor(this, -1)">−</button>
-            <input type="text" class="contador adulto" value="1" >
-            <button class="botao" onclick="alterarValor(this, 1)">+</button>
-        </div>
+    <div class="option-container">
+        <label for="option-tariff" class="option-label-top">Quartos</label>
+        <select id="option-tariff" class="room" name="option-tariff" required>
+            <option value="oneroom">1 quarto</option>
+            <option value="tworoom">2 quartos</option>
+            <option value="threeroom">3 quartos</option>
+            <option value="fourroom">4 quartos</option>
+        </select>
     </div>
-    <div class="categoria">
-        <div class="titulo">Jovens adultos<br><small>12-15 anos</small></div>
-        <div class="controlo">
-            <button class="botao" onclick="alterarValor(this, -1)">−</button>
-            <input type="text" class="contador adolescente" value="0" >
-            <button class="botao" onclick="alterarValor(this, 1)">+</button>
-        </div>
-    </div>
-    <div class="categoria">
-        <div class="titulo">Crianças<br><small>2-11 anos</small></div>
-        <div class="controlo">
-            <button class="botao" onclick="alterarValor(this, -1)">−</button>
-            <input type="text" class="contador crianca" value="0" >
-            <button class="botao" onclick="alterarValor(this, 1)">+</button>
-        </div>
-    </div>
-    <div class="categoria">
-        <div class="titulo">Bebés<br><small>Menos de 2 anos</small></div>
-        <div class="controlo">
-            <button class="botao" onclick="alterarValor(this, -1)">−</button>
-            <input type="text" class="contador bebe" value="0" >
-            <button class="botao" onclick="alterarValor(this, 1)">+</button>
-        </div>
-    </div>
+    <div class="room-container">
+</div>
 
-    <!-- Link para o ficheiro externo -->
     <script src="logic.js"></script>
 </body>
 </html>
