@@ -7,8 +7,7 @@
     <title>British Airways</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="banner.css">
@@ -379,40 +378,39 @@
                     <legend>Estou a pesquisar para:</legend>
                     <div id="banner-radio-group">
                         <div class="banner-radio-wrapper">
-                            <input type="radio" id="schedule_input_fly" name="schedule_input" class="radio" checked>
-                            <label for="schedule_input_fly">Voo</label>
+                            <input type="radio" id="schedule_fly" name="schedule_input" class="radio" checked>
+                            <label for="schedule_fly">Voo</label>
                         </div>
 
                         <div class="banner-radio-wrapper">
-                            <input type="radio" id="schedule_input_flyhotel" name="schedule_input" class="radio">
-                            <label for="schedule_input_fly">Voo + hotel</label>
+                            <input type="radio" id="schedule_flyhotel" name="schedule_input" class="radio">
+                            <label for="schedule_flyhotel">Voo + hotel</label>
                         </div>
 
 
                         <div class="banner-radio-wrapper">
-                            <input type="radio" id="schedule_input_flyvehicle" name="schedule_input" class="radio">
-                            <label for="schedule_input">Voo + Veículo</label>
+                            <input type="radio" id="schedule_flyvehicle" name="schedule_input" class="radio">
+                            <label for="schedule_flyvehicle">Voo + Veículo</label>
                         </div>
 
                         <div class="banner-radio-wrapper">
-                            <input type="radio" id="schedule_input_hotel" name="schedule_input" class="radio">
-                            <label for="schedule_input_hotel">Hotel</label>
+                            <input type="radio" id="schedule_hotel" name="schedule_input" class="radio">
+                            <label for="schedule_hotel">Hotel</label>
                         </div>
 
                         <div class="banner-radio-wrapper">
-                            <input type="radio" id="schedule_input_vehicle" name="schedule_input" class="radio">
-                            <label for="schedule_input_vehicle">Veículo</label>
+                            <input type="radio" id="schedule_vehicle" name="schedule_input" class="radio">
+                            <label for="schedule_vehicle">Veículo</label>
                         </div>
                     </div>
-                    <!-- Form Options End -->
+                    <!-- Form Options End  Teleport-->
 
-                    <form id="flight-form"> <!-- We are only using one form now, maybe change the id? -->
-                        <!-- Flight Form -->
+                    <form id="schedule-form">
                         <div class="schedule-grid">
                             <!-- First Row -->
-                            <div class="grid-cols-6 schedule-grid">
+                            <div class="grid-cols-6 schedule-grid" id="first_row">
                                 <!-- Span 1 -->
-                                <div class="option-container option-container-dropdown">
+                                <div class="option-container option-container-dropdown" id="tariff">
                                     <label for="option-tariff" class="option-label-top">Tarifa</label>
                                     <select class="schedule-select" id="option-tariff" name="option-tariff">
                                         <option value="return">Regresso</option>
@@ -433,7 +431,7 @@
                                 </div>
                             </div>
                             <!-- Second Row -->
-                            <div class="grid-cols-4 schedule-grid">
+                            <div class="grid-cols-4 schedule-grid" id="second_row">
                                 <!-- Span 1 -->
                                 <div class="option-container">
                                     <label for="date-from" class="option-label-top">Partida</label>
@@ -462,7 +460,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="option-container"> <!-- This is for selecting number of people -->
+                                <div class="option-container" id="passengers"> <!-- This is for selecting number of people -->
                                     <label for="option-passengers" class="option-label-top">Passageiros</label>
                                     <button id="passenger-button" name="option-passengers" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">1 Adulto</span></button>
                                     <div class="option_dropdown_container">
@@ -522,9 +520,74 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="option-container" id="rooms" style="display: none;">
+                                    <label for="option-tariff" class="option-label-top">Quartos</label>
+                                    <select class="nrooms-select" id="option-nrooms" name="option-nrooms">
+                                        <option value="oneroom">1 quarto</option>
+                                        <option value="tworoom">2 quartos</option>
+                                        <option value="threeroom">3 quartos</option>
+                                        <option value="fourroom">4 quartos</option>
+                                    </select>
+                                </div>
                             </div>
                             <!-- Third Row -->
-                            <div class="grid-cols-3 schedule-grid">
+                            <div class="grid-cols-4 schedule-grid room-container" id="third_row_1" style="display: none;">
+                            <div class="schedule-grid" id="third_row_2" style="display: none;">
+                                <div class="option-container"> <!-- This is for checking age -->
+                                        <input type="checkbox" class="checkbox" name="agecheck-30to70" id="agecheck-30to70">
+                                        <span for="agecheck-30to70">Condutor entre 30 e 70 anos </span>
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label for="flighthotel-option-roomoccupants-1" class="option-label-top">Quarto 1</label>
+                                <button id="flighthotel-roomoccupants-button-1" name="flighthotel-option-roomoccupants-1" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">1 Adulto</span></button>
+                                <div class="option_dropdown_container">
+                                    <div class="option-dropdown-grid">
+                                        <div class="div_adulto">
+                                            <label>Adultos</label>
+                                            <p>18 anos ou mais</p>
+                                            <div class="option-counter">
+                                                <div class="option-attention-symbol"></div>
+                                                <input type="text" value="1" class="contador adulto">
+                                                <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
+                                                <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
+                                            </div>
+                                            <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+                                            <p class="warning-3" hidden>Para fazer a sua reserva online, deve existir pelo menos um adulto a viajar. Para fazer uma reserva para jovens adultos que viajem sozinhos, contacte-nos.</p>
+                                        </div>
+                                        <div class="div_crianca">
+                                            <label>Crianças</label>
+                                            <p>2-17 anos</p>
+                                            <div class="option-counter">
+                                                <div class="option-attention-symbol"></div>
+                                                <input type="text" value="0" class="contador crianca">
+                                                <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
+                                                <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
+                                            </div>
+                                            <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+                                            <p class="warning-3" hidden>0 é o número minimo.</p>
+                                        </div>
+                                        <div class="div_bebe">
+                                            <label>Bebés</label>
+                                            <p>Menos de 2 anos</p>
+                                            <div class="option-counter">
+                                                <div class="option-attention-symbol"></div>
+                                                <input type="text" value="0" class="contador bebe">
+                                                <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
+                                                <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
+                                            </div>
+                                            <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+                                            <p class="warning-2" hidden>Não podem haver mais bebes do que adultos.</p>
+                                            <p class="warning-3" hidden>0 é o número minimo.</p>
+                                            <div class="container-crianca">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            </div>
+                            <div class="grid-cols-3 schedule-grid" id="fourth_row_1">
                                 <div class="option-container">
                                     <p>Quer fazer mais escalas?</p>
                                     <a class="option-link" href="https://www.britishairways.com/travel/book/public/pt_pt/flightSearch">
@@ -547,254 +610,7 @@
                                     <button class="option-submit">Procurar Voos</button>
                                 </div>
                             </div>
-                        </div> 
-
-                        <!-- Flight + Hotel Form -->
-                        <div class="schedule-grid">
-                            <!-- First Row -->
-                            <div class="grid-cols-2 schedule-grid">
-                                    <div class="option-container">
-                                        <label for="option-from" class="option-label-inside">De<span>Digite 3 letras</span></label>
-                                        <input type="text" class="schedule-input" id="option-from" name="option-from">
-                                    </div>
-
-                                    <div class="option-container">
-                                        <label for="option-to" class="option-label-inside">Para<span>Digite 3 letras</span></label>
-                                        <input type="text" class="schedule-input" id="option-to" name="option-to">
-                                    </div>
-                            </div>
-                            <!-- Second Row -->
-                            <div class="grid-cols-4 schedule-grid">
-                                <!-- Span 1 -->
-                                <div class="option-container">
-                                    <label for="date-from" class="option-label-top">Partida</label>
-                                    <input type="date" pattern="\d{2}\/\d{2}\/\d{4}" placeholder="DD/MM/YYYY" id="date-from" name="date-from">
-                                </div>
-                                <div class="option-container return">
-                                    <label for="date-from" class="option-label-top">Regresso</label>
-                                    <input type="date" id="date-from" name="date-from">
-                                </div>
-                                <div class="option-container"> <!-- This element creates a dropdown div with two radio buttons and a checkbox-->
-                                    <label for="option-cabin" class="option-label-top">Cabine</label>
-                                    <button id="cabin-button" name="option-cabin" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">Económica</span></button>
-                                    <div class="option_dropdown_container" >
-                                        <div class="option-dropdown-grid">
-                                            <p>Estou a viajar em:</p>
-                                            <div class="option-radio-flex">
-                                                <input type="radio" value="economic" name="cabin-type" class="radio" checked><span>Económica</span>
-                                            </div>
-                                            <div class="option-radio-flex">
-                                                <input type="radio" value="executive" name="cabin-type" class="radio"><span>Executiva</span>
-                                            </div>
-                                            <p class="topic-content-fine">Gostaria de um bilhete flexivel?</p>
-                                            <div class="option-radio-flex">
-                                                <input type="checkbox" class="checkbox flexible_ticket"><span>Bilhete flexível</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="option-container"> <!-- This is for selecting number of people -->
-                                    <select class="schedule-select" id="option-tariff" name="option-tariff">
-                                        <option value="return">1 quarto</option>
-                                        <option value="return">2 quartos</option>
-                                        <option value="return">3 quartos</option>
-                                        <option value="return">4 quartos</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- Third Row -->
-                            <div class="grid-cols-4 schedule-grid">
-                                <div class="option-container"> <!-- This is for selecting number of people -->
-                                    <label for="flighthotel-option-roomoccupants-1" class="option-label-top">Quarto 1</label>
-                                    <button id="flighthotel-roomoccupants-button-1" name="flighthotel-option-roomoccupants-1" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">1 Adulto</span></button>
-                                    <div class="option_dropdown_container">
-                                        <div class="option-dropdown-grid">
-                                            <div class="div_adulto">
-                                                <label>Adultos</label>
-                                                <p>18 anos ou mais</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="1" class="contador adulto">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-3" hidden>Para fazer a sua reserva online, deve existir pelo menos um adulto a viajar. Para fazer uma reserva para jovens adultos que viajem sozinhos, contacte-nos.</p>
-
-                                            </div>
-                                            <div class="div_crianca">
-                                                <label>Crianças</label>
-                                                <p>2-17 anos</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="0" class="contador crianca">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-3" hidden>0 é o número minimo.</p>
-
-                                            </div>
-                                            <div class="div_bebe">
-                                                <label>Bebés</label>
-                                                <p>Menos de 2 anos</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="0" class="contador bebe">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-2" hidden>Não podem haver mais bebes do que adultos.</p>
-                                                <p class="warning-3" hidden>0 é o número minimo.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="option-container"> <!-- This is for selecting number of people -->
-                                    <label for="option-roomoccupants-2" class="option-label-top">Quarto 2</label>
-                                    <button id="roomoccupants-button-2" name="option-roomoccupants-2" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">1 Adulto</span></button>
-                                    <div class="option_dropdown_container">
-                                        <div class="option-dropdown-grid">
-                                            <div class="div_adulto">
-                                                <label>Adultos</label>
-                                                <p>18 anos ou mais</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="1" class="contador adulto">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-3" hidden>Para fazer a sua reserva online, deve existir pelo menos um adulto a viajar. Para fazer uma reserva para jovens adultos que viajem sozinhos, contacte-nos.</p>
-
-                                            </div>
-                                            <div class="div_crianca">
-                                                <label>Crianças</label>
-                                                <p>2-17 anos</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="0" class="contador crianca">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-3" hidden>0 é o número minimo.</p>
-
-                                            </div>
-                                            <div class="div_bebe">
-                                                <label>Bebés</label>
-                                                <p>Menos de 2 anos</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="0" class="contador bebe">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-2" hidden>Não podem haver mais bebes do que adultos.</p>
-                                                <p class="warning-3" hidden>0 é o número minimo.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="option-container"> <!-- This is for selecting number of people -->
-                                    <label for="option-roomoccupants-3" class="option-label-top">Quarto 3</label>
-                                    <button id="roomoccupants-button-3" name="option-roomoccupants-3" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">1 Adulto</span></button>
-                                    <div class="option_dropdown_container">
-                                        <div class="option-dropdown-grid">
-                                            <div class="div_adulto">
-                                                <label>Adultos</label>
-                                                <p>18 anos ou mais</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="1" class="contador adulto">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-3" hidden>Para fazer a sua reserva online, deve existir pelo menos um adulto a viajar. Para fazer uma reserva para jovens adultos que viajem sozinhos, contacte-nos.</p>
-
-                                            </div>
-                                            <div class="div_crianca">
-                                                <label>Crianças</label>
-                                                <p>2-17 anos</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="0" class="contador crianca">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-3" hidden>0 é o número minimo.</p>
-
-                                            </div>
-                                            <div class="div_bebe">
-                                                <label>Bebés</label>
-                                                <p>Menos de 2 anos</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="0" class="contador bebe">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-2" hidden>Não podem haver mais bebes do que adultos.</p>
-                                                <p class="warning-3" hidden>0 é o número minimo.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="option-container"> <!-- This is for selecting number of people -->
-                                    <label for="option-roomoccupants-4" class="option-label-top">Quarto 4</label>
-                                    <button id="roomoccupants-button-4" name="option-roomoccupants-4" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">1 Adulto</span></button>
-                                    <div class="option_dropdown_container">
-                                        <div class="option-dropdown-grid">
-                                            <div class="div_adulto">
-                                                <label>Adultos</label>
-                                                <p>18 anos ou mais</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="1" class="contador adulto">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-3" hidden>Para fazer a sua reserva online, deve existir pelo menos um adulto a viajar. Para fazer uma reserva para jovens adultos que viajem sozinhos, contacte-nos.</p>
-
-                                            </div>
-                                            <div class="div_crianca">
-                                                <label>Crianças</label>
-                                                <p>2-17 anos</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="0" class="contador crianca">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-3" hidden>0 é o número minimo.</p>
-
-                                            </div>
-                                            <div class="div_bebe">
-                                                <label>Bebés</label>
-                                                <p>Menos de 2 anos</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="0" class="contador bebe">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-2" hidden>Não podem haver mais bebes do que adultos.</p>
-                                                <p class="warning-3" hidden>0 é o número minimo.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Fourth Row -->
-                            <div class="grid-cols-3 schedule-grid">
+                            <div class="grid-cols-3 schedule-grid" id="fourth_row_2" style="display: none;">
                                 <div class="grid-cols-2 schedule-grid col-span-2">
                                     <div class="option-container">
                                         <p>Quer viajar pelo mundo?</p>
@@ -806,127 +622,11 @@
                                         </a>
                                     </div>
                                 </div>
-                                
                                 <div class="option-container flex-row-reverse">
                                     <button class="option-submit">Procurar Voo + hotel</button>
                                 </div>
                             </div>
-                        </div> 
-
-                        <!-- Flight + Vehicle Form -->
-                        <div class="schedule-grid">
-                            <!-- First Row -->
-                            <div class="grid-cols-2 schedule-grid">
-                                    <div class="option-container">
-                                        <label for="option-from" class="option-label-inside">De<span>Digite 3 letras</span></label>
-                                        <input type="text" class="schedule-input" id="option-from" name="option-from">
-                                    </div>
-
-                                    <div class="option-container">
-                                        <label for="option-to" class="option-label-inside">Para<span>Digite 3 letras</span></label>
-                                        <input type="text" class="schedule-input" id="option-to" name="option-to">
-                                    </div>
-                            </div>
-                            <!-- Second Row (SAME AS FLIGHT HOTEL)-->
-                            <div class="grid-cols-4 schedule-grid">
-                                <!-- Span 1 -->
-                                <div class="option-container">
-                                    <label for="date-from" class="option-label-top">Partida</label>
-                                    <input type="date" pattern="\d{2}\/\d{2}\/\d{4}" placeholder="DD/MM/YYYY" id="date-from" name="date-from">
-                                </div>
-                                <div class="option-container return">
-                                    <label for="date-from" class="option-label-top">Regresso</label>
-                                    <input type="date" id="date-from" name="date-from">
-                                </div>
-                                <div class="option-container"> <!-- This element creates a dropdown div with two radio buttons and a checkbox-->
-                                    <label for="option-cabin" class="option-label-top">Cabine</label>
-                                    <button id="cabin-button" name="option-cabin" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">Económica</span></button>
-                                    <div class="option_dropdown_container" >
-                                        <div class="option-dropdown-grid">
-                                            <p>Estou a viajar em:</p>
-                                            <div class="option-radio-flex">
-                                                <input type="radio" value="economic" name="cabin-type" class="radio" checked><span>Económica</span>
-                                            </div>
-                                            <div class="option-radio-flex">
-                                                <input type="radio" value="executive" name="cabin-type" class="radio"><span>Executiva</span>
-                                            </div>
-                                            <p class="topic-content-fine">Gostaria de um bilhete flexivel?</p>
-                                            <div class="option-radio-flex">
-                                                <input type="checkbox" class="checkbox flexible_ticket"><span>Bilhete flexível</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="option-container"> <!-- This is for selecting number of people -->
-                                    <label for="option-passengers" class="option-label-top">Passageiros</label>
-                                    <button id="passenger-button" name="option-passengers" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">1 Adulto</span></button>
-                                    <div class="option_dropdown_container">
-                                        <div class="option-dropdown-grid">
-                                            <div class="div_adulto">
-                                                <label>Adultos</label>
-                                                <p>16 anos ou mais</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="1" class="contador adulto">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-3" hidden>Para fazer a sua reserva online, deve existir pelo menos um adulto a viajar. Para fazer uma reserva para jovens adultos que viajem sozinhos, contacte-nos.</p>
-
-                                            </div>
-                                            <div class="div_adolescente">
-                                                <label>Jovens adultos</label>
-                                                <p>12-15 anos</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="0" class="contador adolescente">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-3" hidden>0 é o número minimo.</p>
-
-                                            </div>
-                                            <div class="div_crianca">
-                                                <label>Crianças</label>
-                                                <p>2-11 anos</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="0" class="contador crianca">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-3" hidden>0 é o número minimo.</p>
-
-                                            </div>
-                                            <div class="div_bebe">
-                                                <label>Bebés</label>
-                                                <p>Menos de 2 anos</p>
-                                                <div class="option-counter">
-                                                    <div class="option-attention-symbol"></div>
-                                                    <input type="text" value="0" class="contador bebe">
-                                                    <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                    <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
-                                                </div>
-                                                <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                                <p class="warning-2" hidden>Não podem haver mais bebes do que adultos.</p>
-                                                <p class="warning-3" hidden>0 é o número minimo.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Third Row -->
-                            <div class="schedule-grid">
-                                <div class="option-container"> <!-- This is for checking age -->
-                                        <input type="checkbox" class="checkbox" name="agecheck-30to70" id="agecheck-30to70">
-                                        <span for="agecheck-30to70">Condutor entre 30 e 70 anos </span>
-                                </div>
-                            </div>
-                            <!-- Fourth Row -->
-                            <div class="grid-cols-3 schedule-grid">
+                            <div class="grid-cols-3 schedule-grid" id="fourth_row_3" style="display: none;">
                                 <div class="grid-cols-3 col-span-2 schedule-grid">
                                     <div class=" col-span-1 schedule-grid">
                                         <div class="option-container">
@@ -949,7 +649,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                
                                 <div class="option-container flex-row-reverse">
                                     <button class="option-submit">Procurar voo + carro</button>
                                 </div>
@@ -1016,7 +715,7 @@
                         <img src="./img/topic1.jpg" alt="Topic 1">
                         <div class="topic-content">
                             <div class="topic-content-block">
-                                <span class="topic-content-title">Head off to the UK</span>
+                                <span class="topic-content-title">Parta para o Reino Unido</span>
                             </div>
                             <div class="topic-content-block">
                                 <p class="topic-content-paragraph">Visite as pessoas e os locais que adora no Reino
@@ -1197,7 +896,7 @@
                         <div class="topic-action">
                             <a class="topic-content-link"
                                 href="https://www.britishairways.com/content/pt/pt/information/about-ba/our-brand?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=3a8756d88eb8cabd52f906d08af94367||cam|10|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-10-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Obtenha
-                                mais informações </a>https://www.britishairways.com/content/pt/pt/flights
+                                mais informações </a>
                         </div>
                     </div>
                     <!-- Topic 8 (Singular) End -->
