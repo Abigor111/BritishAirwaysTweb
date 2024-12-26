@@ -19,6 +19,50 @@ $search-buttons-width: 250px;
 $search-buttons-height: 50px;
 $main-fontsize: 16px;
 
+
+// Dynamic grid layout
+
+// Configurable variables
+$max-columns: 12; // Maximum number of columns
+$row-height: auto; // Default row height
+$gap: 1rem; // Default gap
+
+// Mixin for grid container
+@mixin grid-container($gap: 1rem) {
+  display: grid;
+  gap: $gap;
+}
+
+// Generate column classes
+@for $i from 1 through $max-columns {
+  .grid-cols-#{$i} {
+    @include grid-container($gap);
+    grid-template-columns: repeat($i, 1fr);
+  }
+}
+
+// Generate row classes
+@for $j from 1 through 12 {
+  .grid-rows-#{$j} {
+    grid-template-rows: repeat($j, $row-height);
+  }
+}
+
+// Generate column span classes
+@for $k from 1 through $max-columns {
+  .col-span-#{$k} {
+    grid-column: span #{$k};
+  }
+}
+
+// Generate row span classes
+@for $l from 1 through 12 {
+  .row-span-#{$l} {
+    grid-row: span #{$l};
+  }
+}
+
+
 // Mix-ins
 @mixin no-internal-spacement {
     padding: 0px 0px;
@@ -42,6 +86,12 @@ $main-fontsize: 16px;
 @mixin centralize {
     margin: 0 auto;
 }
+
+.flex-row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 #schedule-flight-hotel,
 #schedule-flight-vehicle,
 #schedule-hotel,
@@ -200,27 +250,6 @@ $main-fontsize: 16px;
     column-gap: 24px;
     row-gap: 24px;
     max-width: 944px;
-    
-    &#flight-grid-row1 {
-        grid-template-columns: repeat(6, 1fr);
-        // 5 span subrow
-        #flight-grid-row1-span5 {
-            grid-template-columns: repeat(2, 1fr);
-            grid-column: span 5;
-        }
-    }
-    &#flight-grid-row2 {
-        grid-template-columns: repeat(4, 1fr);-column: span 5;
-    }
-    &#flight-grid-row3 {
-        grid-template-columns: repeat(3, 1fr);
-        // 2 span subrow
-        #flight-grid-row3-span2 {
-            grid-template-columns: repeat(2, 1fr);
-            grid-column: span 2;
-        }
-    }
-
 
     .schedule-select {
         padding: 20px 20px 8px 0px;
@@ -229,7 +258,11 @@ $main-fontsize: 16px;
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='16' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: top 26px right 0;
-        
+    }
+
+    .small-gap {
+        column-gap: 8px;
+        align-items: center;
     }
 }
 
@@ -239,9 +272,16 @@ $main-fontsize: 16px;
 
 .option-container {
     box-sizing: border-box;
-    height: 59px;
     position: relative;
     
+    p {
+        font-family: Open Sans, helvetica, arial, sans-serif;
+        font-weight: 300;
+        font-size: 0.75rem;
+        line-height: 1.67;
+        letter-spacing: 0.004em;
+        max-width: 75ch;
+    }
     
     select, input:not(.checkbox), button {
         width: 100%;
@@ -358,7 +398,8 @@ $main-fontsize: 16px;
             opacity: 0;
         }
         &.option-submit {
-            background-color: #2671d3;
+            width: fit-content;
+            background-color: #2e5c99;
             color: #ffffff;
             width: auto;
             font-family: $font-open-sans;
@@ -369,7 +410,6 @@ $main-fontsize: 16px;
             cursor: pointer;
             border: none;
             border-radius: 2px;
-            width: 100%;
             text-wrap: balance;
             padding: 16px 24px;
             transition: background-color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -565,4 +605,63 @@ $main-fontsize: 16px;
 
 .option-container:focus-within .option-label-inside span {
     display: none;
+}
+
+.option-link {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    color: #2671d3;
+    transition: color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 4px;
+    box-shadow: currentcolor 0px -1px inset;
+
+    span {
+        color: currentColor;
+        font-family: Open Sans, helvetica, arial, sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.5;
+        letter-spacing: 0.004em;
+    }
+
+    svg {
+        color: currentColor;
+        fill: currentColor;
+        width: 16px;
+        height: 16px;
+        margin-left: 8px;
+
+        path {
+            color: currentColor;
+            fill: currentColor;
+            width: 16px;
+            height: 16px;
+        }
+    }
+    
+    &:hover {
+        color: #021b41;
+    }
+}
+
+
+#option-partnership {
+    .option-logos {
+        height: 24px;
+        display: flex;
+    
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    .option-partners {
+        color: red;
+        text-align: right;
+    }
 }

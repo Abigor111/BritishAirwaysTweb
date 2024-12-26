@@ -6,6 +6,227 @@
         - Button with text (menu) option-container-dropdownmenu
 
 */
+.grid-cols-1 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-cols-5 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-cols-6 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.grid-cols-7 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.grid-cols-8 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.grid-cols-9 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.grid-cols-10 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.grid-cols-11 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(11, 1fr);
+}
+
+.grid-cols-12 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.grid-rows-1 {
+  grid-template-rows: repeat(1, auto);
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, auto);
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, auto);
+}
+
+.grid-rows-4 {
+  grid-template-rows: repeat(4, auto);
+}
+
+.grid-rows-5 {
+  grid-template-rows: repeat(5, auto);
+}
+
+.grid-rows-6 {
+  grid-template-rows: repeat(6, auto);
+}
+
+.grid-rows-7 {
+  grid-template-rows: repeat(7, auto);
+}
+
+.grid-rows-8 {
+  grid-template-rows: repeat(8, auto);
+}
+
+.grid-rows-9 {
+  grid-template-rows: repeat(9, auto);
+}
+
+.grid-rows-10 {
+  grid-template-rows: repeat(10, auto);
+}
+
+.grid-rows-11 {
+  grid-template-rows: repeat(11, auto);
+}
+
+.grid-rows-12 {
+  grid-template-rows: repeat(12, auto);
+}
+
+.col-span-1 {
+  grid-column: span 1;
+}
+
+.col-span-2 {
+  grid-column: span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3;
+}
+
+.col-span-4 {
+  grid-column: span 4;
+}
+
+.col-span-5 {
+  grid-column: span 5;
+}
+
+.col-span-6 {
+  grid-column: span 6;
+}
+
+.col-span-7 {
+  grid-column: span 7;
+}
+
+.col-span-8 {
+  grid-column: span 8;
+}
+
+.col-span-9 {
+  grid-column: span 9;
+}
+
+.col-span-10 {
+  grid-column: span 10;
+}
+
+.col-span-11 {
+  grid-column: span 11;
+}
+
+.col-span-12 {
+  grid-column: span 12;
+}
+
+.row-span-1 {
+  grid-row: span 1;
+}
+
+.row-span-2 {
+  grid-row: span 2;
+}
+
+.row-span-3 {
+  grid-row: span 3;
+}
+
+.row-span-4 {
+  grid-row: span 4;
+}
+
+.row-span-5 {
+  grid-row: span 5;
+}
+
+.row-span-6 {
+  grid-row: span 6;
+}
+
+.row-span-7 {
+  grid-row: span 7;
+}
+
+.row-span-8 {
+  grid-row: span 8;
+}
+
+.row-span-9 {
+  grid-row: span 9;
+}
+
+.row-span-10 {
+  grid-row: span 10;
+}
+
+.row-span-11 {
+  grid-row: span 11;
+}
+
+.row-span-12 {
+  grid-row: span 12;
+}
+
+.flex-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 #schedule-flight-hotel,
 #schedule-flight-vehicle,
 #schedule-hotel,
@@ -156,24 +377,6 @@
   row-gap: 24px;
   max-width: 944px;
 }
-.schedule-grid#flight-grid-row1 {
-  grid-template-columns: repeat(6, 1fr);
-}
-.schedule-grid#flight-grid-row1 #flight-grid-row1-span5 {
-  grid-template-columns: repeat(2, 1fr);
-  grid-column: span 5;
-}
-.schedule-grid#flight-grid-row2 {
-  grid-template-columns: repeat(4, 1fr);
-  -column: span 5;
-}
-.schedule-grid#flight-grid-row3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-.schedule-grid#flight-grid-row3 #flight-grid-row3-span2 {
-  grid-template-columns: repeat(2, 1fr);
-  grid-column: span 2;
-}
 .schedule-grid .schedule-select {
   padding: 20px 20px 8px 0px;
   display: block;
@@ -182,11 +385,23 @@
   background-repeat: no-repeat;
   background-position: top 26px right 0;
 }
+.schedule-grid .small-gap {
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  align-items: center;
+}
 
 .option-container {
   box-sizing: border-box;
-  height: 59px;
   position: relative;
+}
+.option-container p {
+  font-family: Open Sans, helvetica, arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 1.67;
+  letter-spacing: 0.004em;
+  max-width: 75ch;
 }
 .option-container select, .option-container input:not(.checkbox), .option-container button {
   width: 100%;
@@ -296,7 +511,9 @@
   opacity: 0;
 }
 .option-container button.option-submit {
-  background-color: #2671d3;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #2e5c99;
   color: #ffffff;
   width: auto;
   font-family: "Open sans", helvetica, arial, sans-serif;
@@ -307,7 +524,6 @@
   cursor: pointer;
   border: none;
   border-radius: 2px;
-  width: 100%;
   text-wrap: balance;
   padding: 16px 24px;
   transition: background-color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -477,4 +693,56 @@
 
 .option-container:focus-within .option-label-inside span {
   display: none;
+}
+
+.option-link {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  color: #2671d3;
+  transition: color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 4px;
+  box-shadow: currentcolor 0px -1px inset;
+}
+.option-link span {
+  color: currentColor;
+  font-family: Open Sans, helvetica, arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.004em;
+}
+.option-link svg {
+  color: currentColor;
+  fill: currentColor;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+}
+.option-link svg path {
+  color: currentColor;
+  fill: currentColor;
+  width: 16px;
+  height: 16px;
+}
+.option-link:hover {
+  color: #021b41;
+}
+
+#option-partnership .option-logos {
+  height: 24px;
+  display: flex;
+}
+#option-partnership .option-logos img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#option-partnership .option-partners {
+  color: red;
+  text-align: right;
 }/*# sourceMappingURL=banner.css.map */
