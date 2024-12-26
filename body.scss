@@ -140,11 +140,6 @@ $main-fontsize: 16px;
 
     .topic-content-block {
         margin-top: 12px;
-
-        .topic-content-paragraph {
-            font-size: 1rem;
-            box-sizing: border-box;
-        }
     }
 
     .topic-content-title {
@@ -155,25 +150,9 @@ $main-fontsize: 16px;
         font-size: 0.75rem;
     }
     
-
-
-    .topic-content-link {
-        text-decoration: none;
-    
-        display: flex;
-        width: fit-content;
-        padding-bottom: 4px;
-        box-shadow: currentColor 0px -1px inset;
-        color: $secondary-color;
-        font-weight: 400;
-        line-height: 1.5;
-        letter-spacing: 0.004em;
-    
-        &:hover {
-            transition-duration: 0.25s;
-            color: black;
-            cursor: pointer;
-        }
+    .topic-content-paragraph {
+        font-size: 1rem;
+        box-sizing: border-box;
     }
 }
 
@@ -186,4 +165,21 @@ $main-fontsize: 16px;
     padding: 0px 24px 24px;
 }
 
+.topic-content-link {
+    text-decoration: none;
 
+    display: flex;
+    width: fit-content;
+    padding-bottom: 4px;
+    box-shadow: currentColor 0px -1px inset;
+    color: $secondary-color;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.004em;
+
+    &:hover {
+        transition-duration: 0.25s;
+        color: black;
+        cursor: pointer;
+    }
+}

@@ -106,17 +106,23 @@
 .topic-content .topic-content-block {
   margin-top: 12px;
 }
-.topic-content .topic-content-block .topic-content-paragraph {
-  font-size: 1rem;
-  box-sizing: border-box;
-}
 .topic-content .topic-content-title {
   font-size: 1.25rem;
 }
 .topic-content .topic-content-fine {
   font-size: 0.75rem;
 }
-.topic-content .topic-content-link {
+.topic-content .topic-content-paragraph {
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.topic-action {
+  margin-top: auto;
+  padding: 0px 24px 24px;
+}
+
+.topic-content-link {
   text-decoration: none;
   display: flex;
   width: -moz-fit-content;
@@ -128,13 +134,8 @@
   line-height: 1.5;
   letter-spacing: 0.004em;
 }
-.topic-content .topic-content-link:hover {
+.topic-content-link:hover {
   transition-duration: 0.25s;
   color: black;
   cursor: pointer;
-}
-
-.topic-action {
-  margin-top: auto;
-  padding: 0px 24px 24px;
 }/*# sourceMappingURL=body.css.map */
