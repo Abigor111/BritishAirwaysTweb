@@ -40,7 +40,6 @@
 .toolbar-grid {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   place-self: center;
   align-content: center;
   gap: 10px;
@@ -52,7 +51,6 @@
   padding: 24px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .toolbar-item a {
   display: flex;
   width: -moz-fit-content;
@@ -64,17 +62,12 @@
   line-height: 1.5;
   letter-spacing: 0.004em;
 }
-
 .toolbar-item a span {
   font-size: 1.25rem;
-}
-
-.toolbar_item_link span {
   color: #2671d3;
   text-decoration-thickness: 0.001px;
 }
-
-.toolbar_item_link span:hover {
+.toolbar-item a span:hover {
   transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   color: #021b41;
 }
@@ -87,9 +80,6 @@
   margin: 0 auto;
   margin-bottom: 60px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: auto;
-  place-self: center;
   align-content: center;
   -moz-column-gap: 48px;
        column-gap: 48px;
@@ -104,7 +94,6 @@
   min-height: 300px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 .topic-item img {
   width: 100%;
   -o-object-fit: cover;
@@ -114,30 +103,20 @@
 .topic-content {
   padding: 24px;
 }
-
-.topic-content-block {
+.topic-content .topic-content-block {
   margin-top: 12px;
 }
-
-.topic-content-title {
-  font-size: 1.25rem;
-}
-
-.topic-content-fine {
-  font-size: 0.75rem;
-}
-
-.topic-content-paragraph {
+.topic-content .topic-content-block .topic-content-paragraph {
   font-size: 1rem;
   box-sizing: border-box;
 }
-
-.topic-action {
-  margin-top: auto;
-  padding: 0px 24px 24px;
+.topic-content .topic-content-title {
+  font-size: 1.25rem;
 }
-
-.topic-content-link {
+.topic-content .topic-content-fine {
+  font-size: 0.75rem;
+}
+.topic-content .topic-content-link {
   text-decoration: none;
   display: flex;
   width: -moz-fit-content;
@@ -149,9 +128,13 @@
   line-height: 1.5;
   letter-spacing: 0.004em;
 }
-
-.topic-content-link:hover {
+.topic-content .topic-content-link:hover {
   transition-duration: 0.25s;
   color: black;
   cursor: pointer;
+}
+
+.topic-action {
+  margin-top: auto;
+  padding: 0px 24px 24px;
 }/*# sourceMappingURL=body.css.map */
