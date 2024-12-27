@@ -85,18 +85,26 @@ $gap: 1rem; // Default gap
 @mixin centralize {
     margin: 0 auto;
 }
-
+.flight-status-container {
+    background-image: url('./img/111.jpg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding: 64px 0px;
+}
+.flight-status {
+    background-color: $terciary-color;
+    box-sizing: border-box;
+    max-width: 992px;
+    padding: 24px;
+    margin: auto;
+}
 .flex-row-reverse {
     display: flex;
     flex-direction: row-reverse;
 }
 
-#schedule-flight-hotel,
-#schedule-flight-vehicle,
-#schedule-hotel,
-#schedule-vehicle {
-    visibility: hidden;
-}
+
 
 .banner {
     background-color: $terciary-color;
@@ -129,7 +137,7 @@ $gap: 1rem; // Default gap
 
 #banner-radio-group {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;

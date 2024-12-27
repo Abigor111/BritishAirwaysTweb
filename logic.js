@@ -32,6 +32,8 @@ function criarQuarto(numero) {
                 </div>
                 <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
                 <p class="warning-3" hidden>0 é o número minimo.</p>
+                <div class="container-crianca">
+                </div>
 
             </div>
             <div class="div_bebe">
@@ -46,8 +48,7 @@ function criarQuarto(numero) {
                 <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
                 <p class="warning-2" hidden>Não podem haver mais bebes do que adultos.</p>
                 <p class="warning-3" hidden>0 é o número minimo.</p>
-                <div class="container-crianca">
-                </div>
+
             </div>
         </div>
     </div>
@@ -201,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const iconTemplate = document.getElementById('arrow-icon-template');
     if (iconTemplate) {
-        document.querySelectorAll('.header_nav_button').forEach(button => {
+        document.querySelectorAll('.nav_button').forEach(button => {
             const iconInstance = document.importNode(iconTemplate.content, true);
             button.appendChild(iconInstance);
         });
@@ -234,7 +235,9 @@ function appear_option_dropdown_container(event) {
 document.addEventListener('click', function (event) {
     let dropdownContainers = document.querySelectorAll('.option_dropdown_container');
     dropdownContainers.forEach(container => {
-        if (!container.contains(event.target) && !event.target.closest('.option-container').contains(event.target)) {
+        // Verifica se `event.target.closest` não retorna null
+        const optionContainer = event.target.closest('.option-container');
+        if (!container.contains(event.target) && (!optionContainer || !optionContainer.contains(event.target))) {
             container.style.display = 'none';
             container.style.opacity = '0';
             container.style.filter = 'blur(0.1rem)';
@@ -243,11 +246,15 @@ document.addEventListener('click', function (event) {
 });
 
 // Dynamic Form
+// Radio Buttons 
 let inputFly = document.getElementById('schedule_fly');
 let inputFlyHotel = document.getElementById('schedule_flyhotel');
 let inputFlyVehicle = document.getElementById('schedule_flyvehicle');
 let inputHotel = document.getElementById('schedule_hotel');
 let inputVehicle = document.getElementById('schedule_vehicle');
+let flightStatus = document.getElementById('flight_status');
+// Rows
+let return_vehicleRow = document.getElementById('return_vehicle_row');
 let firstRow = document.getElementById('first_row');
 let secondRow = document.getElementById('second_row');
 let thirdRow1 = document.getElementById('third_row_1');
@@ -255,77 +262,215 @@ let thirdRow2 = document.getElementById('third_row_2');
 let fourthRow1 = document.getElementById('fourth_row_1');
 let fourthRow2 = document.getElementById('fourth_row_2');
 let fourthRow3 = document.getElementById('fourth_row_3');
+// Form Inputs
 let tariff_div = document.getElementById('tariff');
+let To = document.getElementById('to');
+let fromTo = document.getElementById('from-to');
+let destiny = document.getElementById('destiny');
+let carRetrieval = document.getElementById('car-retrieval');
+let return_div = document.querySelector('.return');
+let goLabel = document.getElementById('go_label');
+let returnLabel = document.getElementById('return_label');
+let cabin_div = document.getElementById('cabin');
 let passengers_div = document.getElementById('passengers');
 let rooms_div = document.getElementById('rooms');
-inputFly.addEventListener('click', function () {
-    tariff_div.style.display = 'block';
-    firstRow.className = 'grid-cols-6 schedule-grid';
-    passengers_div.style.display = 'block';
-    rooms_div.style.display = 'none';
-    thirdRow1.style.display = 'none';
-    thirdRow2.style.display = 'none';
-    fourthRow1.style.display = 'grid';
-    fourthRow2.style.display = 'none';
-    fourthRow3.style.display = 'none';
-
-});
-inputFlyHotel.addEventListener('click', function () {
-    tariff_div.style.display = 'none';
-    firstRow.className = 'grid-cols-2 schedule-grid';
-    passengers_div.style.display = 'none';
-    rooms_div.style.display = 'block';
-    thirdRow1.style.display = 'grid';
-    thirdRow2.style.display = 'none';
-    fourthRow1.style.display = 'none';
-    fourthRow2.style.display = 'grid';
-    fourthRow3.style.display = 'none';
-});
-inputFlyVehicle.addEventListener('click', function () {
-    tariff_div.style.display = 'none';
-    firstRow.className = 'grid-cols-2 schedule-grid';
-    passengers_div.style.display = 'block';
-    rooms_div.style.display = 'none';
-    thirdRow1.style.display = 'none';
-    thirdRow2.style.display = 'grid';
-    fourthRow1.style.display = 'none';
-    fourthRow2.style.display = 'none';
-    fourthRow3.style.display = 'grid';
-
-});
-/*
-let schedule_flight_hotel = document.getElementById("schedule-flight-hotel");
-let schedule_flight_vehicle = document.getElementById("schedule-flight-vehicle");
-let schedule_hotel = document.getElementById("schedule-hotel");
-let schedule_vehicle = document.getElementById("schedule-vehicle");
-let schedule_flight = document.getElementById("schedule-flight");
-
-
-
-scheduleInputFlyVehicle.addEventListener('click', function () {
-    schedule_flight.style.visibility = 'hidden';
-    schedule_flight_hotel.style.visibility = 'hidden';
-    schedule_hotel.style.visibility = 'hidden';
-    schedule_vehicle.style.visibility = 'hidden';
-    schedule_flight_vehicle.style.visibility = 'visible';
+let buttonHotel = document.getElementById('button-hotel');
+let buttonVehicle = document.getElementById('button-vehicle');
+let buttonFlight = document.getElementById('button-flight');
+inputFly.addEventListener('change', function () {
+    if (inputFly.checked) {
+        // Inputs
+        tariff_div.style.display = 'block';
+        passengers_div.style.display = 'block';
+        cabin_div.style.display = 'block';
+        rooms_div.style.display = 'none';
+        return_div.style.display = 'block';
+        fromTo.style.display = 'grid';
+        destiny.style.display = 'none';
+        carRetrieval.style.display = 'none';
+        To.style.display = 'grid';
+        fromTo.className = 'grid-cols-2 col-span-5 schedule-grid';
+        goLabel.textContent = 'Partida';
+        returnLabel.textContent = 'Regresso';
+        buttonFlight.textContent = 'Procurar Voos';
+        // Rows
+        return_vehicleRow.style.display = 'none';
+        firstRow.className = 'grid-cols-6 schedule-grid';
+        secondRow.className = 'grid-cols-4 schedule-grid';
+        thirdRow1.style.display = 'none';
+        thirdRow2.style.display = 'none';
+        fourthRow1.style.display = 'grid';
+        fourthRow2.style.display = 'none';
+        fourthRow3.style.display = 'none';
+    }
 });
 
-scheduleInputHotel.addEventListener('click', function () {
-    schedule_flight.style.visibility = 'hidden';
-    schedule_flight_hotel.style.visibility = 'hidden';
-    schedule_flight_vehicle.style.visibility = 'hidden';
-    schedule_vehicle.style.visibility = 'hidden';
-    schedule_hotel.style.visibility = 'visible';
+inputFlyHotel.addEventListener('change', function () {
+    if (inputFlyHotel.checked) {
+        // Inputs
+        tariff_div.style.display = 'none';
+        passengers_div.style.display = 'none';
+        rooms_div.style.display = 'block';
+        cabin_div.style.display = 'block';
+        return_div.style.display = 'block';
+        fromTo.style.display = 'grid';
+        destiny.style.display = 'none';
+        carRetrieval.style.display = 'none';
+        To.style.display = 'grid';
+        fromTo.className = 'grid-cols-2 col-span-5 schedule-grid';
+        goLabel.textContent = 'Partida';
+        returnLabel.textContent = 'Regresso';
+        // Rows
+        return_vehicleRow.style.display = 'none';
+        firstRow.className = 'grid-cols-2 schedule-grid';
+        secondRow.className = 'grid-cols-4 schedule-grid';
+        thirdRow1.style.display = 'grid';
+        thirdRow2.style.display = 'none';
+        fourthRow1.style.display = 'none';
+        fourthRow2.style.display = 'grid';
+        fourthRow3.style.display = 'none';
+        buttonHotel.textContent = 'Procurar voo + hotel';
+    }
 });
 
-scheduleInputVehicle.addEventListener('change', function () {
-    schedule_flight.style.visibility = 'hidden';
-    schedule_flight_vehicle.style.visibility = 'hidden';
-    schedule_hotel.style.visibility = 'hidden';
-    schedule_flight_hotel.style.visibility = 'hidden';
-    schedule_vehicle.style.visibility = 'visible';
+inputFlyVehicle.addEventListener('change', function () {
+    if (inputFlyVehicle.checked) {
+        // Inputs
+        tariff_div.style.display = 'none';
+        passengers_div.style.display = 'block';
+        rooms_div.style.display = 'none';
+        cabin_div.style.display = 'block';
+        return_div.style.display = 'block';
+        fromTo.style.display = 'grid';
+        destiny.style.display = 'none';
+        To.style.display = 'grid';
+        fromTo.className = 'grid-cols-2 col-span-5 schedule-grid';
+        carRetrieval.style.display = 'none';
+        goLabel.textContent = 'Partida';
+        returnLabel.textContent = 'Regresso';
+        // Rows
+        return_vehicleRow.style.display = 'none';
+        firstRow.className = 'grid-cols-2 schedule-grid';
+        secondRow.className = 'grid-cols-4 schedule-grid';
+        thirdRow1.style.display = 'none';
+        thirdRow2.style.display = 'grid';
+        fourthRow1.style.display = 'none';
+        fourthRow2.style.display = 'none';
+        fourthRow3.style.display = 'grid';
+        buttonVehicle.textContent = 'Procurar voo + carro';
+    }
 });
-*/
+
+inputHotel.addEventListener('change', function () {
+    if (inputHotel.checked) {
+        // Inputs
+        tariff_div.style.display = 'none';
+        passengers_div.style.display = 'none';
+        rooms_div.style.display = 'block';
+        cabin_div.style.display = 'none';
+        return_div.style.display = 'block';
+        fromTo.style.display = 'none';
+        destiny.style.display = 'grid';
+        carRetrieval.style.display = 'none';
+        goLabel.textContent = 'Check-in';
+        returnLabel.textContent = 'Check-out';
+        // Rows
+        return_vehicleRow.style.display = 'none';
+        firstRow.className = 'grid-cols-2 schedule-grid';
+        secondRow.className = 'grid-cols-3 schedule-grid';
+        thirdRow1.style.display = 'grid';
+        thirdRow2.style.display = 'none';
+        fourthRow1.style.display = 'none';
+        fourthRow2.style.display = 'grid';
+        fourthRow3.style.display = 'none';
+        buttonHotel.textContent = 'Procurar hotéis';
+    }
+});
+
+inputVehicle.addEventListener('change', function () {
+    if (inputVehicle.checked) {
+        // Inputs
+        tariff_div.style.display = 'none';
+        passengers_div.style.display = 'none';
+        rooms_div.style.display = 'none';
+        cabin_div.style.display = 'none';
+        return_div.style.display = 'block';
+        fromTo.style.display = 'none';
+        destiny.style.display = 'none';
+
+        carRetrieval.style.display = 'grid';
+        goLabel.textContent = 'Data de Recolha';
+        returnLabel.textContent = 'Data de Entrega';
+        // Rows
+        return_vehicleRow.style.display = 'grid';
+        firstRow.className = 'grid-cols-2 schedule-grid';
+        secondRow.className = 'grid-cols-4 schedule-grid';
+        thirdRow1.style.display = 'none';
+        thirdRow2.style.display = 'grid';
+        fourthRow1.style.display = 'none';
+        fourthRow2.style.display = 'none';
+        fourthRow3.style.display = 'grid';
+        buttonVehicle.textContent = 'Procurar automóveis';
+    }
+});
+
+flightStatus.addEventListener('change', function () {
+    if (flightStatus.checked) {
+        // Inputs
+        tariff_div.style.display = 'block';
+        passengers_div.style.display = 'none';
+        cabin_div.style.display = 'none';
+        rooms_div.style.display = 'none';
+        return_div.style.display = 'none';
+        fromTo.style.display = 'grid';
+        destiny.style.display = 'none';
+        carRetrieval.style.display = 'none';
+        To.style.display = 'none';
+        fromTo.className = 'grid-cols-1 col-span-5 schedule-grid';
+        goLabel.textContent = 'Data do Voo';
+        buttonFlight.textContent = 'Prosseguir';
+        // Rows
+        return_vehicleRow.style.display = 'none';
+        firstRow.className = 'grid-cols-6 schedule-grid';
+        secondRow.className = 'grid-cols-2 schedule-grid';
+        thirdRow1.style.display = 'none';
+        thirdRow2.style.display = 'none';
+        fourthRow1.style.display = 'grid';
+        fourthRow2.style.display = 'none';
+        fourthRow3.style.display = 'none';
+    }
+});
+function flightStatusDiv(flightNumber, day, hour, type, airport, date, status) {
+    const flightStatus = document.createElement('div');
+    flightStatus.classList.add('flight-status');
+    flightStatus.innerHTML = `
+    <p>Número do Voo: <span>TP${flightNumber}</span></p>
+    <p>Dia do Voo: <span>${day}</span></p>
+    <p>Hora do Voo: <span>${hour}</span></p>
+    <div class="status">
+        <p>Tipo de Voo: <span>${type}</span></p>
+        <p>Aeroporto: <span>${airport}</span></p>
+        <p>Data: <span>${date}</span></p>
+        <p>Estado: <span>${status}</span></p>
+    </div>`;
+    return flightStatus;
+}
+// Estado do Voo
+document.getElementById('schedule-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from actually submitting
+    const flightType = document.getElementById('option-tariff').value;
+    const city = document.getElementById('option-from').value;
+    const date = document.getElementById('departure-date').value;
+    const container = document.querySelector('.flight-status-container');
+    console.log('Flight Type:', flightType);
+    console.log('City:', city);
+    console.log('Date:', date);
+    for (let y = 0; y <= 1; y++) {
+        container.appendChild(flightStatusDiv(y+1, 1, 1,1,1, 1, 1));
+    }
+});
+
+
 // Passageiros contador
 function alterarValor(botao, incremento, event) {
     if (event) event.preventDefault();
@@ -401,13 +546,13 @@ function alterarValor(botao, incremento, event) {
     }
 }
 // Tarifa Ida e Volta
-const tariff = document.getElementById('option-tariff');
+let tariff = document.getElementById('option-tariff');
 tariff.addEventListener('change', function () {
     if (tariff.value == 'oneway') {
-        document.querySelector('.return').style.display = 'none';
+        return_div.style.display = 'none';
     }
     else {
-        document.querySelector('.return').style.display = 'block';
+        return_div.style.display = 'block';
     }
 });
 // Alterar o value do option-span-fill da cabine

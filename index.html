@@ -381,35 +381,44 @@
                             <input type="radio" id="schedule_fly" name="schedule_input" class="radio" checked>
                             <label for="schedule_fly">Voo</label>
                         </div>
-
                         <div class="banner-radio-wrapper">
                             <input type="radio" id="schedule_flyhotel" name="schedule_input" class="radio">
                             <label for="schedule_flyhotel">Voo + hotel</label>
                         </div>
-
-
+                        
+                        
                         <div class="banner-radio-wrapper">
                             <input type="radio" id="schedule_flyvehicle" name="schedule_input" class="radio">
                             <label for="schedule_flyvehicle">Voo + Veículo</label>
                         </div>
-
+                        
                         <div class="banner-radio-wrapper">
                             <input type="radio" id="schedule_hotel" name="schedule_input" class="radio">
                             <label for="schedule_hotel">Hotel</label>
                         </div>
-
+                        
                         <div class="banner-radio-wrapper">
                             <input type="radio" id="schedule_vehicle" name="schedule_input" class="radio">
                             <label for="schedule_vehicle">Veículo</label>
+                        </div>
+                        <div class="banner-radio-wrapper">
+                            <input type="radio" id="flight_status" name="schedule_input" class="radio">
+                            <label for="flight_status">Estado do Voo</label>
                         </div>
                     </div>
                     <!-- Form Options End  Teleport-->
 
                     <form id="schedule-form">
                         <div class="schedule-grid">
+                            <div class="schedule-grid" id="return_vehicle_row" style="display: none;">
+                                <div class="option-container"> <!-- This is for checking age -->
+                                        <input type="checkbox" class="checkbox" name="return_vehicle" id="return_vehicle">
+                                        <span for="return_vehicle">Devolver o veículo numa outra localização</span>
+                                </div>
+                            </div>
                             <!-- First Row -->
                             <div class="grid-cols-6 schedule-grid" id="first_row">
-                                <!-- Span 1 -->
+                                <!-- Tariff -->
                                 <div class="option-container option-container-dropdown" id="tariff">
                                     <label for="option-tariff" class="option-label-top">Tarifa</label>
                                     <select class="schedule-select" id="option-tariff" name="option-tariff">
@@ -417,15 +426,30 @@
                                         <option value="oneway">Só ida</option>
                                     </select>
                                 </div>
-                                <!-- Span 5 -->
-                                <div class="grid-cols-2 col-span-5 schedule-grid">
+                                <!-- Locations -->
+                                <div class="grid-cols-2 col-span-5 schedule-grid" id="from-to">
                                     <div class="option-container">
                                         <label for="option-from" class="option-label-inside">De<span>Digite 3 letras</span></label>
                                         <input type="text" class="schedule-input" id="option-from" name="option-from">
                                     </div>
 
-                                    <div class="option-container">
+                                    <div class="option-container" id="to">
                                         <label for="option-to" class="option-label-inside">Para<span>Digite 3 letras</span></label>
+                                        <input type="text" class="schedule-input" id="option-to" name="option-to">
+                                    </div>
+                                </div>
+                            <!-- Hidden at page Load -->
+
+                                <div class="grid-cols-1 col-span-5 schedule-grid" id="destiny" style="display: none;">
+                                    <div class="option-container">
+                                        <label for="option-to" class="option-label-inside">Destino<span>Digite 3 letras</span></label>
+                                        <input type="text" class="schedule-input" id="option-to" name="option-to">
+                                    </div>
+                                </div>
+                            <!-- Hidden at page Load -->
+                                <div class="grid-cols-1 col-span-5 schedule-grid" id="car-retrieval" style="display: none;">
+                                    <div class="option-container">
+                                        <label for="option-to" class="option-label-inside">Levantamento a partir das<span>Digite 3 letras</span></label>
                                         <input type="text" class="schedule-input" id="option-to" name="option-to">
                                     </div>
                                 </div>
@@ -434,14 +458,14 @@
                             <div class="grid-cols-4 schedule-grid" id="second_row">
                                 <!-- Span 1 -->
                                 <div class="option-container">
-                                    <label for="date-from" class="option-label-top">Partida</label>
-                                    <input type="date" pattern="\d{2}\/\d{2}\/\d{4}" placeholder="DD/MM/YYYY" id="date-from" name="date-from">
+                                    <label for="departure-date" class="option-label-top" id="go_label">Partida</label>
+                                    <input type="date" pattern="\d{2}\/\d{2}\/\d{4}" placeholder="DD/MM/YYYY" id="departure-date" name="departure-date">
                                 </div>
                                 <div class="option-container return">
-                                    <label for="date-from" class="option-label-top">Regresso</label>
-                                    <input type="date" id="date-from" name="date-from">
+                                    <label for="return-date" class="option-label-top" id="return_label">Regresso</label>
+                                    <input type="date" id="return-date" name="return-date">
                                 </div>
-                                <div class="option-container"> <!-- This element creates a dropdown div with two radio buttons and a checkbox-->
+                                <div class="option-container" id="cabin"> <!-- This element creates a dropdown div with two radio buttons and a checkbox-->
                                     <label for="option-cabin" class="option-label-top">Cabine</label>
                                     <button id="cabin-button" name="option-cabin" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">Económica</span></button>
                                     <div class="option_dropdown_container" >
@@ -520,6 +544,7 @@
                                         </div>
                                     </div>
                                 </div>
+                            <!-- Hidden at page Load -->
                                 <div class="option-container" id="rooms" style="display: none;">
                                     <label for="option-tariff" class="option-label-top">Quartos</label>
                                     <select class="nrooms-select" id="option-nrooms" name="option-nrooms">
@@ -531,13 +556,9 @@
                                 </div>
                             </div>
                             <!-- Third Row -->
+                            <!-- Hidden at page Load -->
                             <div class="grid-cols-4 schedule-grid room-container" id="third_row_1" style="display: none;">
-                            <div class="schedule-grid" id="third_row_2" style="display: none;">
-                                <div class="option-container"> <!-- This is for checking age -->
-                                        <input type="checkbox" class="checkbox" name="agecheck-30to70" id="agecheck-30to70" checked>
-                                        <span for="agecheck-30to70">Condutor entre 30 e 70 anos </span>
-                                </div>
-                            </div>
+
                             <div class="option-container">
                                 <label for="flighthotel-option-roomoccupants-1" class="option-label-top">Quarto 1</label>
                                 <button id="flighthotel-roomoccupants-button-1" name="flighthotel-option-roomoccupants-1" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">1 Adulto</span></button>
@@ -587,6 +608,13 @@
                             </div>
 
                             </div>
+                            <!-- Hidden at page Load -->
+                            <div class="schedule-grid" id="third_row_2" style="display: none;">
+                                <div class="option-container"> <!-- This is for checking age -->
+                                        <input type="checkbox" class="checkbox" name="agecheck-30to70" id="agecheck-30to70" checked>
+                                        <span for="agecheck-30to70">Condutor entre 30 e 70 anos </span>
+                                </div>
+                            </div>
                             <div class="grid-cols-3 schedule-grid" id="fourth_row_1">
                                 <div class="option-container">
                                     <p>Quer fazer mais escalas?</p>
@@ -607,7 +635,7 @@
                                     </a>
                                 </div>
                                 <div class="option-container flex-row-reverse">
-                                    <button class="option-submit">Procurar Voos</button>
+                                    <button class="option-submit" id="button-flight">Procurar Voos</button>
                                 </div>
                             </div>
                             <div class="grid-cols-3 schedule-grid" id="fourth_row_2" style="display: none;">
@@ -623,7 +651,7 @@
                                     </div>
                                 </div>
                                 <div class="option-container flex-row-reverse">
-                                    <button class="option-submit">Procurar Voo + hotel</button>
+                                    <button class="option-submit" id="button-hotel">Procurar Voo + hotel</button>
                                 </div>
                             </div>
                             <div class="grid-cols-3 schedule-grid" id="fourth_row_3" style="display: none;">
@@ -650,7 +678,7 @@
                                     </div>
                                 </div>
                                 <div class="option-container flex-row-reverse">
-                                    <button class="option-submit">Procurar voo + carro</button>
+                                    <button class="option-submit" id="button-vehicle">Procurar voo + carro</button>
                                 </div>
                             </div>
                         </div> 
@@ -659,6 +687,11 @@
             </div>
         </section>
         <!-- Scheduling Travels Menu End -->
+         <section>
+         <div class="flight-status-container">
+
+         </div>
+        </section>
         <!-- London Calling -->
         <section>
             <div class="block-wrapper" id="london-wrapper">
@@ -726,17 +759,15 @@
 
                                 <a class="topic-content-link"
                                     href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos
-                                    a partir de €83 só ida</a>
+                                    para Londres a partir de €100 ambos os sentidos</a>
                                 <span class="topic-content-fine">a partir de Funchal, January 2025</span>
                             </div>
                             <div class="topic-content-block">
-                                <span class="topic-content-fine">O preço das férias inclui voos de retorno e um generoso
-                                    limite de bagagem.</span>
+                                <span class="topic-content-fine">O preço das férias inclui voos de ida e volta e um generoso limite de bagagem.</span>
                             </div>
-                            <div class="topic-action">
+                            <div class="topic-content-block">
                                 <a class="topic-content-link"
-                                    href="https://www.britishairways.com/content/pt/pt/flights/england/london?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||cam|3|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-3-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Explore
-                                    Londres </a>
+                                    href="https://www.britishairways.com/content/pt/pt/flights/england/london?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||cam|3|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-3-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Pesquise mais ofertas </a>
                             </div>
                         </div>
                     </div>

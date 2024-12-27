@@ -117,7 +117,7 @@ $main-fontsize: 16px;
     margin-bottom: 60px;
     display: grid;
     align-content: center;
-    column-gap: 48px;
+    column-gap: 40px;
     row-gap: 40px;
     width: 992px;
 }
@@ -125,7 +125,7 @@ $main-fontsize: 16px;
 .topic-item {
     display: flex;
     flex-direction: column;
-    height: 550px;
+    height: 620px;
     min-height: 300px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
