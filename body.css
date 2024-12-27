@@ -112,44 +112,6 @@
   background-color: white;
 }
 
-.topic-grid {
-  margin: 0 auto;
-  margin-bottom: 60px;
-  display: grid;
-  align-content: center;
-  -moz-column-gap: 40px;
-       column-gap: 40px;
-  row-gap: 40px;
-  width: 992px;
-}
-
-.topic-item {
-  display: flex;
-  flex-direction: column;
-  height: 620px;
-  min-height: 300px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-.topic-item img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.topic-content {
-  padding: 24px;
-}
-.topic-content .topic-content-block {
-  margin-top: 12px;
-}
-.topic-content .topic-content-fine {
-  font-size: 0.75rem;
-}
-.topic-content .topic-content-paragraph {
-  font-size: 1rem;
-  box-sizing: border-box;
-}
-
 .topic-action {
   margin-top: auto;
   padding: 0px 24px 24px;

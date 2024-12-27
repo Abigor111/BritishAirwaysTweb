@@ -289,6 +289,16 @@ button.button-secondary {
   height: 100%;
   min-height: 300px;
   max-height: 487.75px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.body {
+  padding: 24px;
+}
+
+.action {
+  padding: 0px 24px 24px;
+  margin-top: auto;
 }
 
 img {
@@ -312,4 +322,13 @@ img {
   overflow: hidden;
   height: -moz-fit-content;
   height: fit-content;
+}
+
+.topic-grid {
+  margin: 0 auto;
+  margin-bottom: 60px;
+  display: grid;
+  align-content: center;
+  width: 992px;
+  gap: 40px;
 }/*# sourceMappingURL=styles.css.map */
