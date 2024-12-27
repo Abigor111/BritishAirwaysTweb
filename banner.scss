@@ -21,45 +21,8 @@ $main-fontsize: 16px;
 
 
 
-// Configurable variables
-$max-columns: 12; // Maximum number of columns
-$row-height: auto; // Default row height
-$gap: 1rem; // Default gap
 
-// Mixin for grid container
-@mixin grid-container($gap: 1rem) {
-  display: grid;
-  gap: $gap;
-}
 
-// Generate column classes
-@for $i from 1 through $max-columns {
-  .grid-cols-#{$i} {
-    @include grid-container($gap);
-    grid-template-columns: repeat($i, 1fr);
-  }
-}
-
-// Generate row classes
-@for $j from 1 through 12 {
-  .grid-rows-#{$j} {
-    grid-template-rows: repeat($j, $row-height);
-  }
-}
-
-// Generate column span classes
-@for $k from 1 through $max-columns {
-  .col-span-#{$k} {
-    grid-column: span #{$k};
-  }
-}
-
-// Generate row span classes
-@for $l from 1 through 12 {
-  .row-span-#{$l} {
-    grid-row: span #{$l};
-  }
-}
 
 
 // Mix-ins
@@ -90,7 +53,6 @@ $gap: 1rem; // Default gap
     background-size: auto;
     background-repeat: no-repeat;
     background-position: top center;
-    padding: 64px 0px;
 }
 .flight-status {
     background-color: $terciary-color;
@@ -593,6 +555,16 @@ $gap: 1rem; // Default gap
         line-height: 28px;
         pointer-events: none;
     }
+
+    &.move-label-up {
+        font-size: 14px;
+        line-height: 20px;
+        top: 0px;
+
+        span {
+            display: none;
+        }
+    }
 }
 
 .option-label-top {
@@ -604,15 +576,7 @@ $gap: 1rem; // Default gap
     font-family: $font-open-sans;
 }
 
-.option-container:focus-within .option-label-inside {
-    font-size: 14px;
-    line-height: 20px;
-    top: 0px;
-}
 
-.option-container:focus-within .option-label-inside span {
-    display: none;
-}
 
 .option-link {
     padding-top: 10px;

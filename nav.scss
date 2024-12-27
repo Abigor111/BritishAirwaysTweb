@@ -159,17 +159,9 @@ $main-fontsize: 16px;
     }
         
         .nav_dropdown_grid {
+            gap: 24px;
             margin: 0 auto;
             display: grid;
-            &.cl3{
-                grid-template-columns: repeat(3, 1fr);
-            }
-            &.cl5{
-                grid-template-columns: repeat(5, 1fr);
-            }
-            &.cl6{
-                grid-template-columns: repeat(6, 1fr);
-            }
             background-color: $terciary-color;
             grid-template-rows: 1fr;
             width: 1200px;

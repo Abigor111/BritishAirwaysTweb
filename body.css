@@ -1,3 +1,8 @@
+/* Generic */
+.spacing {
+  margin-top: 1em;
+}
+
 /* London */
 #london-wrapper {
   background-color: #ECECED;
@@ -6,11 +11,10 @@
 }
 
 .london-calling {
-  margin: 30px 0px;
+  padding: 64px 0px;
   width: 992px;
   height: 300px;
 }
-
 .london-calling h2 {
   -ms-margin: 0 0px;
   margin: 0px 0px;
@@ -18,18 +22,50 @@
   font-weight: 300;
   font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
 }
-
-.london-calling-button {
-  width: 250px;
-  height: 50px;
+.london-calling span {
+  font-family: Open Sans, helvetica, arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 1.67;
+  letter-spacing: 0.004em;
+  max-width: 75ch;
+}
+.london-calling p {
+  margin-top: 1em;
+  font-family: Open Sans, helvetica, arial, sans-serif;
+  font-weight: 300;
+  max-width: 75ch;
+  font-family: Open Sans, helvetica, arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 1.67;
+  letter-spacing: 0.004em;
+}
+.london-calling a {
+  margin-top: 1em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.london-calling button {
+  width: auto;
+  font-family: "Open Sans", helvetica, arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.004em;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  text-wrap: balance;
+  padding: 16px 24px;
+  transition: background-color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   color: #2e5c99;
   font-size: 16px;
   border: 1px solid #2e5c99;
   border-radius: 2px;
-  padding: 64px 0px;
 }
-
-.london-calling-button:hover {
+.london-calling button:hover {
+  background-color: red;
   transition-duration: 0.75s;
   background-color: #2e5c99;
   color: white;
@@ -105,9 +141,6 @@
 }
 .topic-content .topic-content-block {
   margin-top: 12px;
-}
-.topic-content .topic-content-title {
-  font-size: 1.25rem;
 }
 .topic-content .topic-content-fine {
   font-size: 0.75rem;

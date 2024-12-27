@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="banner.css">
     <link rel="stylesheet" href="body.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="./img/iconlogo-transformed.png">
 </head>
 
@@ -66,7 +67,7 @@
                         <span class="nav_span">Descubra</span>
 
                         <div class="nav_dropdown_container">
-                            <div class="nav_dropdown_grid cl6">
+                            <div class="grid-cols-6 nav_dropdown_grid">
                                 <div class="nav_dropdown_grid_item">
                                     <h2>BA</h2>
                                     <ul>
@@ -208,7 +209,7 @@
                     <button class="nav_button" id="nav-reservar">
                         <span class="nav_span">Reservar</span>
                         <div class="nav_dropdown_container">
-                            <div class="nav_dropdown_grid cl5">
+                            <div class="grid-cols-5 nav_dropdown_grid">
                                 <div class="nav_dropdown_grid_item">
                                     <h2>Voos</h2>
                                     <ul>
@@ -245,7 +246,7 @@
                     <button class="nav_button" id="nav-gerir">
                         <span class="nav_span">Gerir</span>
                         <div class="nav_dropdown_container">
-                            <div class="nav_dropdown_grid cl3">
+                            <div class="grid-cols-3 nav_dropdown_grid">
                                 <div class="nav_dropdown_grid_item">
                                     <h2>A minha reserva</h2>
                                     <!--
@@ -284,10 +285,9 @@
                     <button class="nav_button" id="nav-checkin">
                         <span class="nav_span">Check-in</span>
                         <div class="nav_dropdown_container">
-                            <div class="nav_dropdown_grid cl3">
+                            <div class="grid-cols-3 nav_dropdown_grid">
                                 <div class="nav_dropdown_grid_item">
                                     <h2>As minha reservas</h2>
-                                    <!--
                                     <ul>
                                         <input type="text" placeholder="Referência de reserva" id="banner_text_input">
                                         <input type="text" placeholder="Sobrenome do passageiro" id="banner_text_input">
@@ -298,7 +298,6 @@
                                                 href="https://www.britishairways.com/content/pt/pt/information/flight-information?source=mnvinf3flight_information">Informações
                                                 de voos</a></li>
                                     </ul>
-                                    -->
                                 </div>
                             </div>
                         </div>
@@ -309,7 +308,7 @@
                     <button class="nav_button" id="nav-ajuda">
                         <span class="nav_span">Ajuda</span>
                         <div class="nav_dropdown_container">
-                            <div class="nav_dropdown_grid cl5">
+                            <div class="grid-cols-5 nav_dropdown_grid">
                                 <div class="nav_dropdown_grid_item">
                                     <h2>Reservas</h2>
                                     <ul>
@@ -325,7 +324,7 @@
                                     </ul>
                                 </div>
                                 <div class="nav_dropdown_grid_item">
-                                    <h2>assistência</h2>
+                                    <h2>Assistência</h2>
                                     <ul>
                                         <li id="nav_text_item"><a
                                                 href="https://www.britishairways.com/content/pt/pt/information/help-and-contacts">Contactos e
@@ -354,7 +353,6 @@
                                         <li id="nav_text_item"><a
                                                 href="https://www.britishairways.com/content/pt/pt/information/travel-news">Últimas novidades de
                                                 viagem</a></li>
-                        
                                     </ul>
                                 </div>
                             </div>
@@ -385,18 +383,14 @@
                             <input type="radio" id="schedule_flyhotel" name="schedule_input" class="radio">
                             <label for="schedule_flyhotel">Voo + hotel</label>
                         </div>
-                        
-                        
                         <div class="banner-radio-wrapper">
                             <input type="radio" id="schedule_flyvehicle" name="schedule_input" class="radio">
                             <label for="schedule_flyvehicle">Voo + Veículo</label>
                         </div>
-                        
                         <div class="banner-radio-wrapper">
                             <input type="radio" id="schedule_hotel" name="schedule_input" class="radio">
                             <label for="schedule_hotel">Hotel</label>
                         </div>
-                        
                         <div class="banner-radio-wrapper">
                             <input type="radio" id="schedule_vehicle" name="schedule_input" class="radio">
                             <label for="schedule_vehicle">Veículo</label>
@@ -422,8 +416,8 @@
                                 <div class="option-container option-container-dropdown" id="tariff">
                                     <label for="option-tariff" class="option-label-top">Tarifa</label>
                                     <select class="schedule-select" id="option-tariff" name="option-tariff">
-                                        <option value="return">Regresso</option>
-                                        <option value="oneway">Só ida</option>
+                                        <option value="return" id="option_return">Regresso</option>
+                                        <option value="oneway" id="option_oneway">Só ida</option>
                                     </select>
                                 </div>
                                 <!-- Locations -->
@@ -499,6 +493,7 @@
                                                     <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
                                                 </div>
                                                 <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+                                                <p class="warning-2" hidden>Não podem haver mais bebes do que adultos.</p>
                                                 <p class="warning-3" hidden>Para fazer a sua reserva online, deve existir pelo menos um adulto a viajar. Para fazer uma reserva para jovens adultos que viajem sozinhos, contacte-nos.</p>
 
                                             </div>
@@ -569,39 +564,43 @@
                                             <p>18 anos ou mais</p>
                                             <div class="option-counter">
                                                 <div class="option-attention-symbol"></div>
-                                                <input type="text" value="1" class="contador adulto">
-                                                <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
+                                                <input type="text" value="1" class="contador adulto_room">
+                                                <button class="button-icon minus-image" onclick="alterarValorQuartos(this, -1, event)"></button>
+                                                <button class="button-icon plus-image" onclick="alterarValorQuartos(this, 1, event)"></button>
                                             </div>
-                                            <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                            <p class="warning-3" hidden>Para fazer a sua reserva online, deve existir pelo menos um adulto a viajar. Para fazer uma reserva para jovens adultos que viajem sozinhos, contacte-nos.</p>
+                                            <p class="warning-1_room" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+                                            <p class="warning-2_room" hidden>Não podem haver mais bebes do que adultos.</p>
+                                            <p class="warning-3_room" hidden>Para fazer a sua reserva online, deve existir pelo menos um adulto a viajar. Para fazer uma reserva para jovens adultos que viajem sozinhos, contacte-nos.</p>
+                            
                                         </div>
                                         <div class="div_crianca">
                                             <label>Crianças</label>
                                             <p>2-17 anos</p>
                                             <div class="option-counter">
                                                 <div class="option-attention-symbol"></div>
-                                                <input type="text" value="0" class="contador crianca">
-                                                <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
+                                                <input type="text" value="0" class="contador crianca_room">
+                                                <button class="button-icon minus-image" onclick="alterarValorQuartos(this, -1, event)"></button>
+                                                <button class="button-icon plus-image" onclick="alterarValorQuartos(this, 1, event)"></button>
                                             </div>
-                                            <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                            <p class="warning-3" hidden>0 é o número minimo.</p>
+                                            <p class="warning-1_room" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+                                            <p class="warning-3_room" hidden>0 é o número minimo.</p>
+                                            <div class="div_criancaidade erro">
+                                            </div>
+                            
                                         </div>
                                         <div class="div_bebe">
                                             <label>Bebés</label>
                                             <p>Menos de 2 anos</p>
                                             <div class="option-counter">
                                                 <div class="option-attention-symbol"></div>
-                                                <input type="text" value="0" class="contador bebe">
-                                                <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
-                                                <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
+                                                <input type="text" value="0" class="contador bebe_room">
+                                                <button class="button-icon minus-image" onclick="alterarValorQuartos(this, -1, event)"></button>
+                                                <button class="button-icon plus-image" onclick="alterarValorQuartos(this, 1, event)"></button>
                                             </div>
-                                            <p class="warning-1" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
-                                            <p class="warning-2" hidden>Não podem haver mais bebes do que adultos.</p>
-                                            <p class="warning-3" hidden>0 é o número minimo.</p>
-                                            <div class="container-crianca">
-                                            </div>
+                                            <p class="warning-1_room" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+                                            <p class="warning-2_room" hidden>Não podem haver mais bebes do que adultos.</p>
+                                            <p class="warning-3_room" hidden>0 é o número minimo.</p>
+                            
                                         </div>
                                     </div>
                                 </div>
@@ -704,12 +703,13 @@
                         href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=false&cabin=M&destination=LGW&origin=FNC&numNights=7&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=e1a2221fc9e425ad237e44fa7933a6c5||HER|1|PRI1|1|EUR|89||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=HER-POS-1-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos
                         para Londres a partir de €89 ambos os sentidos</a>
                     <span class="topic-content-fine">a partir de Funchal, January 2025</span>
-                    <br>
+                    <div class="spacing"></div>
                     <button class="london-calling-button" id="london-flight-search">Procurar voos para Londres</button>
                     <br>
-                    <p><span class="topic-content-fine">Os passageiros são responsáveis por verificar os requisitos de
+                    <p class="topic-content-fine">Os passageiros são responsáveis por verificar os requisitos de
                             entrada no Reino Unido|
-                            Aplicam-se Termos e Condições</span></p>
+                            Aplicam-se Termos e Condições
+                    </p>
                 </div>
             </div>
         </section>
@@ -720,18 +720,25 @@
             <div class="block-wrapper" id="toolbar-wrapper">
                 <div class="grid-cols-3 toolbar-grid">
                     <div class="toolbar-item">
-                        <a href="https://www.britishairways.com/travel/managebooking/public/pt_pt?dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=||TTB||MMB|1||||HOME||||L4||||anonymous-inspiration|||&source=TTB-MMB&KMtag=c&KMver=1.0&clickpage=HOMEPAGE"
-                            class="toolbar_item_link"><span>Gerir a minha reserva</span></a>
+                        <h3 class="content-summary">
+                            <a href="https://www.britishairways.com/travel/managebooking/public/pt_pt?dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=||TTB||MMB|1||||HOME||||L4||||anonymous-inspiration|||&source=TTB-MMB&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">
+                                Gerir a minha reserva</a>
+                        </h3>
+                        
                         <p>Faça alterações aos seus planos de viagem e veja os seus dados de reserva</p>
                     </div>
                     <div class="toolbar-item">
-                        <a href="https://www.britishairways.com/travel/olcilandingpageauthreq/public/pt_pt?dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=||TTB||OLCI|1||||HOME||||L4||||anonymous-inspiration|||&source=TTB-OLCI&KMtag=c&KMver=1.0&clickpage=HOMEPAGE"
-                            class="toolbar_item_link"><span>Check-in online</span></a>
+                        <h3 class="content-summary">
+                            <a href="https://www.britishairways.com/travel/olcilandingpageauthreq/public/pt_pt?dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=||TTB||OLCI|1||||HOME||||L4||||anonymous-inspiration|||&source=TTB-OLCI&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">
+                                Check-in online</a>
+                        </h3>
                         <p>O check-in online abre 24 horas antes da partida do voo</p>
                     </div>
                     <div class="toolbar-item">
-                        <a href="https://www.britishairways.com/travel/flightstatus/public/pt_pt/search?dt=British%20Airways%20%7C%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=%7C%7CTTB%7C%7CRTAD%7C1%7C%7C%7C%7CHOME%7C%7C%7C%7CL4%7C%7C%7C%7Canonymous-inspiration%7C%7C%7C&source=TTB-RTAD&KMtag=c&KMver=1.0&clickpage=HOMEPAGE"
-                            class="toolbar_item_link"><span>Estado do voo</span></a>
+                        <h3 class="content-summary">
+                            <a href="https://www.britishairways.com/travel/flightstatus/public/pt_pt/search?dt=British%20Airways%20%7C%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=%7C%7CTTB%7C%7CRTAD%7C1%7C%7C%7C%7CHOME%7C%7C%7C%7CL4%7C%7C%7C%7Canonymous-inspiration%7C%7C%7C&source=TTB-RTAD&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">
+                                Estado do voo</a>
+                        </h3>
                         <p>Verifique o estado mais recente dos nossos voos nos próximos 10 dias</p>
                     </div>
                 </div>
@@ -744,11 +751,13 @@
             <div class="block-wrapper" id="topic-wrapper">
                 <div class="grid-cols-2 topic-grid">
                     <!-- Topic 1 (Head off to the UK)-->
-                    <div class="topic-item">
-                        <img src="./img/topic1.jpg" alt="Topic 1">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="./img/topic1.jpg" alt="Topic 1">
+                        </div>
                         <div class="topic-content">
                             <div class="topic-content-block">
-                                <span class="topic-content-title">Parta para o Reino Unido</span>
+                                <h3 class="content-summary">Parta para o Reino Unido</h3>
                             </div>
                             <div class="topic-content-block">
                                 <p class="topic-content-paragraph">Visite as pessoas e os locais que adora no Reino
@@ -774,11 +783,13 @@
                     <!-- Topic 1 (Head off to the UK) End-->
 
                     <!-- Topic 2 (BA Better World)-->
-                    <div class="topic-item">
-                        <img src="./img/topic2.jpg" alt="Topic 2">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="./img/topic2.jpg" alt="Topic 2">
+                        </div>
                         <div class="topic-content">
                             <div class="topic-content-block">
-                                <span class="topic-content-title">A sustentabilidade é o nosso foco</span>
+                                <h3 class="content-summary">A sustentabilidade é o nosso foco</h3>
                             </div>
                             <div class="topic-content-block">
                                 <p class="topic-content-paragraph">Com enfoque nas pessoas, no planeta e numa empresa
@@ -795,11 +806,13 @@
                     <!-- Topic 2 (BA Better World) End-->
 
                     <!-- Topic 3 (Férias)-->
-                    <div class="topic-item">
-                        <img src="./img/topic3.jpg" alt="Topic 3">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="./img/topic3.jpg" alt="Topic 3">
+                        </div>
                         <div class="topic-content">
                             <div class="topic-content-block">
-                                <span class="topic-content-title">Férias nos EUA</span>
+                                <h3 class="content-summary">Férias nos EUA</h3>
                             </div>
                             <div class="topic-content-block">
                                 <p class="topic-content-paragraph">Assegure as suas férias com um depósito reduzido e
@@ -819,11 +832,13 @@
                     <!-- Topic 3 (Férias) End -->
 
                     <!-- Topic 4 (Fly-Drive)-->
-                    <div class="topic-item">
-                        <img src="./img/topic4.jpg" alt="Topic 4">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="./img/topic4.jpg" alt="Topic 4">
+                        </div>
                         <div class="topic-content">
                             <div class="topic-content-block">
-                                <span class="topic-content-title">Aventuras Fly-drive</span>
+                                <h3 class="content-summary">Aventuras Fly-drive</h3>
                             </div>
                             <div class="topic-content-block">
                                 <p class="topic-content-paragraph">Damos-lhe a liberdade de explorar novos lugares com
@@ -845,11 +860,13 @@
                     <!-- Topic 4 (Fly-Drive) End -->
 
                     <!-- Topic 5 (Novos Lugares)-->
-                    <div class="topic-item">
-                        <img src="./img/topic5.jpg" alt="Topic 5">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="./img/topic5.jpg" alt="Topic 5">
+                        </div>
                         <div class="topic-content">
                             <div class="topic-content-block">
-                                <span class="topic-content-title">Descubra novos lugares</span>
+                                <h3 class="content-summary">Descubra novos lugares</h3>
                             </div>
                             <div class="topic-content-block">
                                 <p class="topic-content-paragraph">Está na altura de planear a próxima aventura. Viva
@@ -869,11 +886,13 @@
                     <!-- Topic 5 (Novos Lugares) End -->
 
                     <!-- Topic 6 (Económica Premium)-->
-                    <div class="topic-item">
-                        <img src="./img/topic6.jpg" alt="Topic 6">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="./img/topic6.jpg" alt="Topic 6">
+                        </div>
                         <div class="topic-content">
                             <div class="topic-content-block">
-                                <span class="topic-content-title">Viaje em Económica premium</span>
+                                <h3 class="content-summary">Viaje em Económica premium</h3>
                             </div>
                             <div class="topic-content-block">
                                 <p class="topic-content-paragraph">Desfrute de uma cabina mais silenciosa e espaçosa,
@@ -892,11 +911,13 @@
                     <!-- Topic 6 (Económica Premium) End -->
 
                     <!-- Topic 7 (Contactar)-->
-                    <div class="topic-item">
-                        <img src="./img/topic7.jpg" alt="Topic 7">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="./img/topic7.jpg" alt="Topic 7">
+                        </div>
                         <div class="topic-content">
                             <div class="topic-content-block">
-                                <span class="topic-content-title">Se precisar de nos contactar</span>
+                                <h3 class="content-summary">Se precisar de nos contactar</h3>
                             </div>
                             <div class="topic-content-block">
                                 <p class="topic-content-paragraph">Estamos sempre prontos para ajudar A nossa equipa de
@@ -912,11 +933,13 @@
                     <!-- Topic 7 (Contactar) End -->
 
                     <!-- Topic 8 (Singular)-->
-                    <div class="topic-item">
-                        <img src="./img/topic8.jpg" alt="Topic 8">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="./img/topic8.jpg" alt="Topic 8">
+                        </div>
                         <div class="topic-content">
                             <div class="topic-content-block">
-                                <span class="topic-content-title">Singular em todos os sentidos</span>
+                                <h3 class="content-summary">Singular em todos os sentidos</h3>
                             </div>
                             <div class="topic-content-block">
                                 <p class="topic-content-paragraph">Todos viajamos por um milhão de razões diferentes e
@@ -933,11 +956,13 @@
                     <!-- Topic 8 (Singular) End -->
 
                     <!-- Topic 9 (Exevutive Club)-->
-                    <div class="topic-item">
-                        <img src="./img/topic9.jpg" alt="Topic 9">
+                    <div class="card">
+                        <div class="image-wrapper">
+                            <img src="./img/topic9.jpg" alt="Topic 9">
+                        </div>
                         <div class="topic-content">
                             <div class="topic-content-block">
-                                <span class="topic-content-title">Junte-se ao nosso Executive Club</span>
+                                <h3 class="content-summary">Junte-se ao nosso Executive Club</h3>
                             </div>
                             <div class="topic-content-block">
                                 <p class="topic-content-paragraph">Desfrute de reservas mais rápidas, pagando com Avios,
