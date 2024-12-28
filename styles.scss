@@ -112,7 +112,7 @@ $gap: 1rem; // Default gap
 
 
 p, ul, ol {
-	font-family: Open Sans, helvetica, arial, sans-serif;
+	font-family: $font-open-sans;
 	font-weight: 300;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -143,7 +143,7 @@ a {
 }
 
 h2 {
-  font-family: Mylius Modern, Open Sans, helvetica, arial, sans-serif;
+  font-family: $font-mylius-modern;
   font-weight: 300;
   font-size: 2.25rem;
   line-height: 1.33;

@@ -302,7 +302,7 @@ html {
 }
 
 p, ul, ol {
-  font-family: Open Sans, helvetica, arial, sans-serif;
+  font-family: "Open sans", helvetica, arial, sans-serif;
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.5;
@@ -329,7 +329,7 @@ a {
 }
 
 h2 {
-  font-family: Mylius Modern, Open Sans, helvetica, arial, sans-serif;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-weight: 300;
   font-size: 2.25rem;
   line-height: 1.33;

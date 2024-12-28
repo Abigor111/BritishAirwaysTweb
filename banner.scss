@@ -50,17 +50,37 @@ $main-fontsize: 16px;
 }
 .flight-status-container {
     background-image: url('./img/111.jpg');
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
+    padding: 32px;
 }
+
 .flight-status {
-    background-color: $terciary-color;
+    font-family: $font-mylius-modern;
+    background-color: rgba(255, 255, 255, 0.9);
     box-sizing: border-box;
-    max-width: 992px;
-    padding: 24px;
+    max-width: 800px;
+    padding: 20px 30px;
     margin: auto;
+    margin-bottom: 24px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
+
+.flight-status p {
+    font-size: 22px;
+    color: $main-color;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.flight-status span {
+    font-size: 26px;
+    color: $link-color;
+    font-weight: normal;
+}
+
 .flex-row-reverse {
     display: flex;
     flex-direction: row-reverse;

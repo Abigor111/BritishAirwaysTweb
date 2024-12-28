@@ -490,20 +490,20 @@ flightStatus.addEventListener('change', function () {
     }
 });
 function flightStatusDiv(flightNumber, day, hour, type, airport, date, status) {
-    const flightStatus = document.createElement('div');
-    flightStatus.classList.add('flight-status');
-    flightStatus.innerHTML = `
+    const divFligtStatus = document.createElement('div');
+    divFligtStatus.classList.add('flight-status');
+    divFligtStatus.innerHTML = `
     <p>Número do Voo: <span>TP${flightNumber}</span></p>
     <p>Dia do Voo: <span>${day}</span></p>
     <p>Hora do Voo: <span>${hour}</span></p>
     <div class="status">
     <p>Tipo de Voo: <span>${type}</span></p>
     <p>Aeroporto: <span>${airport}</span></p>
-        <p>Data: <span>${date}</span></p>
-        <p>Estado: <span>${status}</span></p>
-        </div>
-        `;
-        return flightStatus;
+    <p>Data: <span>${date}</span></p>
+    <p>Estado: <span class="span_status">${status}</span></p>
+    </div>
+    `;
+    return divFligtStatus;
     }
     // Estado do Voo
 document.getElementById('schedule-form').addEventListener('submit', function(event) {
@@ -550,12 +550,22 @@ document.getElementById('schedule-form').addEventListener('submit', function(eve
         type = 'Chegada';
     }
     else if (flightType == 'oneway'){
-        type = 'Destino';
+        type = 'Partida';
 
     }
     for (let y = 0; y <= 1; y++) {
+        document.getElementById('fligt-status-section').style.display = 'block';
         container.style.padding  = '64px 0px';
         container.appendChild(flightStatusDiv(y+1, days[day_of_week],  horas[y], type, city, formattedDate, status));
+    }
+    const flight_status_spans = document.querySelectorAll('.span_status');
+    if (status == 'Atrasado'){
+        flight_status_spans.forEach((span) => {
+            span.style.color = 'red';
+
+        });
+    } else {
+        console.log("Coming Back to Life é a melhor música dos Pink Floyd")
     }
 });
 

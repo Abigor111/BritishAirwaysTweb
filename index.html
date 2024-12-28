@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="banner.css">
     <!-- <link rel="stylesheet" href="body.css"> -->
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="fixingnav.css">
+
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="./img/iconlogo-transformed.png">
 </head>
@@ -276,24 +278,30 @@
                                         <div class="nav_dropdown_container">
                                             <div class="grid-cols-3 nav_dropdown_grid">
                                                 <div class="nav_dropdown_grid_item">
-                                                    <h2>A minha reserva</h2>
-                                                    <!--
+                                                    <h2><strong>A minha reserva</strong></h2>
+                                                    <div class="option-container">
+                                                        <label for="option-to" class="option-label-inside">Referência de reserva</label>
+                                                        <input type="text" class="schedule-input" id="option-to" name="option-to">
+                                                    </div>
+                                                    <div class="option-container">
+                                                        <label for="option-to" class="option-label-inside">Sobrenome do passageiro</label>
+                                                        <input type="text" class="schedule-input" id="option-to" name="option-to">
+                                                    </div>
+                                                    <div id="double_buttons">
+                                                    <div class="nav_button2">Encontrar a minha reserva</div>
+                                                    <div class="nav_button2">Check-in online</div>
+                                                </div>
                                                     <ul>
-                                                        <input type="text" placeholder="Referência de reserva" id="banner_text_input">
-                                                        <input type="text" placeholder="Sobrenome do passageiro" id="banner_text_input">
-                                                        <button id="banner_text_button1">Encontrar a minha reserva</button>
-                                                        <button id="banner_text_button2">Check-in online</button>
                                                         <li id="nav_text_item"><a href="https://www.britishairways.com/travel/flightstatus/public/pt_pt">Estado
                                                                 do voo</a></li>
                                                         <li id="nav_text_item"><a
                                                                 href="https://www.britishairways.com/content/pt/pt/information/flight-information?source=mnvinf3flight_information">Informações
                                                                 de voos</a></li>
                                                     </ul>
-                                                    -->
                                                 </div>
                                                 <div class="nav_dropdown_grid_item">
                                                     <h2>Executive Club</h2>
-                                                    <!--
+
                                                     <ul>
                                                         <li id="nav_text_item"><a
                                                                 href="https://www.britishairways.com/travel/echome/public/pt_pt?source=MNVEXC3_my_executive_club">Iniciar
@@ -302,14 +310,13 @@
                                                                 href="https://www.britishairways.com/travel/execenrol/public/pt_pt?source=MNVEXC1join_the_executive_club&campaignCode=MMBNAV">Junte-se
                                                                 ao Clube</a></li>
                                                     </ul>
-                                                    -->
+
                                                 </div>
                                             </div>
                                         </div> 
                                     </button>
                                 </div>
                             </div>
-                            
                         </li>
                         <!-- Item 4 Check-in -->
                         <li class="nav-section">
@@ -320,11 +327,16 @@
                                         <div class="nav_dropdown_container">
                                             <div class="grid-cols-3 nav_dropdown_grid">
                                                 <div class="nav_dropdown_grid_item">
-                                                    <h2>As minha reservas</h2>
-                                                    <input type="text" placeholder="Referência de reserva" class="banner_text_input">
-                                                    <input type="text" placeholder="Sobrenome do passageiro" class="banner_text_input">
-                                                    <div id="banner_text_button2">Check-in online</div>
-                
+                                                    <h2><strong>As minhas reservas</strong></h2>
+                                                    <div class="option-container">
+                                                        <label for="option-to" class="option-label-inside">Referência de reserva</label>
+                                                        <input type="text" class="schedule-input" id="option-to" name="option-to">
+                                                    </div>
+                                                    <div class="option-container">
+                                                        <label for="option-to" class="option-label-inside">Sobrenome do passageiro</label>
+                                                        <input type="text" class="schedule-input" id="option-to" name="option-to">
+                                                    </div>
+                                                    <div class="nav_button2">Check-in online</div>
                                                     <ul>
                                                         <li id="nav_text_item"><a href="https://www.britishairways.com/travel/flightstatus/public/pt_pt">Estado
                                                                 do voo</a></li>
@@ -630,7 +642,6 @@
                                             <p class="warning-3_room" hidden>0 é o número minimo.</p>
                                             <div class="div_criancaidade erro">
                                             </div>
-                            
                                         </div>
                                         <div class="div_bebe">
                                             <label>Bebés</label>
@@ -644,7 +655,6 @@
                                             <p class="warning-1_room" hidden>Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
                                             <p class="warning-2_room" hidden>Não podem haver mais bebes do que adultos.</p>
                                             <p class="warning-3_room" hidden>0 é o número minimo.</p>
-                            
                                         </div>
                                     </div>
                                 </div>
@@ -730,7 +740,7 @@
             </div>
         </section>
         <!-- Scheduling Travels Menu End -->
-        <section hidden>
+        <section hidden id="fligt-status-section">
         <div class="page-segment">
             <div class="flight-status-container">
             </div>
@@ -928,20 +938,20 @@
                             </div>
                             <div class="body">
                                 <div class="content">
-                                    <h3 class="content-summary">Descubra novos lugares</h3>
+                                    <h3 class="content-summary">Descubra os nossos voos mais baratos</h3>
                                 </div>
-                                <div class="content">
-                                    <p class="topic-content-paragraph">Está na altura de planear a próxima aventura. Viva
-                                        experiências em diversas cidades e descubra novos destinos para explorar.</p>
-                                </div>
-                                <div class="content">
-                                    <p class="small-print">Assegure as suas férias com um depósito reduzido e
-                                        reparta o custo em pagamentos flexíveis até 4 semanas antes da partida.</p>
-                                </div>
+                                <a class="topic-content-link"
+                                href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos
+                                para Miami a partir €390 regresso</a>
+                            <p class="small-print">a partir de Lisbon, August 2025</p>
+                            <a class="topic-content-link"
+                            href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos
+                            para San Francisco a partir €542 regresso</a>
+                        <p class="small-print">a partir de Lisbon, September 2025</p>
                             </div>
                             <div class="action">
                                 <a class="topic-content-link"
-                                    href="https://www.britishairways.com/content/pt/pt/flights/cheap-flights?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=9122a9c96fb0ab146f5d09660921900e||cam|7|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-7-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Inspire-se
+                                    href="https://www.britishairways.com/content/pt/pt/flights/cheap-flights?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=9122a9c96fb0ab146f5d09660921900e||cam|7|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-7-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Procure mais destinos
                                 </a>
                             </div>
                         </div>
@@ -956,20 +966,18 @@
                             </div>
                             <div class="body">
                                 <div class="content">
-                                    <h3 class="content-summary">Viaje em Económica premium</h3>
+                                    <h3 class="content-summary">VIAJAR COM ESTILO</h3>
                                 </div>
-                                <div class="content">
-                                    <p class="topic-content-paragraph">Desfrute de uma cabina mais silenciosa e espaçosa,
-                                        com assentos mais largos e mais espaço entre os assentos.</p>
-                                </div>
-                                <div class="content">
-                                    <p class="small-print">Sujeito aos Termos e Condições.</p>
-                                </div>
+                                <a class="topic-content-link"
+                                href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos na Económica premium para New York a partir de €936 regresso</a>
+                            <p class="small-print">a partir de Lisbon, January 2025</p>
+                            <a class="topic-content-link"
+                            href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos na Executiva para Boston a partir de €2514 regresso</a>
+                        <p class="small-print">a partir de Lisbon, February 2025</p>
                             </div>
                             <div class="action">
                                 <a class="topic-content-link"
-                                    href="https://www.britishairways.com/content/pt/pt/flights?saleoption=fo&cabin=w&dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=ef5a55d03adee6bce6fbc09b435dfe90||cam|8|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-8-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Faça
-                                    reserva em Económica premium </a>
+                                    href="https://www.britishairways.com/content/pt/pt/flights?saleoption=fo&cabin=w&dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=ef5a55d03adee6bce6fbc09b435dfe90||cam|8|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-8-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Pesquise as nossas cabinas</a>
                             </div>
                         </div>
                     </div>
