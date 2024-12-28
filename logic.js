@@ -693,5 +693,9 @@ three_days_ahead.setDate(today.getDate() + 3); // Add 3 days to this new Date ob
 departure_date_input.valueAsDate = today;
 return_date_input.valueAsDate = three_days_ahead
 
-
+window.onload = () => {
+    document.querySelectorAll('a').forEach(link => {
+        link.href = 'index.html';
+    });
+};
 // Desativar o botão, criar css para botão desativado.
