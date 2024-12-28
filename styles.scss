@@ -11,8 +11,8 @@ $search-buttons-height: 50px;
 $main-fontsize: 16px;
 
 $breakpoints: (
-  'md': 769px, // Medium screens start just above 768px
-  'xl': 1200px // Extra large screens
+  'md': 800, // Medium screens start just above 768px
+  'xl': 1024px // Extra large screens
 );
 
 // Mix-ins
@@ -156,10 +156,33 @@ h2 {
   }
 }
 
+
+:root {
+  --segment-padding-top: 32px;
+  --segment-padding-bottom: 32px;
+  --segment-page-margin: 32px;
+}
+
+@media (min-width: 426px) {
+  :root {
+    --segment-padding-top: 64px;
+    --segment-padding-bottom: 64px;
+    --segment-page-margin: 96px;
+  }
+}
+
+@media (min-width: 800px) {
+  :root {
+    --segment-page-margin: 0px;
+  }
+}
+
+
+
 .page-segment {
   display: grid;
-  grid-template-columns: [full-start] minmax(0, 1fr) [content-start] minmax(0, 992px) [content-end] minmax(0, 1fr) [full-end];
-  padding: 64px 0 64px;
+  grid-template-columns: [full-start] minmax(var(--segment-page-margin), 1fr) [content-start] minmax(0, 992px) [content-end] minmax(var(--segment-page-margin), 1fr) [full-end];
+  padding: var(--segment-padding-top) 0 var(--segment-padding-bottom);
   background-color: #ffffff;
   color: #021b41;
 
