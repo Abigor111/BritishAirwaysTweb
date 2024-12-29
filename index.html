@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="header.css"> -->
-    <link rel="stylesheet" href="nav.css">
-    <link rel="stylesheet" href="banner.css">
-    <!-- <link rel="stylesheet" href="body.css"> -->
-    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="fixingnav.css">
 
     <link rel="stylesheet" href="styles.css">
@@ -31,7 +25,7 @@
     </template>
     <template id="arrow-icon-template">
         <div class="arrow-icon-container">
-            <svg id="arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+            <svg class="arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                 focusable="false">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
@@ -41,17 +35,18 @@
     </template>
     <!-- Arrow Templates End -->
 
-    <header class="header">
+    <header class="header" id="header">
         <!-- Header Logos -->
-        <div class="header_content" id="header">
+        <div class="header-content" id="header-content">
             <div class="header-logos" id="header_logos">
                 <div class="header-logos-grid">
                     <a class="logo"><img id="header_ba_logo" src="./img/British_Airways_Logo.svg" alt="British Airways Logo"></a>
-                    <a class="logo mobile" hidden><img id="header_ba_logo_mobile" src="./img/British_Airways_Logo.svg" alt="British Airways Logo"></a>
+                    <a class="logo mobile"><img id="header_ba_logo_mobile" src="./img/logo_mobile.jpg" alt="British Airways Logo"></a>
                     <a class="logo"><img id="header_ow_logo" src="./img/oneworld_logo.png" alt="One World Logo"></a>
                 </div>
             </div>
-            <div id="header_controls">
+            <div class="header-controls" id="header_controls">
+                <input type="checkbox" id="mobile-hamburguer" class="mobile-hamburguer">
                 <div class="account-controls">
                     <a class="account-controls_control">
                         <svg width="32px" height="32px" role="img" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +82,9 @@
                                 <div class="nav-section-title-section">
                                     <button class="nav_button" id="nav-descubra">
                                         <span class="nav_span nav-section-title">Descubra</span>
-                                        <div class="nav_dropdown_container">
+                                    </button>
+                                    <div class="nav_dropdown_container">
+                                        <div class="nav_dropdown_content">
                                             <div class="grid-cols-6 nav_dropdown_grid">
                                                 <div class="nav_dropdown_grid_item">
                                                     <h2>BA</h2>
@@ -223,7 +220,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </button>
+                                        
+                                    </div>
                                 </div>
                             </div> 
                         </li>
@@ -233,7 +231,9 @@
                                 <div class="nav-section-title-section">
                                     <button class="nav_button" id="nav-reservar">
                                         <span class="nav_span nav-section-title">Reservar</span>
-                                        <div class="nav_dropdown_container">
+                                    </button>
+                                    <div class="nav_dropdown_container">
+                                        <div class="nav_dropdown_content">
                                             <div class="grid-cols-5 nav_dropdown_grid">
                                                 <div class="nav_dropdown_grid_item">
                                                     <h2>Voos</h2>
@@ -264,7 +264,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </button>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -274,8 +274,10 @@
                             <div class="nav-section-wrapper">
                                 <div class="nav-section-title-section">
                                     <button class="nav_button" id="nav-gerir">
-                                        <span class="nav_span nav-section-title">Gerir</span>
-                                        <div class="nav_dropdown_container">
+                                        <span class="nav_span nav-section-title">Gerir</span> 
+                                    </button>
+                                    <div class="nav_dropdown_container">
+                                        <div class="nav_dropdown_content">
                                             <div class="grid-cols-3 nav_dropdown_grid">
                                                 <div class="nav_dropdown_grid_item">
                                                     <h2><strong>A minha reserva</strong></h2>
@@ -301,7 +303,7 @@
                                                 </div>
                                                 <div class="nav_dropdown_grid_item">
                                                     <h2>Executive Club</h2>
-
+    
                                                     <ul>
                                                         <li class="nav_text_item"><a
                                                                 href="https://www.britishairways.com/travel/echome/public/pt_pt?source=MNVEXC3_my_executive_club">Iniciar
@@ -310,11 +312,11 @@
                                                                 href="https://www.britishairways.com/travel/execenrol/public/pt_pt?source=MNVEXC1join_the_executive_club&campaignCode=MMBNAV">Junte-se
                                                                 ao Clube</a></li>
                                                     </ul>
-
+    
                                                 </div>
                                             </div>
-                                        </div> 
-                                    </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -324,7 +326,9 @@
                                 <div class="nav-section-title-section">
                                     <button class="nav_button" id="nav-checkin">
                                         <span class="nav_span nav-section-title">Check-in</span>
-                                        <div class="nav_dropdown_container">
+                                    </button>
+                                    <div class="nav_dropdown_container">
+                                        <div class="nav_dropdown_content">
                                             <div class="grid-cols-3 nav_dropdown_grid">
                                                 <div class="nav_dropdown_grid_item">
                                                     <h2><strong>As minhas reservas</strong></h2>
@@ -347,7 +351,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </button>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -357,7 +362,9 @@
                                 <div class="nav-section-title-section">
                                     <button class="nav_button" id="nav-ajuda">
                                         <span class="nav_span nav-section-title">Ajuda</span>
-                                        <div class="nav_dropdown_container">
+                                    </button>
+                                    <div class="nav_dropdown_container">
+                                        <div class="nav_dropdown_content">
                                             <div class="grid-cols-5 nav_dropdown_grid">
                                                 <div class="nav_dropdown_grid_item">
                                                     <h2>Reservas</h2>
@@ -407,7 +414,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </button>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -425,12 +433,12 @@
     <!-- Scheduling Travels Menu -->
     <main>
         <section id="scheduling-travels-menu">
-            <div class="block-wrapper" id="scheduling-wrapper">
+            <div class="page-segment" id="scheduling-travels-segment">
                 <div class="banner">
                     <div class="form-legend">
                         <legend class="small-print">Estou a pesquisar para:</legend>
                     </div>
-                    <div id="banner-radio-group">
+                    <div class="grid-cols-6" id="banner-radio-grid">
                         <div class="banner-radio-wrapper">
                             <input type="radio" id="schedule_fly" name="schedule_input" class="radio" checked>
                             <label for="schedule_fly">Voo</label>
@@ -688,7 +696,7 @@
                                     </a>
                                 </div>
                                 <div class="option-container flex-row-reverse">
-                                    <button class="option-submit" id="button-flight">Procurar Voos</button>
+                                    <button class="btn-primary option-submit" id="button-flight">Procurar Voos</button>
                                 </div>
                             </div>
                             <div class="grid-cols-3 schedule-grid" id="fourth_row_2" style="display: none;">
@@ -737,7 +745,7 @@
                         </div> 
                     </form>
                 </div>
-            </div>
+            </div> 
         </section>
         <!-- Scheduling Travels Menu End -->
         <section hidden id="fligt-status-section">
@@ -775,7 +783,7 @@
         <section>
         <div class="page-segment">
             <div class="block-wrapper" id="toolbar-wrapper">
-                <div class="grid-cols-3 toolbar-grid">
+                <div class="grid grid-cols-3 toolbar-grid">
                     <div class="card">
                         <div class="wrapper">
                             <div class="body">
@@ -802,7 +810,7 @@
                         <div class="wrapper">
                             <div class="body">
                                 <h3 class="content-summary">
-                                    <a class="link" href="https://www.britishairways.com/travel/flightstatus/public/pt_pt/search?dt=British%20Airways%20%7C%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=%7C%7CTTB%7C%7CRTAD%7C1%7C%7C%7C%7CHOME%7C%7C%7C%7CL4%7C%7C%7C%7Canonymous-inspiration%7C%7C%7C&source=TTB-RTAD&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">
+                                    <a href="https://www.britishairways.com/travel/flightstatus/public/pt_pt/search?dt=British%20Airways%20%7C%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=%7C%7CTTB%7C%7CRTAD%7C1%7C%7C%7C%7CHOME%7C%7C%7C%7CL4%7C%7C%7C%7Canonymous-inspiration%7C%7C%7C&source=TTB-RTAD&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">
                                         Estado do voo</a>
                                 </h3>
                                 <p>Verifique o estado mais recente dos nossos voos nos próximos 10 dias</p>
@@ -817,7 +825,7 @@
 
         <!-- Topics -->
         <section id="section-topic">
-        <div class="page-segment">
+        <div class="page-segment" id="page-segment-topic">
             <div class="block-wrapper" id="topic-wrapper">
                 <div class="grid-cols-2 topic-grid">
                     <!-- Topic 1 (Head off to the UK)-->
@@ -827,20 +835,18 @@
                                 <img src="./img/topic1.jpg" alt="Topic 1">
                             </div>
                             <div class="body">
-                                <div class="content">
-                                    <h3 class="content-summary">Parta para o Reino Unido</h3>
-                                    <p class="topic-content-paragraph">Visite as pessoas e os locais que adora no Reino
-                                        Unido Explore as ruas de lojas de estilistas e os pontos históricos. Planeie a sua
-                                        próxima viagem agora.</p>
-                                    <a class="topic-content-link"
-                                        href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos
-                                        para Londres a partir de €100 ambos os sentidos</a>
-                                    <p class="small-print">a partir de Funchal, January 2025</p>
-                                    <p class="small-print">O preço das férias inclui voos de ida e volta e um generoso limite de bagagem.</p>
-                                </div>
+                                <h3 class="content-summary">Parta para o Reino Unido</h3>
+                                <p class="topic-content-paragraph">Visite as pessoas e os locais que adora no Reino
+                                    Unido Explore as ruas de lojas de estilistas e os pontos históricos. Planeie a sua
+                                    próxima viagem agora.</p>
+                                    <a class="topic-content-link link"
+                                    href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos
+                                    para Londres a partir de €100 ambos os sentidos</a>
+                                <p class="small-print">a partir de Funchal, January 2025</p>
+                                <p class="small-print">O preço das férias inclui voos de ida e volta e um generoso limite de bagagem.</p>
                             </div>
                             <div class="action">
-                                <a class="topic-content-link"
+                                <a class="topic-content-link link"
                                     href="https://www.britishairways.com/content/pt/pt/flights/england/london?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||cam|3|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-3-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Pesquise mais ofertas </a>
                             </div>
                         </div>
@@ -854,17 +860,13 @@
                                 <img src="./img/topic2.jpg" alt="Topic 2">
                             </div>
                             <div class="body">
-                                <div class="content">
-                                    <h3 class="content-summary">A sustentabilidade é o nosso foco</h3>
-                                </div>
-                                <div class="content">
-                                    <p class="topic-content-paragraph">Com enfoque nas pessoas, no planeta e numa empresa
-                                        responsável, estamos a transformar a nossa companhia aérea para um futuro mais
-                                        sustentável.</p>
-                                </div>
+                                <h3 class="content-summary">A sustentabilidade é o nosso foco</h3>
+                                <p class="topic-content-paragraph">Com enfoque nas pessoas, no planeta e numa empresa
+                                    responsável, estamos a transformar a nossa companhia aérea para um futuro mais
+                                    sustentável.</p>
                             </div>
                             <div class="action">
-                                <a class="topic-content-link"
+                                <a class="topic-content-link link"
                                     href="https://www.britishairways.com/content/pt/pt/information/about-ba/ba-better-world?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=ba9058e85e822fe6f5a6a9f0190d2553||cam|4|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-4-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Sobre
                                     o BA Better World </a>
                             </div>
@@ -879,20 +881,14 @@
                                 <img src="./img/topic3.jpg" alt="Topic 3">
                             </div>
                             <div class="body">
-                                <div class="content">
-                                    <h3 class="content-summary">Férias nos EUA</h3>
-                                </div>
-                                <div class="content">
-                                    <p class="topic-content-paragraph">Assegure as suas férias com um depósito reduzido e
-                                        reparta o custo em pagamentos flexíveis até 4 semanas antes da partida.</p>
-                                </div>
-                                <div class="content">
-                                    <p class="small-print">Os preços incluem um limite de bagagem generoso, todos
-                                        os encargos obrigatórios e 24 horas de apoio ao cliente.</p>
-                                </div>
+                                <h3 class="content-summary">Férias nos EUA</h3>
+                                <p class="topic-content-paragraph">Assegure as suas férias com um depósito reduzido e
+                                    reparta o custo em pagamentos flexíveis até 4 semanas antes da partida.</p>
+                                <p class="small-print">Os preços incluem um limite de bagagem generoso, todos
+                                    os encargos obrigatórios e 24 horas de apoio ao cliente.</p>
                             </div>
                             <div class="action">
-                                <a class="topic-content-link"
+                                <a class="topic-content-link link"
                                     href="https://www.britishairways.com/content/pt/pt/flights/cheap-flights?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=82bee58303e7e4a7482fe55715464630||cam|5|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-5-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Procure
                                     oportunidades de férias </a>
                             </div>
@@ -907,22 +903,16 @@
                                 <img src="./img/topic4.jpg" alt="Topic 4">
                             </div>
                             <div class="body">
-                                <div class="content">
-                                    <h3 class="content-summary">Aventuras Fly-drive</h3>
-                                </div>
-                                <div class="content">
-                                    <p class="topic-content-paragraph">Damos-lhe a liberdade de explorar novos lugares com
-                                        fly-drives a preços excelentes no Reino Unido e aluguer de um veículo por 7 dias
-                                        pelo preço de 5 dias nos EUA. </p>
-                                </div>
-                                <div class="content">
-                                    <p class="small-print">Os preços incluem um limite de bagagem generoso, todos
-                                        os encargos obrigatórios e 24 horas de apoio, para que possa viajar
-                                        descansado.</p>
-                                </div>
+                                <h3 class="content-summary">Aventuras Fly-drive</h3>
+                                <p class="topic-content-paragraph">Damos-lhe a liberdade de explorar novos lugares com
+                                    fly-drives a preços excelentes no Reino Unido e aluguer de um veículo por 7 dias
+                                    pelo preço de 5 dias nos EUA. </p>
+                                <p class="small-print">Os preços incluem um limite de bagagem generoso, todos
+                                    os encargos obrigatórios e 24 horas de apoio, para que possa viajar
+                                    descansado.</p>
                             </div>
                             <div class="action">
-                                <a class="topic-content-link"
+                                <a class="topic-content-link link"
                                     href="https://www.britishairways.com/content/pt/pt/holidays/holiday-types/fly-drive-holidays?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=cca52d939ebf8b0858554c2f058f7500||cam|6|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-6-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Vamos
                                     lá </a>
                             </div>
@@ -937,20 +927,18 @@
                                 <img src="./img/topic5.jpg" alt="Topic 5">
                             </div>
                             <div class="body">
-                                <div class="content">
-                                    <h3 class="content-summary">Descubra os nossos voos mais baratos</h3>
-                                </div>
-                                <a class="topic-content-link"
+                                <h3 class="content-summary">Descubra os nossos voos mais baratos</h3>
+                                <a class="topic-content-link link"
                                 href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos
                                 para Miami a partir €390 regresso</a>
                             <p class="small-print">a partir de Lisbon, August 2025</p>
-                            <a class="topic-content-link"
+                            <a class="topic-content-link link"
                             href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos
                             para San Francisco a partir €542 regresso</a>
                         <p class="small-print">a partir de Lisbon, September 2025</p>
                             </div>
                             <div class="action">
-                                <a class="topic-content-link"
+                                <a class="topic-content-link link"
                                     href="https://www.britishairways.com/content/pt/pt/flights/cheap-flights?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=9122a9c96fb0ab146f5d09660921900e||cam|7|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-7-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Procure mais destinos
                                 </a>
                             </div>
@@ -965,18 +953,19 @@
                                 <img src="./img/topic6.jpg" alt="Topic 6">
                             </div>
                             <div class="body">
-                                <div class="content">
-                                    <h3 class="content-summary">VIAJAR COM ESTILO</h3>
+                                <h3 class="content-summary">VIAJAR COM ESTILO</h3>
+                                <p>Desfrute do conforto da classe económica premium ou executiva e chegue revigorado e pronto para começar a sua viagem.</p>
+                                <div class="grid-cols-1">
+                                    <a class="topic-content-link link"
+                                    href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos na Económica premium para New York<br> a partir de €936 regresso</a>
+                                    <p class="small-print">a partir de Lisbon, January 2025</p>
+                                    <a class="topic-content-link link"
+                                    href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos na Executiva para Boston<br>a partir de €2514 regresso</a>
+                                    <p class="small-print">a partir de Lisbon, February 2025</p>
                                 </div>
-                                <a class="topic-content-link"
-                                href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos na Económica premium para New York a partir de €936 regresso</a>
-                            <p class="small-print">a partir de Lisbon, January 2025</p>
-                            <a class="topic-content-link"
-                            href="https://www.britishairways.com/travel/low-price-finder/public/pt_pt?eId=113021&oneway=true&cabin=M&destination=LGW&origin=FNC&numNights=0&region=EUK&dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=698374288eefeb5ded07d0cb9706d73e||CAM|3|PRI1|1|EUR|83||HOME||||L4|LGW|FNCLGW||anonymous-inspiration|||&source=CAM-POS-3-PRI1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Voos na Executiva para Boston a partir de €2514 regresso</a>
-                        <p class="small-print">a partir de Lisbon, February 2025</p>
                             </div>
                             <div class="action">
-                                <a class="topic-content-link"
+                                <a class="topic-content-link link"
                                     href="https://www.britishairways.com/content/pt/pt/flights?saleoption=fo&cabin=w&dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=ef5a55d03adee6bce6fbc09b435dfe90||cam|8|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-8-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Pesquise as nossas cabinas</a>
                             </div>
                         </div>
@@ -990,16 +979,12 @@
                                 <img src="./img/topic7.jpg" alt="Topic 7">
                             </div>
                             <div class="body">
-                                <div class="content">
-                                    <h3 class="content-summary">Se precisar de nos contactar</h3>
-                                </div>
-                                <div class="content">
-                                    <p class="topic-content-paragraph">Estamos sempre prontos para ajudar A nossa equipa de
-                                        Apoio ao Cliente está à sua disposição para responder a todas as suas perguntas.</p>
-                                </div>
+                                <h3 class="content-summary">Se precisar de nos contactar</h3>
+                                <p class="topic-content-paragraph">Estamos sempre prontos para ajudar A nossa equipa de
+                                    Apoio ao Cliente está à sua disposição para responder a todas as suas perguntas.</p>
                             </div>
                             <div class="action">
-                                <a class="topic-content-link"
+                                <a class="topic-content-link link"
                                     href="https://www.britishairways.com/content/pt/pt/information/help-and-contacts?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=733c5ad2de572d462b57956ae34f840a||cam|9|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-9-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Como
                                     contactar-nos </a>
                             </div>
@@ -1014,17 +999,13 @@
                                 <img src="./img/topic8.jpg" alt="Topic 8">
                             </div>
                             <div class="body">
-                                <div class="content">
-                                    <h3 class="content-summary">Singular em todos os sentidos</h3>
-                                </div>
-                                <div class="content">
-                                    <p class="topic-content-paragraph">Todos viajamos por um milhão de razões diferentes e
-                                        cada uma é única - tal como cada membro da nossa equipa, cada momento do nosso
-                                        serviço e cada um dos passageiros.</p>
-                                </div>
+                                <h3 class="content-summary">Singular em todos os sentidos</h3>
+                                <p class="topic-content-paragraph">Todos viajamos por um milhão de razões diferentes e
+                                    cada uma é única - tal como cada membro da nossa equipa, cada momento do nosso
+                                    serviço e cada um dos passageiros.</p>
                             </div>
                             <div class="action">
-                                <a class="topic-content-link"
+                                <a class="topic-content-link link"
                                     href="https://www.britishairways.com/content/pt/pt/information/about-ba/our-brand?dt=british%20airways%20|%20reserve%20voos,%20f%c3%a9rias,%20escapadinhas%20urbanas%20e%20fa%c3%a7a%20o%20check-in%20online&audience=travel&ban=3a8756d88eb8cabd52f906d08af94367||cam|10|cta1|1||||home||||l4||||anonymous-inspiration|||&source=cam-pos-10-cta1&kmtag=c&kmver=1.0&clickpage=homepage">Obtenha
                                     mais informações </a>
                             </div>
@@ -1039,17 +1020,13 @@
                                 <img src="./img/topic9.jpg" alt="Topic 9">
                             </div>
                             <div class="body">
-                                <div class="content">
-                                    <h3 class="content-summary">Junte-se ao nosso Executive Club</h3>
-                                </div>
-                                <div class="content">
-                                    <p class="topic-content-paragraph">Desfrute de reservas mais rápidas, pagando com Avios,
-                                        acumulando recompensas e recebendo ofertas especiais como Membro do Executive Club.
-                                    </p>
-                                </div>
+                                <h3 class="content-summary">Junte-se ao nosso Executive Club</h3>
+                                <p class="topic-content-paragraph">Desfrute de reservas mais rápidas, pagando com Avios,
+                                    acumulando recompensas e recebendo ofertas especiais como Membro do Executive Club.
+                                </p>
                             </div>
                             <div class="action">
-                                <a class="topic-content-link"
+                                <a class="topic-content-link link"
                                     href="https://www.britishairways.com/travel/execenrol/public/pt_pt?dt=British%20Airways%20|%20Reserve%20voos,%20f%C3%A9rias,%20escapadinhas%20urbanas%20e%20fa%C3%A7a%20o%20check-in%20online&audience=travel&ban=8c6a4ad0afd06249e58ada363c1fd5b9||CAM|11|CTA1|1||||HOME||||L4||||anonymous-inspiration|||&source=CAM-POS-11-CTA1&KMtag=c&KMver=1.0&clickpage=HOMEPAGE">Adira
                                     agora </a>
                             </div>
@@ -1132,7 +1109,10 @@
                     </svg></a></li>
         </ul>
         <span id="footer-legal">© British Airways - todos os direitos reservados</span>
-        <img src="./img/footerlogo.png" alt="" id="footer_ba_logo">
+        <div class="grid-cols-1 footer-logos-grid">  
+            <img src="./img/footerlogo.png" alt="" id="footer_ba_logo" class="footer-logos">
+            <img src="./img/oneworld_logo.png" alt="" id="footer_world_logo" class="footer-logos">
+        </div>
         <!-- Footer Icons -->
 
     </footer>

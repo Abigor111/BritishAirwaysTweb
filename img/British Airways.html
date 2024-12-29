@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="pt"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>British Airways</title>
+    
+    
+    
+    <!-- <link rel="stylesheet" href="header.css"> -->
+    
+    
+    <!-- <link rel="stylesheet" href="body.css"> -->
+    
+    
+
+    
+    
+<link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link href="./British Airways_files/css2" rel="stylesheet"><link rel="stylesheet" href="./British Airways_files/nav.css"><link rel="stylesheet" href="./British Airways_files/banner.css"><link rel="stylesheet" href="./British Airways_files/footer.css"><link rel="stylesheet" href="./British Airways_files/fixingnav.css"><link rel="stylesheet" href="./British Airways_files/styles.css"><link rel="icon" href="http://127.0.0.1:5500/img/iconlogo-transformed.png"></head>
+
+<body>
+    <!-- Arrow Templates -->
+    <template id="link-arrow-icon-template"></template>
+    <template id="arrow-icon-template"></template>
+    <!-- Arrow Templates End -->
+
+    <header class="header">
+        <!-- Header Logos -->
+        <div class="header_content" id="header">
+            <div class="header-logos" id="header_logos">
+                <div class="header-logos-grid">
+                    <a class="logo" href="http://127.0.0.1:5500/index.html"><img id="header_ba_logo" src="./British Airways_files/British_Airways_Logo.svg" alt="British Airways Logo"></a>
+                    <a class="logo mobile" href="http://127.0.0.1:5500/index.html"><img id="header_ba_logo_mobile" src="./British Airways_files/logo_mobile.jpg" alt="British Airways Logo"></a>
+                    <a class="logo" href="http://127.0.0.1:5500/index.html"><img id="header_ow_logo" src="./British Airways_files/oneworld_logo.png" alt="One World Logo"></a>
+                </div>
+            </div>
+            <div class="header-controls" id="header_controls">
+                <button>
+                    <img class="mobile-hamburguer" src="./British Airways_files/hamburger.png">
+                </button>
+                <div class="account-controls">
+                    <a class="account-controls_control" href="http://127.0.0.1:5500/index.html">
+                        <svg width="32px" height="32px" role="img" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <title>Account</title>
+                            <path d="M53.133 54.537c.29.422.86.56 1.314.302a.998.998 0 00.38-1.363 26.621 26.621 0 00-4.099-5.466 26.18 26.18 0 00-5.45-4.22c-4.009-2.343-8.676-3.466-13.294-3.59-4.617-.04-9.364.908-13.535 3.145-4.175 2.21-7.704 5.568-10.16 9.614a1.999 1.999 0 003.406 2.098l.013-.02c2.12-3.393 5.118-6.267 8.628-8.21 3.515-1.957 7.543-2.946 11.648-3.028 4.101-.085 8.21.738 11.882 2.593 3.667 1.843 6.887 4.672 9.254 8.127l.013.018zM31.975 12c-5.502 0-9.978 4.475-9.978 9.977 0 5.501 4.476 9.977 9.978 9.977 5.501 0 9.976-4.476 9.976-9.977 0-5.502-4.475-9.977-9.976-9.977zm0 23.954c-7.707 0-13.978-6.27-13.978-13.977C17.997 14.27 24.268 8 31.975 8s13.976 6.27 13.976 13.977c0 7.707-6.269 13.977-13.976 13.977z"></path>
+                        </svg>
+                        <span id="header-span">Entrar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Header Logos End -->
+
+        <!-- Header Nav -->
+        <nav class="nav" id="nav">
+            <div class="nav-content">
+                <div class="account-controls account-controls-mobile">
+                    <a class="account-controls_control" href="http://127.0.0.1:5500/index.html"> <!-- Versão mobile de entrar na conta -->
+                        <svg width="32px" height="32px" role="img" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <title>Account</title>
+                            <path d="M53.133 54.537c.29.422.86.56 1.314.302a.998.998 0 00.38-1.363 26.621 26.621 0 00-4.099-5.466 26.18 26.18 0 00-5.45-4.22c-4.009-2.343-8.676-3.466-13.294-3.59-4.617-.04-9.364.908-13.535 3.145-4.175 2.21-7.704 5.568-10.16 9.614a1.999 1.999 0 003.406 2.098l.013-.02c2.12-3.393 5.118-6.267 8.628-8.21 3.515-1.957 7.543-2.946 11.648-3.028 4.101-.085 8.21.738 11.882 2.593 3.667 1.843 6.887 4.672 9.254 8.127l.013.018zM31.975 12c-5.502 0-9.978 4.475-9.978 9.977 0 5.501 4.476 9.977 9.978 9.977 5.501 0 9.976-4.476 9.976-9.977 0-5.502-4.475-9.977-9.976-9.977zm0 23.954c-7.707 0-13.978-6.27-13.978-13.977C17.997 14.27 24.268 8 31.975 8s13.976 6.27 13.976 13.977c0 7.707-6.269 13.977-13.976 13.977z"></path>
+                        </svg>
+                        <span>Entrar</span>
+                    </a>
+                </div>
+                <div class="nav-menu">
+                    <ul id="nav_list">
+                        <!-- Item 1 Descubra -->
+                        <li class="nav-section">
+                            <div class="nav-section-wrapper">
+                                <div class="nav-section-title-section">
+                                    <button class="nav_button" id="nav-descubra">
+                                        <span class="nav_span nav-section-title">Descubra</span>
+                                        <div class="nav_dropdown_container">
+                                            <div class="grid-cols-6 nav_dropdown_grid">
+                                                <div class="nav_dropdown_grid_item">
+                                                    <h2>BA</h2>
+                                                    <ul>
+                                                        <li class="nav_text_item">
+                                                            <a href="http://127.0.0.1:5500/index.html">Sobre
+                                                                a BA</a>
+                                                        </li>
+                                                        <li class="nav_text_item">
+                                                            <a href="http://127.0.0.1:5500/index.html">BA
+                                                                Better World</a>
+                                                        </li>
+                                                        <li class="nav_text_item">
+                                                            <a href="http://127.0.0.1:5500/index.html">A
+                                                                experiência BA</a>
+                                                        </li>
+                                                        <li class="nav_text_item">
+                                                            <a href="http://127.0.0.1:5500/index.html">Classes
+                                                                de Viagem</a>
+                                                        </li>
+                                                        <li class="nav_text_item">
+                                                            <a href="http://127.0.0.1:5500/index.html">Novidades</a>
+                                                        </li>
+                                                        <li class="nav_text_item">
+                                                            <a href="http://127.0.0.1:5500/index.html">Viagens de
+                                                                Negócios</a>
+                                                        </li>
+                                                        <li class="nav_text_item">
+                                                            <a href="http://127.0.0.1:5500/index.html">Parceiros
+                                                                e alianças</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="nav_dropdown_grid_item">
+                                                    <h2>Executive Club</h2>
+                                                    <ul>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Junta-se
+                                                                ao Clube</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Sobre
+                                                                o Club</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Sobre
+                                                                os Avios</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Acumular
+                                                                Avios</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Gastar
+                                                                Avios</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="nav_dropdown_grid_item">
+                                                    <h2>Voos e destinos</h2>
+                                                    <ul>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Explore os
+                                                                nossos
+                                                                destinos</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Voos
+                                                                para Londres</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Voos
+                                                                para Nova Iorque</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Rotas
+                                                                e
+                                                                horários</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Antes
+                                                                de viajar</a>
+                                                        </li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Informações
+                                                                sobre
+                                                                bagagem</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Informações
+                                                                do
+                                                                aeroporto</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="nav_dropdown_grid_item">
+                                                    <h2>Férias</h2>
+                                                    <ul>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Descubra BA
+                                                                holidays</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Férias
+                                                                em Nova Iorque</a>
+                                                        </li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Escapadinhas
+                                                                em
+                                                                Londres</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="nav_dropdown_grid_item">
+                                                    <h2>Ofertas e oportunidades</h2>
+                                                    <ul>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Descubra
+                                                                os nossos voos
+                                                                mais baratos</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="nav_dropdown_grid_item">
+                                                    <h2>Extras</h2>
+                                                    <ul>
+                                                        <li class="nav_text_item">
+                                                            <a href="http://127.0.0.1:5500/index.html">Hóteis
+                                                                dos aeroportos de Londres</a>
+                                                        </li>
+                                                        <li class="nav_text_item">
+                                                            <a href="http://127.0.0.1:5500/index.html">Seguro
+                                                                de viagem</a>
+                                                        </li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Conheça
+                                                                e assista</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+        <div class="arrow-icon-container">
+            <svg id="arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+                </path>
+            </svg>
+        </div>
+    </button>
+                                </div>
+                            </div> 
+                        </li>
+                        <!-- Item 2 Reservar -->
+                        <li class="nav-section">
+                            <div class="nav-section-wrapper">
+                                <div class="nav-section-title-section">
+                                    <button class="nav_button" id="nav-reservar">
+                                        <span class="nav_span nav-section-title">Reservar</span>
+                                        <div class="nav_dropdown_container">
+                                            <div class="grid-cols-5 nav_dropdown_grid">
+                                                <div class="nav_dropdown_grid_item">
+                                                    <h2>Voos</h2>
+                                                    <ul>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Reservar um voo</a>
+                                                        </li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Reservar um voo com
+                                                                Avios</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="nav_dropdown_grid_item">
+                                                    <h2>Voos e muito mais</h2>
+                                                    <ul>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Voo + hotel</a>
+                                                        </li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Voo +
+                                                                Veículo</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Procure um
+                                                                hotel</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Alugue
+                                                                um veículo</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Reservar uma
+                                                                experiência</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+        <div class="arrow-icon-container">
+            <svg id="arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+                </path>
+            </svg>
+        </div>
+    </button>
+                                </div>
+                            </div>
+                            
+                        </li>
+                        <!-- Item 3 Gerir -->
+                        <li class="nav-section">
+                            <div class="nav-section-wrapper">
+                                <div class="nav-section-title-section">
+                                    <button class="nav_button" id="nav-gerir">
+                                        <span class="nav_span nav-section-title">Gerir</span>
+                                        <div class="nav_dropdown_container">
+                                            <div class="grid-cols-3 nav_dropdown_grid">
+                                                <div class="nav_dropdown_grid_item">
+                                                    <h2><strong>A minha reserva</strong></h2>
+                                                    <div class="option-container">
+                                                        <label for="option-to" class="option-label-inside">Referência de reserva</label>
+                                                        <input type="text" class="schedule-input" name="option-to">
+                                                    </div>
+                                                    <div class="option-container">
+                                                        <label for="option-to" class="option-label-inside">Sobrenome do passageiro</label>
+                                                        <input type="text" class="schedule-input" name="option-to">
+                                                    </div>
+                                                    <div id="double_buttons">
+                                                    <div class="nav_button2">Encontrar a minha reserva</div>
+                                                    <div class="nav_button2">Check-in online</div>
+                                                </div>
+                                                    <ul>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Estado
+                                                                do voo</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Informações
+                                                                de voos</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="nav_dropdown_grid_item">
+                                                    <h2>Executive Club</h2>
+
+                                                    <ul>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Iniciar
+                                                                sessão ao Executive Club</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Junte-se
+                                                                ao Clube</a></li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    
+        <div class="arrow-icon-container">
+            <svg id="arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+                </path>
+            </svg>
+        </div>
+    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Item 4 Check-in -->
+                        <li class="nav-section">
+                            <div class="nav-section-wrapper">
+                                <div class="nav-section-title-section">
+                                    <button class="nav_button" id="nav-checkin">
+                                        <span class="nav_span nav-section-title">Check-in</span>
+                                        <div class="nav_dropdown_container">
+                                            <div class="grid-cols-3 nav_dropdown_grid">
+                                                <div class="nav_dropdown_grid_item">
+                                                    <h2><strong>As minhas reservas</strong></h2>
+                                                    <div class="option-container">
+                                                        <label for="option-to" class="option-label-inside">Referência de reserva</label>
+                                                        <input type="text" class="schedule-input" name="option-to">
+                                                    </div>
+                                                    <div class="option-container">
+                                                        <label for="option-to" class="option-label-inside">Sobrenome do passageiro</label>
+                                                        <input type="text" class="schedule-input" name="option-to">
+                                                    </div>
+                                                    <div class="nav_button2">Check-in online</div>
+                                                    <ul>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Estado
+                                                                do voo</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Informações
+                                                                de voos</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+        <div class="arrow-icon-container">
+            <svg id="arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+                </path>
+            </svg>
+        </div>
+    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Item 5 Ajuda -->
+                        <li class="nav-section">
+                            <div class="nav-section-wrapper">
+                                <div class="nav-section-title-section">
+                                    <button class="nav_button" id="nav-ajuda">
+                                        <span class="nav_span nav-section-title">Ajuda</span>
+                                        <div class="nav_dropdown_container">
+                                            <div class="grid-cols-5 nav_dropdown_grid">
+                                                <div class="nav_dropdown_grid_item">
+                                                    <h2>Reservas</h2>
+                                                    <ul>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Atrasos,
+                                                                cancelamentos e reembolsos</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Bagagem
+                                                                perdida</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Vouchers</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="nav_dropdown_grid_item">
+                                                    <h2>Assistência</h2>
+                                                    <ul>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Contactos e
+                                                                Perguntas Frequentes</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Estado
+                                                                do voo</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Assistência
+                                                                à locomoção e a pessoas portadoras de incapacidades</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Condições
+                                                                médicas e gravidez</a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">
+                                                                Assistência em viagem
+                                                            </a></li>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">
+                                                                Check-in e embarque
+                                                            </a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="nav_dropdown_grid_item">
+                                                    <h2>Novidades de viagem</h2>
+                                                    <ul>
+                                                        <li class="nav_text_item"><a href="http://127.0.0.1:5500/index.html">Últimas novidades de
+                                                                viagem</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+        <div class="arrow-icon-container">
+            <svg id="arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+                </path>
+            </svg>
+        </div>
+    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <a class="country-selector" id="nav_countryselector" href="http://127.0.0.1:5500/index.html">
+                    <img src="./British Airways_files/pt.png" alt="Portuguese Flag">
+                    <span>Portugal - Português</span>
+                </a>
+            </div>
+            
+        </nav>
+    </header>
+    <!-- Header Nav End -->
+    <!-- Scheduling Travels Menu -->
+    <main>
+        <section id="scheduling-travels-menu">
+            <div class="page-segment" style="
+    background-image: ./img/;
+">
+                <div class="block-wrapper" id="scheduling-wrapper">
+                    <div class="banner">
+                        <div class="form-legend">
+                            <legend class="small-print">Estou a pesquisar para:</legend>
+                        </div>
+                        <div id="banner-radio-group">
+                            <div class="banner-radio-wrapper">
+                                <input type="radio" id="schedule_fly" name="schedule_input" class="radio" checked="">
+                                <label for="schedule_fly">Voo</label>
+                            </div>
+                            <div class="banner-radio-wrapper">
+                                <input type="radio" id="schedule_flyhotel" name="schedule_input" class="radio">
+                                <label for="schedule_flyhotel">Voo + hotel</label>
+                            </div>
+                            <div class="banner-radio-wrapper">
+                                <input type="radio" id="schedule_flyvehicle" name="schedule_input" class="radio">
+                                <label for="schedule_flyvehicle">Voo + Veículo</label>
+                            </div>
+                            <div class="banner-radio-wrapper">
+                                <input type="radio" id="schedule_hotel" name="schedule_input" class="radio">
+                                <label for="schedule_hotel">Hotel</label>
+                            </div>
+                            <div class="banner-radio-wrapper">
+                                <input type="radio" id="schedule_vehicle" name="schedule_input" class="radio">
+                                <label for="schedule_vehicle">Veículo</label>
+                            </div>
+                            <div class="banner-radio-wrapper">
+                                <input type="radio" id="flight_status" name="schedule_input" class="radio">
+                                <label for="flight_status">Estado do Voo</label>
+                            </div>
+                        </div>
+                        <!-- Form Options End  Teleport-->
+    
+                        <form id="schedule-form">
+                            <div class="schedule-grid">
+                                <div class="schedule-grid" id="return_vehicle_row" style="display: none;">
+                                    <div class="option-container"> <!-- This is for checking age -->
+                                            <input type="checkbox" class="checkbox" name="return_vehicle" id="return_vehicle">
+                                            <span for="return_vehicle">Devolver o veículo numa outra localização</span>
+                                    </div>
+                                </div>
+                                <!-- First Row -->
+                                <div class="grid-cols-6 schedule-grid" id="first_row">
+                                    <!-- Tariff -->
+                                    <div class="option-container option-container-dropdown" id="tariff">
+                                        <label for="option-tariff" class="option-label-top">Tarifa</label>
+                                        <select class="schedule-select" id="option-tariff" name="option-tariff">
+                                            <option value="return" id="option_return">Regresso</option>
+                                            <option value="oneway" id="option_oneway">Só ida</option>
+                                        </select>
+                                    </div>
+                                    <!-- Locations -->
+                                    <div class="grid-cols-2 col-span-5 schedule-grid" id="from-to">
+                                        <div class="option-container">
+                                            <label for="option-from" class="option-label-inside">De<span>Digite 3 letras</span></label>
+                                            <input type="text" class="schedule-input" id="option-from" name="option-from">
+                                        </div>
+    
+                                        <div class="option-container" id="to">
+                                            <label for="option-to" class="option-label-inside">Para<span>Digite 3 letras</span></label>
+                                            <input type="text" class="schedule-input" name="option-to">
+                                        </div>
+                                    </div>
+                                <!-- Hidden at page Load -->
+    
+                                    <div class="grid-cols-1 col-span-5 schedule-grid" id="destiny" style="display: none;">
+                                        <div class="option-container">
+                                            <label for="option-to" class="option-label-inside">Destino<span>Digite 3 letras</span></label>
+                                            <input type="text" class="schedule-input" name="option-to">
+                                        </div>
+                                    </div>
+                                <!-- Hidden at page Load -->
+                                    <div class="grid-cols-1 col-span-5 schedule-grid" id="car-retrieval" style="display: none;">
+                                        <div class="option-container">
+                                            <label for="option-to" class="option-label-inside">Levantamento a partir das<span>Digite 3 letras</span></label>
+                                            <input type="text" class="schedule-input" name="option-to">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Second Row -->
+                                <div class="grid-cols-4 schedule-grid" id="second_row">
+                                    <!-- Span 1 -->
+                                    <div class="option-container">
+                                        <label for="departure-date" class="option-label-top" id="go_label">Partida</label>
+                                        <input type="date" pattern="\d{2}\/\d{2}\/\d{4}" placeholder="DD/MM/YYYY" id="departure-date" name="departure-date">
+                                    </div>
+                                    <div class="option-container return">
+                                        <label for="return-date" class="option-label-top" id="return_label">Regresso</label>
+                                        <input type="date" id="return-date" name="return-date">
+                                    </div>
+                                    <div class="option-container" id="cabin"> <!-- This element creates a dropdown div with two radio buttons and a checkbox-->
+                                        <label for="option-cabin" class="option-label-top">Cabine</label>
+                                        <button id="cabin-button" name="option-cabin" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">Económica</span></button>
+                                        <div class="option_dropdown_container">
+                                            <div class="option-dropdown-grid">
+                                                <p>Estou a viajar em:</p>
+                                                <div class="option-radio-flex">
+                                                    <input type="radio" value="economic" name="cabin-type" class="radio" checked=""><span>Económica</span>
+                                                </div>
+                                                <div class="option-radio-flex">
+                                                    <input type="radio" value="executive" name="cabin-type" class="radio"><span>Executiva</span>
+                                                </div>
+                                                <p class="small-print">Gostaria de um bilhete flexivel?</p>
+                                                <div class="option-radio-flex">
+                                                    <input type="checkbox" class="checkbox flexible_ticket"><span>Bilhete flexível</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="option-container" id="passengers"> <!-- This is for selecting number of people -->
+                                        <label for="option-passengers" class="option-label-top">Passageiros</label>
+                                        <button id="passenger-button" name="option-passengers" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">1 Adulto</span></button>
+                                        <div class="option_dropdown_container">
+                                            <div class="option-dropdown-grid">
+                                                <div class="div_adulto">
+                                                    <label>Adultos</label>
+                                                    <p>16 anos ou mais</p>
+                                                    <div class="option-counter">
+                                                        <div class="option-attention-symbol"></div>
+                                                        <input type="text" value="1" class="contador adulto">
+                                                        <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
+                                                        <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
+                                                    </div>
+                                                    <p class="warning-1" hidden="">Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+                                                    <p class="warning-2" hidden="">Não podem haver mais bebes do que adultos.</p>
+                                                    <p class="warning-3" hidden="">Para fazer a sua reserva online, deve existir pelo menos um adulto a viajar. Para fazer uma reserva para jovens adultos que viajem sozinhos, contacte-nos.</p>
+    
+                                                </div>
+                                                <div class="div_adolescente">
+                                                    <label>Jovens adultos</label>
+                                                    <p>12-15 anos</p>
+                                                    <div class="option-counter">
+                                                        <div class="option-attention-symbol"></div>
+                                                        <input type="text" value="0" class="contador adolescente">
+                                                        <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
+                                                        <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
+                                                    </div>
+                                                    <p class="warning-1" hidden="">Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+                                                    <p class="warning-3" hidden="">0 é o número minimo.</p>
+    
+                                                </div>
+                                                <div class="div_crianca">
+                                                    <label>Crianças</label>
+                                                    <p>2-11 anos</p>
+                                                    <div class="option-counter">
+                                                        <div class="option-attention-symbol"></div>
+                                                        <input type="text" value="0" class="contador crianca">
+                                                        <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
+                                                        <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
+                                                    </div>
+                                                    <p class="warning-1" hidden="">Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+                                                    <p class="warning-3" hidden="">0 é o número minimo.</p>
+    
+                                                </div>
+                                                <div class="div_bebe">
+                                                    <label>Bebés</label>
+                                                    <p>Menos de 2 anos</p>
+                                                    <div class="option-counter">
+                                                        <div class="option-attention-symbol"></div>
+                                                        <input type="text" value="0" class="contador bebe">
+                                                        <button class="button-icon minus-image" onclick="alterarValor(this, -1, event)"></button>
+                                                        <button class="button-icon plus-image" onclick="alterarValor(this, 1, event)"></button>
+                                                    </div>
+                                                    <p class="warning-1" hidden="">Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+                                                    <p class="warning-2" hidden="">Não podem haver mais bebes do que adultos.</p>
+                                                    <p class="warning-3" hidden="">0 é o número minimo.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <!-- Hidden at page Load -->
+                                    <div class="option-container" id="rooms" style="display: none;">
+                                        <label for="option-tariff" class="option-label-top">Quartos</label>
+                                        <select class="nrooms-select" id="option-nrooms" name="option-nrooms">
+                                            <option value="oneroom">1 quarto</option>
+                                            <option value="tworoom">2 quartos</option>
+                                            <option value="threeroom">3 quartos</option>
+                                            <option value="fourroom">4 quartos</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Third Row -->
+                                <!-- Hidden at page Load -->
+                                <div class="grid-cols-4 schedule-grid room-container" id="third_row_1" style="display: none;">
+    
+                                <div class="option-container">
+                                    <label for="flighthotel-option-roomoccupants-1" class="option-label-top">Quarto 1</label>
+                                    <button id="flighthotel-roomoccupants-button-1" name="flighthotel-option-roomoccupants-1" onclick="appear_option_dropdown_container(event)"><span class="option-span-fill">1 Adulto</span></button>
+                                    <div class="option_dropdown_container">
+                                        <div class="option-dropdown-grid">
+                                            <div class="div_adulto">
+                                                <label>Adultos</label>
+                                                <p>18 anos ou mais</p>
+                                                <div class="option-counter">
+                                                    <div class="option-attention-symbol"></div>
+                                                    <input type="text" value="1" class="contador adulto_room">
+                                                    <button class="button-icon minus-image" onclick="alterarValorQuartos(this, -1, event)"></button>
+                                                    <button class="button-icon plus-image" onclick="alterarValorQuartos(this, 1, event)"></button>
+                                                </div>
+                                                <p class="warning-1_room" hidden="">Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+                                                <p class="warning-2_room" hidden="">Não podem haver mais bebes do que adultos.</p>
+                                                <p class="warning-3_room" hidden="">Para fazer a sua reserva online, deve existir pelo menos um adulto a viajar. Para fazer uma reserva para jovens adultos que viajem sozinhos, contacte-nos.</p>
+                                
+                                            </div>
+                                            <div class="div_crianca">
+                                                <label>Crianças</label>
+                                                <p>2-17 anos</p>
+                                                <div class="option-counter">
+                                                    <div class="option-attention-symbol"></div>
+                                                    <input type="text" value="0" class="contador crianca_room">
+                                                    <button class="button-icon minus-image" onclick="alterarValorQuartos(this, -1, event)"></button>
+                                                    <button class="button-icon plus-image" onclick="alterarValorQuartos(this, 1, event)"></button>
+                                                </div>
+                                                <p class="warning-1_room" hidden="">Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+                                                <p class="warning-3_room" hidden="">0 é o número minimo.</p>
+                                                <div class="div_criancaidade erro">
+                                                </div>
+                                            </div>
+                                            <div class="div_bebe">
+                                                <label>Bebés</label>
+                                                <p>Menos de 2 anos</p>
+                                                <div class="option-counter">
+                                                    <div class="option-attention-symbol"></div>
+                                                    <input type="text" value="0" class="contador bebe_room">
+                                                    <button class="button-icon minus-image" onclick="alterarValorQuartos(this, -1, event)"></button>
+                                                    <button class="button-icon plus-image" onclick="alterarValorQuartos(this, 1, event)"></button>
+                                                </div>
+                                                <p class="warning-1_room" hidden="">Podem viajar até 9 clientes numa reserva. Não estão incluídos bebés. Obtenha mais informações sobre reservas de viagens de grupo.</p>
+                                                <p class="warning-2_room" hidden="">Não podem haver mais bebes do que adultos.</p>
+                                                <p class="warning-3_room" hidden="">0 é o número minimo.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                </div>
+                                <!-- Hidden at page Load -->
+                                <div class="schedule-grid" id="third_row_2" style="display: none;">
+                                    <div class="option-container"> <!-- This is for checking age -->
+                                            <input type="checkbox" class="checkbox" name="agecheck-30to70" id="agecheck-30to70" checked="">
+                                            <span for="agecheck-30to70">Condutor entre 30 e 70 anos </span>
+                                    </div>
+                                </div>
+                                <div class="grid-cols-3 schedule-grid" id="fourth_row_1">
+                                    <div class="option-container">
+                                        <p>Quer fazer mais escalas?</p>
+                                        <a class="option-link" href="http://127.0.0.1:5500/index.html">
+                                            <span>Várias cidades e à volta do mundo</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" viewBox="0 0 64 64">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M47.3 30.478c-1.116-1.136-2.278-2.224-3.417-3.338l-3.491-3.26c-2.337-2.164-4.73-4.267-7.093-6.4-2.42-2.076-4.805-4.188-7.25-6.233-2.445-2.047-4.9-4.082-7.431-6.038a1.004 1.004 0 00-1.36 1.466c2.137 2.378 4.348 4.677 6.57 6.963 2.22 2.288 4.504 4.51 6.752 6.768 2.303 2.2 4.578 4.43 6.908 6.6l3.51 3.24c.639.563 1.272 1.131 1.907 1.697-.635.566-1.268 1.135-1.907 1.698l-3.51 3.24c-2.34 2.16-4.625 4.38-6.91 6.597-2.268 2.238-4.537 4.475-6.752 6.77l-3.32 3.443c-1.082 1.175-2.187 2.325-3.248 3.521a1.005 1.005 0 001.36 1.466c1.273-.97 2.5-1.988 3.75-2.98l3.682-3.056c2.452-2.039 4.85-4.136 7.25-6.232 2.382-2.115 4.764-4.23 7.092-6.402l3.49-3.26c1.14-1.115 2.302-2.203 3.419-3.339a2.088 2.088 0 000-2.93z"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="option-container">
+                                        <p>Precisa de inspiração?</p>
+                                        <a class="option-link" href="http://127.0.0.1:5500/index.html">
+                                            <span>Encontre a sua próxima aventura</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" viewBox="0 0 64 64">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M47.3 30.478c-1.116-1.136-2.278-2.224-3.417-3.338l-3.491-3.26c-2.337-2.164-4.73-4.267-7.093-6.4-2.42-2.076-4.805-4.188-7.25-6.233-2.445-2.047-4.9-4.082-7.431-6.038a1.004 1.004 0 00-1.36 1.466c2.137 2.378 4.348 4.677 6.57 6.963 2.22 2.288 4.504 4.51 6.752 6.768 2.303 2.2 4.578 4.43 6.908 6.6l3.51 3.24c.639.563 1.272 1.131 1.907 1.697-.635.566-1.268 1.135-1.907 1.698l-3.51 3.24c-2.34 2.16-4.625 4.38-6.91 6.597-2.268 2.238-4.537 4.475-6.752 6.77l-3.32 3.443c-1.082 1.175-2.187 2.325-3.248 3.521a1.005 1.005 0 001.36 1.466c1.273-.97 2.5-1.988 3.75-2.98l3.682-3.056c2.452-2.039 4.85-4.136 7.25-6.232 2.382-2.115 4.764-4.23 7.092-6.402l3.49-3.26c1.14-1.115 2.302-2.203 3.419-3.339a2.088 2.088 0 000-2.93z"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="option-container flex-row-reverse">
+                                        <button class="option-submit" id="button-flight">Procurar Voos</button>
+                                    </div>
+                                </div>
+                                <div class="grid-cols-3 schedule-grid" id="fourth_row_2" style="display: none;">
+                                    <div class="grid-cols-2 schedule-grid col-span-2">
+                                        <div class="option-container">
+                                            <p>Quer viajar pelo mundo?</p>
+                                            <a class="option-link" href="http://127.0.0.1:5500/index.html">
+                                                <span>Criar viagem personalizada</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" viewBox="0 0 64 64">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M47.3 30.478c-1.116-1.136-2.278-2.224-3.417-3.338l-3.491-3.26c-2.337-2.164-4.73-4.267-7.093-6.4-2.42-2.076-4.805-4.188-7.25-6.233-2.445-2.047-4.9-4.082-7.431-6.038a1.004 1.004 0 00-1.36 1.466c2.137 2.378 4.348 4.677 6.57 6.963 2.22 2.288 4.504 4.51 6.752 6.768 2.303 2.2 4.578 4.43 6.908 6.6l3.51 3.24c.639.563 1.272 1.131 1.907 1.697-.635.566-1.268 1.135-1.907 1.698l-3.51 3.24c-2.34 2.16-4.625 4.38-6.91 6.597-2.268 2.238-4.537 4.475-6.752 6.77l-3.32 3.443c-1.082 1.175-2.187 2.325-3.248 3.521a1.005 1.005 0 001.36 1.466c1.273-.97 2.5-1.988 3.75-2.98l3.682-3.056c2.452-2.039 4.85-4.136 7.25-6.232 2.382-2.115 4.764-4.23 7.092-6.402l3.49-3.26c1.14-1.115 2.302-2.203 3.419-3.339a2.088 2.088 0 000-2.93z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="option-container flex-row-reverse">
+                                        <button class="option-submit" id="button-hotel">Procurar Voo + hotel</button>
+                                    </div>
+                                </div>
+                                <div class="grid-cols-3 schedule-grid" id="fourth_row_3" style="display: none;">
+                                    <div class="grid-cols-3 col-span-2 schedule-grid">
+                                        <div class=" col-span-1 schedule-grid">
+                                            <div class="option-container">
+                                                <p>Quer viajar pelo mundo?</p>
+                                                <a class="option-link" href="http://127.0.0.1:5500/index.html">
+                                                    <span>Criar viagem personalizada</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="arrow-icon" viewBox="0 0 64 64">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M47.3 30.478c-1.116-1.136-2.278-2.224-3.417-3.338l-3.491-3.26c-2.337-2.164-4.73-4.267-7.093-6.4-2.42-2.076-4.805-4.188-7.25-6.233-2.445-2.047-4.9-4.082-7.431-6.038a1.004 1.004 0 00-1.36 1.466c2.137 2.378 4.348 4.677 6.57 6.963 2.22 2.288 4.504 4.51 6.752 6.768 2.303 2.2 4.578 4.43 6.908 6.6l3.51 3.24c.639.563 1.272 1.131 1.907 1.697-.635.566-1.268 1.135-1.907 1.698l-3.51 3.24c-2.34 2.16-4.625 4.38-6.91 6.597-2.268 2.238-4.537 4.475-6.752 6.77l-3.32 3.443c-1.082 1.175-2.187 2.325-3.248 3.521a1.005 1.005 0 001.36 1.466c1.273-.97 2.5-1.988 3.75-2.98l3.682-3.056c2.452-2.039 4.85-4.136 7.25-6.232 2.382-2.115 4.764-4.23 7.092-6.402l3.49-3.26c1.14-1.115 2.302-2.203 3.419-3.339a2.088 2.088 0 000-2.93z"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div id="option-partnership" class="grid-cols-2 col-span-2 schedule-grid small-gap">
+                                            <div class="option-container option-partners">
+                                                <span>Em parceria com</span>
+                                            </div>
+                                            <div class="option-container option-logos">
+                                                <img src="./British Airways_files/avis_rgb_pos.svg">
+                                                <img src="./British Airways_files/budget-logo.svg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="option-container flex-row-reverse">
+                                        <button class="option-submit" id="button-vehicle">Procurar voo + carro</button>
+                                    </div>
+                                </div>
+                            </div> 
+                        </form>
+                    </div>
+                </div>
+            </div> 
+        </section>
+        <!-- Scheduling Travels Menu End -->
+        <section hidden="" id="fligt-status-section">
+        <div class="page-segment">
+            <div class="flight-status-container">
+            </div>
+        </div>
+        </section>
+        <!-- London Calling -->
+        <section>
+        <div class="page-segment" id="london-segment">
+            <div class="block-wrapper" id="london-wrapper">
+                <div class="london-calling">
+                    <h2>Sonha com Londres?</h2>
+                    <p>Planeie uma emocionante escapadinha à cidade e explore sítios culturais icónicos. Reserve a sua
+                        viagem a Londres agora.</p>
+
+                    <a class="topic-content-link link" href="http://127.0.0.1:5500/index.html">Voos
+                        para Londres a partir de €89 ambos os sentidos
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                    <p class="small-print">a partir de Funchal, January 2025</p>
+                    <button class="btn btn-secondary london-calling-button" id="london-flight-search">Procurar voos para Londres</button>
+                    <br>
+                    <p class="small-print">Os passageiros são responsáveis por verificar os requisitos de
+                            entrada no Reino Unido|
+                            Aplicam-se Termos e Condições
+                    </p>
+                </div>
+            </div>
+        </div>
+        </section>
+        <!-- London Calling End -->
+
+        <!-- Toolbar -->
+        <section>
+        <div class="page-segment">
+            <div class="block-wrapper" id="toolbar-wrapper">
+                <div class="grid-cols-3 toolbar-grid">
+                    <div class="card">
+                        <div class="wrapper">
+                            <div class="body">
+                                <h3 class="content-summary">
+                                    <a href="http://127.0.0.1:5500/index.html">
+                                        Gerir a minha reserva</a>
+                                </h3>
+                                <p>Faça alterações aos seus planos de viagem e veja os seus dados de reserva</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="wrapper">
+                            <div class="body">
+                                <h3 class="content-summary">
+                                    <a href="http://127.0.0.1:5500/index.html">
+                                        Check-in online</a>
+                                </h3>
+                                <p>O check-in online abre 24 horas antes da partida do voo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="wrapper">
+                            <div class="body">
+                                <h3 class="content-summary">
+                                    <a class="link" href="http://127.0.0.1:5500/index.html">
+                                        Estado do voo</a>
+                                </h3>
+                                <p>Verifique o estado mais recente dos nossos voos nos próximos 10 dias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <!-- Toolbar End -->
+
+        <!-- Topics -->
+        <section id="section-topic">
+        <div class="page-segment">
+            <div class="block-wrapper" id="topic-wrapper">
+                <div class="grid-cols-2 topic-grid">
+                    <!-- Topic 1 (Head off to the UK)-->
+                    <div class="card">
+                        <div class="wrapper">
+                            <div class="image-wrapper">
+                                <img src="./British Airways_files/topic1.jpg" alt="Topic 1">
+                            </div>
+                            <div class="body">
+                                <div class="content">
+                                    <h3 class="content-summary">Parta para o Reino Unido</h3>
+                                    <p class="topic-content-paragraph">Visite as pessoas e os locais que adora no Reino
+                                        Unido Explore as ruas de lojas de estilistas e os pontos históricos. Planeie a sua
+                                        próxima viagem agora.</p>
+                                    <a class="topic-content-link" href="http://127.0.0.1:5500/index.html">Voos
+                                        para Londres a partir de €100 ambos os sentidos
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                                    <p class="small-print">a partir de Funchal, January 2025</p>
+                                    <p class="small-print">O preço das férias inclui voos de ida e volta e um generoso limite de bagagem.</p>
+                                </div>
+                            </div>
+                            <div class="action">
+                                <a class="topic-content-link" href="http://127.0.0.1:5500/index.html">Pesquise mais ofertas 
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Topic 1 (Head off to the UK) End-->
+
+                    <!-- Topic 2 (BA Better World)-->
+                    <div class="card">
+                        <div class="wrapper">
+                            <div class="image-wrapper">
+                                <img src="./British Airways_files/topic2.jpg" alt="Topic 2">
+                            </div>
+                            <div class="body">
+                                <div class="content">
+                                    <h3 class="content-summary">A sustentabilidade é o nosso foco</h3>
+                                </div>
+                                <div class="content">
+                                    <p class="topic-content-paragraph">Com enfoque nas pessoas, no planeta e numa empresa
+                                        responsável, estamos a transformar a nossa companhia aérea para um futuro mais
+                                        sustentável.</p>
+                                </div>
+                            </div>
+                            <div class="action">
+                                <a class="topic-content-link" href="http://127.0.0.1:5500/index.html">Sobre
+                                    o BA Better World 
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Topic 2 (BA Better World) End-->
+
+                    <!-- Topic 3 (Férias)-->
+                    <div class="card">
+                        <div class="wrapper">
+                            <div class="image-wrapper">
+                                <img src="./British Airways_files/topic3.jpg" alt="Topic 3">
+                            </div>
+                            <div class="body">
+                                <div class="content">
+                                    <h3 class="content-summary">Férias nos EUA</h3>
+                                </div>
+                                <div class="content">
+                                    <p class="topic-content-paragraph">Assegure as suas férias com um depósito reduzido e
+                                        reparta o custo em pagamentos flexíveis até 4 semanas antes da partida.</p>
+                                </div>
+                                <div class="content">
+                                    <p class="small-print">Os preços incluem um limite de bagagem generoso, todos
+                                        os encargos obrigatórios e 24 horas de apoio ao cliente.</p>
+                                </div>
+                            </div>
+                            <div class="action">
+                                <a class="topic-content-link" href="http://127.0.0.1:5500/index.html">Procure
+                                    oportunidades de férias 
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Topic 3 (Férias) End -->
+
+                    <!-- Topic 4 (Fly-Drive)-->
+                    <div class="card">
+                        <div class="wrapper">
+                            <div class="image-wrapper">
+                                <img src="./British Airways_files/topic4.jpg" alt="Topic 4">
+                            </div>
+                            <div class="body">
+                                <div class="content">
+                                    <h3 class="content-summary">Aventuras Fly-drive</h3>
+                                </div>
+                                <div class="content">
+                                    <p class="topic-content-paragraph">Damos-lhe a liberdade de explorar novos lugares com
+                                        fly-drives a preços excelentes no Reino Unido e aluguer de um veículo por 7 dias
+                                        pelo preço de 5 dias nos EUA. </p>
+                                </div>
+                                <div class="content">
+                                    <p class="small-print">Os preços incluem um limite de bagagem generoso, todos
+                                        os encargos obrigatórios e 24 horas de apoio, para que possa viajar
+                                        descansado.</p>
+                                </div>
+                            </div>
+                            <div class="action">
+                                <a class="topic-content-link" href="http://127.0.0.1:5500/index.html">Vamos
+                                    lá 
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Topic 4 (Fly-Drive) End -->
+
+                    <!-- Topic 5 (Novos Lugares)-->
+                    <div class="card">
+                        <div class="wrapper">
+                            <div class="image-wrapper">
+                                <img src="./British Airways_files/topic5.jpg" alt="Topic 5">
+                            </div>
+                            <div class="body">
+                                <div class="content">
+                                    <h3 class="content-summary">Descubra os nossos voos mais baratos</h3>
+                                </div>
+                                <a class="topic-content-link" href="http://127.0.0.1:5500/index.html">Voos
+                                para Miami a partir €390 regresso
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                            <p class="small-print">a partir de Lisbon, August 2025</p>
+                            <a class="topic-content-link" href="http://127.0.0.1:5500/index.html">Voos
+                            para San Francisco a partir €542 regresso
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                        <p class="small-print">a partir de Lisbon, September 2025</p>
+                            </div>
+                            <div class="action">
+                                <a class="topic-content-link" href="http://127.0.0.1:5500/index.html">Procure mais destinos
+                                
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Topic 5 (Novos Lugares) End -->
+
+                    <!-- Topic 6 (Económica Premium)-->
+                    <div class="card">
+                        <div class="wrapper">
+                            <div class="image-wrapper">
+                                <img src="./British Airways_files/topic6.jpg" alt="Topic 6">
+                            </div>
+                            <div class="body">
+                                <div class="content">
+                                    <h3 class="content-summary">VIAJAR COM ESTILO</h3>
+                                </div>
+                                <a class="topic-content-link" href="http://127.0.0.1:5500/index.html">Voos na Económica premium para New York a partir de €936 regresso
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                            <p class="small-print">a partir de Lisbon, January 2025</p>
+                            <a class="topic-content-link" href="http://127.0.0.1:5500/index.html">Voos na Executiva para Boston a partir de €2514 regresso
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                        <p class="small-print">a partir de Lisbon, February 2025</p>
+                            </div>
+                            <div class="action">
+                                <a class="topic-content-link" href="http://127.0.0.1:5500/index.html">Pesquise as nossas cabinas
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Topic 6 (Económica Premium) End -->
+
+                    <!-- Topic 7 (Contactar)-->
+                    <div class="card">
+                        <div class="wrapper">
+                            <div class="image-wrapper">
+                                <img src="./British Airways_files/topic7.jpg" alt="Topic 7">
+                            </div>
+                            <div class="body">
+                                <div class="content">
+                                    <h3 class="content-summary">Se precisar de nos contactar</h3>
+                                </div>
+                                <div class="content">
+                                    <p class="topic-content-paragraph">Estamos sempre prontos para ajudar A nossa equipa de
+                                        Apoio ao Cliente está à sua disposição para responder a todas as suas perguntas.</p>
+                                </div>
+                            </div>
+                            <div class="action">
+                                <a class="topic-content-link" href="http://127.0.0.1:5500/index.html">Como
+                                    contactar-nos 
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Topic 7 (Contactar) End -->
+
+                    <!-- Topic 8 (Singular)-->
+                    <div class="card">
+                        <div class="wrapper">
+                            <div class="image-wrapper">
+                                <img src="./British Airways_files/topic8.jpg" alt="Topic 8">
+                            </div>
+                            <div class="body">
+                                <div class="content">
+                                    <h3 class="content-summary">Singular em todos os sentidos</h3>
+                                </div>
+                                <div class="content">
+                                    <p class="topic-content-paragraph">Todos viajamos por um milhão de razões diferentes e
+                                        cada uma é única - tal como cada membro da nossa equipa, cada momento do nosso
+                                        serviço e cada um dos passageiros.</p>
+                                </div>
+                            </div>
+                            <div class="action">
+                                <a class="topic-content-link" href="http://127.0.0.1:5500/index.html">Obtenha
+                                    mais informações 
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Topic 8 (Singular) End -->
+
+                    <!-- Topic 9 (Exevutive Club)-->
+                    <div class="card">
+                        <div class="wrapper">
+                            <div class="image-wrapper">
+                                <img src="./British Airways_files/topic9.jpg" alt="Topic 9">
+                            </div>
+                            <div class="body">
+                                <div class="content">
+                                    <h3 class="content-summary">Junte-se ao nosso Executive Club</h3>
+                                </div>
+                                <div class="content">
+                                    <p class="topic-content-paragraph">Desfrute de reservas mais rápidas, pagando com Avios,
+                                        acumulando recompensas e recebendo ofertas especiais como Membro do Executive Club.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="action">
+                                <a class="topic-content-link" href="http://127.0.0.1:5500/index.html">Adira
+                                    agora 
+        <svg id="link-arrow-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#2671D3" d="M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z">
+            </path>
+        </svg>
+    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Topic 9 (Exevutive Club) End -->
+
+                </div>
+            </div>
+        </div>
+
+        </section>
+        <!-- Topics End -->
+
+    </main>
+    <footer>
+        <!-- Footer Links -->
+
+        <nav class="footer-links">
+            <a href="http://127.0.0.1:5500/index.html">Ajuda
+                e contactos</a>
+            <a href="http://127.0.0.1:5500/index.html">Acessibilidade
+                e ajuda do site</a>
+            <a href="http://127.0.0.1:5500/index.html">Segurança
+                do site</a>
+            <a href="http://127.0.0.1:5500/index.html">Política
+                de privacidade</a>
+            <a href="http://127.0.0.1:5500/index.html">Política de Cookies</a>
+            <a href="http://127.0.0.1:5500/index.html">Informação
+                legal</a>
+            <a href="http://127.0.0.1:5500/index.html">Sobre a
+                BA</a>
+            <a href="http://127.0.0.1:5500/index.html">Media Centre</a>
+            <a href="http://127.0.0.1:5500/index.html">Compromisso
+                com o cliente</a>
+            <a href="http://127.0.0.1:5500/index.html">Careers</a>
+            <a href="http://127.0.0.1:5500/index.html">Sustentabilidade</a>
+            <a href="http://127.0.0.1:5500/index.html">Declaração
+                de escravatura moderna</a>
+            <a href="http://127.0.0.1:5500/index.html">Iberia.com</a>
+        </nav>
+        <!-- Footer Links End -->
+        <!-- Footer Icons -->
+        <ul class="footer-icons">
+            <li><a href="http://127.0.0.1:5500/index.html">
+                    <svg width="22px" height="22px" role="img" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                        <title>Instagram</title>
+                        <path d="M8.376,12.508c-0.004,-2.301 1.839,-4.17 4.116,-4.174c2.277,-0.005 4.127,1.857 4.132,4.158c0.004,2.301 -1.839,4.17 -4.117,4.174c-2.276,0.005 -4.127,-1.857 -4.131,-4.158m-2.228,0.004c0.006,3.545 2.856,6.413 6.364,6.406c3.508,-0.007 6.348,-2.886 6.341,-6.431c-0.007,-3.543 -2.857,-6.412 -6.366,-6.406c-3.507,0.007 -6.346,2.887 -6.339,6.431m11.458,-6.694c0.002,0.828 0.668,1.498 1.487,1.497c0.82,-0.002 1.483,-0.675 1.482,-1.502c-0.001,-0.828 -0.668,-1.499 -1.487,-1.497c-0.82,0.001 -1.483,0.674 -1.482,1.502m-10.086,16.865c-1.206,-0.053 -1.861,-0.255 -2.297,-0.425c-0.578,-0.226 -0.991,-0.497 -1.425,-0.932c-0.433,-0.437 -0.702,-0.853 -0.928,-1.435c-0.169,-0.442 -0.373,-1.102 -0.43,-2.321c-0.061,-1.318 -0.075,-1.713 -0.081,-5.051c-0.007,-3.336 0.005,-3.732 0.062,-5.05c0.052,-1.218 0.254,-1.881 0.421,-2.321c0.224,-0.585 0.491,-1.001 0.923,-1.44c0.432,-0.438 0.844,-0.709 1.421,-0.937c0.436,-0.173 1.09,-0.377 2.296,-0.435c1.305,-0.062 1.696,-0.076 4.998,-0.082c3.304,-0.007 3.695,0.005 5,0.063c1.205,0.053 1.861,0.255 2.297,0.425c0.578,0.226 0.991,0.496 1.424,0.933c0.434,0.437 0.703,0.851 0.929,1.436c0.17,0.439 0.373,1.101 0.43,2.319c0.062,1.318 0.076,1.713 0.082,5.05c0.006,3.338 -0.006,3.733 -0.063,5.051c-0.053,1.219 -0.253,1.881 -0.421,2.322c-0.224,0.584 -0.491,1.001 -0.923,1.439c-0.432,0.437 -0.844,0.71 -1.421,0.938c-0.436,0.172 -1.091,0.377 -2.296,0.434c-1.304,0.062 -1.695,0.077 -4.999,0.083c-3.303,0.006 -3.693,-0.006 -4.999,-0.064m-0.144,-22.596c-1.316,0.062 -2.215,0.275 -3.001,0.586c-0.813,0.321 -1.503,0.75 -2.189,1.446c-0.686,0.696 -1.108,1.394 -1.423,2.216c-0.304,0.796 -0.511,1.705 -0.569,3.036c-0.058,1.333 -0.071,1.759 -0.064,5.153c0.006,3.394 0.021,3.82 0.084,5.154c0.063,1.329 0.273,2.237 0.581,3.031c0.317,0.822 0.742,1.518 1.431,2.212c0.688,0.693 1.379,1.119 2.194,1.437c0.787,0.308 1.687,0.517 3.003,0.575c1.32,0.059 1.741,0.072 5.1,0.065c3.36,-0.006 3.782,-0.021 5.101,-0.084c1.317,-0.064 2.215,-0.277 3.001,-0.587c0.814,-0.322 1.503,-0.75 2.189,-1.446c0.686,-0.696 1.108,-1.394 1.422,-2.217c0.305,-0.795 0.512,-1.704 0.569,-3.034c0.058,-1.334 0.072,-1.76 0.065,-5.154c-0.006,-3.394 -0.021,-3.82 -0.084,-5.152c-0.062,-1.331 -0.273,-2.239 -0.581,-3.033c-0.317,-0.822 -0.742,-1.518 -1.43,-2.212c-0.689,-0.693 -1.38,-1.12 -2.194,-1.437c-0.788,-0.308 -1.687,-0.517 -3.004,-0.575c-1.32,-0.059 -1.741,-0.072 -5.101,-0.065c-3.359,0.006 -3.78,0.021 -5.1,0.085"></path>
+                    </svg></a></li>
+            <li><a href="http://127.0.0.1:5500/index.html"><svg width="22px" height="22px" role="img" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                        <title>Facebook</title>
+                        <path d="M14.474,25l-0,-11.403l3.901,0l0.584,-4.445l-4.485,-0l-0,-2.839c-0,-1.285 0.363,-2.161 2.244,-2.161l2.4,-0l-0,-3.978c-1.162,-0.121 -2.33,-0.179 -3.497,-0.174c-3.458,0 -5.827,2.071 -5.827,5.875l0,3.277l-3.912,-0l0,4.445l3.912,0l0,11.403l4.68,0Z"></path>
+                    </svg></a></li>
+            <li><a href="http://127.0.0.1:5500/index.html"><svg width="22px" height="22px" role="img" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                        <title>Twitter</title>
+                        <path d="M22.441,7.4c0.015,0.22 0.015,0.441 0.015,0.663c0,6.778 -5.16,14.594 -14.594,14.594l0,-0.004c-2.787,0.004 -5.516,-0.795 -7.862,-2.3c0.405,0.048 0.813,0.073 1.221,0.074c2.31,0.002 4.554,-0.773 6.37,-2.2c-2.194,-0.041 -4.12,-1.473 -4.792,-3.562c0.769,0.148 1.561,0.118 2.316,-0.088c-2.393,-0.484 -4.114,-2.587 -4.115,-5.028l0,-0.065c0.713,0.398 1.512,0.618 2.328,0.642c-2.254,-1.505 -2.949,-4.503 -1.588,-6.847c2.605,3.204 6.447,5.152 10.571,5.359c-0.413,-1.781 0.152,-3.648 1.484,-4.901c2.065,-1.942 5.315,-1.843 7.257,0.223c1.149,-0.227 2.25,-0.648 3.257,-1.245c-0.383,1.188 -1.184,2.196 -2.255,2.837c1.017,-0.12 2.01,-0.392 2.946,-0.807c-0.689,1.03 -1.555,1.929 -2.559,2.655Z"></path>
+                    </svg></a></li>
+            <li><a href="http://127.0.0.1:5500/index.html"><svg width="22px" height="22px" role="img" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                        <title>LinkedIn</title>
+                        <path d="M23.125,0l-21.25,0c-1.029,0 -1.875,0.846 -1.875,1.875l0,21.25c0,1.029 0.846,1.875 1.875,1.875l21.25,0c1.029,0 1.875,-0.846 1.875,-1.875l0,-21.25c0,-1.029 -0.846,-1.875 -1.875,-1.875Zm-15.625,21.25l-3.75,0l0,-11.25l3.75,0l0,11.25Zm-1.875,-13.438c-1.176,-0.033 -2.125,-1.01 -2.125,-2.186c0,-1.2 0.987,-2.188 2.188,-2.188c1.199,0 2.187,0.987 2.187,2.187c-0.02,1.216 -1.034,2.201 -2.25,2.188Zm15.625,13.437l-3.75,0l0,-5.925c0,-1.775 -0.75,-2.412 -1.725,-2.412c-1.136,0.075 -2.031,1.031 -2.031,2.17c0,0.051 0.002,0.103 0.006,0.155c-0.006,0.058 -0.006,0.116 0,0.175l0,5.837l-3.75,0l0,-11.25l3.625,0l0,1.625c0.743,-1.13 2.024,-1.794 3.375,-1.75c1.938,0 4.2,1.075 4.2,4.575l0.05,6.8Z"></path>
+                    </svg></a></li>
+            <li><a href="http://127.0.0.1:5500/index.html"><svg width="22px" height="22px" role="img" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                        <title>Youtube</title>
+                        <path d="M24.478,6.483c0.522,1.949 0.522,6.017 0.522,6.017c-0,0 -0,4.068 -0.522,6.017c-0.288,1.076 -1.135,1.923 -2.211,2.211c-1.949,0.522 -9.767,0.522 -9.767,0.522c-0,0 -7.818,0 -9.767,-0.522c-1.076,-0.288 -1.923,-1.135 -2.211,-2.211c-0.522,-1.949 -0.522,-6.017 -0.522,-6.017c-0,0 -0,-4.068 0.522,-6.017c0.288,-1.076 1.135,-1.923 2.211,-2.211c1.949,-0.522 9.767,-0.522 9.767,-0.522c-0,-0 7.818,-0 9.767,0.522c1.076,0.288 1.923,1.135 2.211,2.211Zm-14.478,9.767l6.495,-3.75l-6.495,-3.75l-0,7.5Z"></path>
+                    </svg></a></li>
+            <li><a href="http://127.0.0.1:5500/index.html"><svg width="22px" height="22px" role="img" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                        <title>TikTok</title>
+                        <path d="M 17.535 0 c 0 0.373 1.409 4.134 2.787 5.011 l 0.001 0.001 c 0.96 0.612 2.103 0.969 3.331 0.969 l 0 4.297 c -2.281 0 -4.394 -0.713 -6.119 -1.924 l 0 8.736 c 0 4.361 -3.63 7.91 -8.094 7.91 c -1.726 0 -3.324 -0.531 -4.639 -1.433 c -0.001 -0.001 -0.001 -0.001 -0.003 -0.003 c -2.086 -1.432 -3.453 -3.8 -3.453 -6.476 c 0 -4.361 3.632 -7.911 8.095 -7.911 c 0.371 0 0.733 0.031 1.091 0.077 l 0 4.39 c -0.346 -0.106 -0.71 -0.168 -1.091 -0.168 c -2.039 0 -3.697 1.622 -3.697 3.614 c 0 1.386 0.806 2.593 1.981 3.197 c 0.513 0.264 1.097 0.415 1.716 0.415 c 1.99 0 3.616 -1.548 3.689 -3.477 l 0.007 -17.225 l 4.398 0 Z"></path>
+                    </svg></a></li>
+        </ul>
+        <span id="footer-legal">© British Airways - todos os direitos reservados</span>
+        <div class="grid-cols-1 footer-logos-grid">  
+            <img src="./British Airways_files/footerlogo.png" alt="" id="footer_ba_logo" class="footer-logos">
+            <img src="./British Airways_files/oneworld_logo.png" alt="" id="footer_world_logo" class="footer-logos">
+        </div>
+        <!-- Footer Icons -->
+
+    </footer>
+    <script src="./British Airways_files/logic.js.download"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
