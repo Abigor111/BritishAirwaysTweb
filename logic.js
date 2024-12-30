@@ -597,6 +597,7 @@ function alterarValor(botao, incremento, event) {
         input.classList.add('disabled');
         warning1.style.display = 'block';
         warning3.style.display = 'none';
+        botao.classList.add("disabled")
         return;
     }
     const novoValor = valorAtual + incremento;

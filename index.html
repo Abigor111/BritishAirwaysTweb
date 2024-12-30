@@ -290,12 +290,12 @@
                         <li class="nav-section">
                             <div class="nav-section-wrapper">
                                 <div class="nav-section-title-section">
-                                    <button class="nav_button" id="nav-gerir">
+                                    <button class="nav_button" id="nav_gerir">
                                         <span class="nav_span nav-section-title">Gerir</span>
                                     </button>
                                     <div class="nav_dropdown_container">
                                         <div class="nav_dropdown_content">
-                                            <div class="grid-cols-3 nav_dropdown_grid">
+                                            <div class="grid-cols-3 nav_dropdown_grid" id="nav_gerir_dropdown">
                                                 <div class="nav_dropdown_grid_item">
                                                     <h2><strong>A minha reserva</strong></h2>
                                                     <div class="option-container">
@@ -349,7 +349,7 @@
                                     </button>
                                     <div class="nav_dropdown_container">
                                         <div class="nav_dropdown_content">
-                                            <div class="grid-cols-3 nav_dropdown_grid">
+                                            <div class="grid-cols-3 nav_dropdown_grid" id="nav_checkin_dropdown">
                                                 <div class="nav_dropdown_grid_item">
                                                     <h2><strong>As minhas reservas</strong></h2>
                                                     <div class="option-container">
@@ -388,7 +388,7 @@
                                     </button>
                                     <div class="nav_dropdown_container">
                                         <div class="nav_dropdown_content">
-                                            <div class="grid-cols-5 nav_dropdown_grid">
+                                            <div class="grid-cols-4 nav_dropdown_grid" id="nav_ajuda_dropdown">
                                                 <div class="nav_dropdown_grid_item">
                                                     <h2>Reservas</h2>
                                                     <ul>
@@ -830,7 +830,7 @@
                                         <div class="option-container option-partners">
                                             <span>Em parceria com</span>
                                         </div>
-                                        <div class="option-container option-logos">
+                                        <div class="option-container option-logos" id="banner-logos">
                                             <img src="img/avis_rgb_pos.svg">
                                             <img src="img/budget-logo.svg">
                                         </div>
@@ -1228,7 +1228,7 @@
                     </svg></a></li>
         </ul>
         <span id="footer-legal">© British Airways - todos os direitos reservados</span>
-        <div class="grid-cols-1 footer-logos-grid">
+        <div class="grid grid-cols-1 footer-logos-grid">
             <img src="./img/footerlogo.png" alt="" id="footer_ba_logo" class="footer-logos">
             <img src="./img/oneworld_logo.png" alt="" id="footer_world_logo" class="footer-logos">
         </div>

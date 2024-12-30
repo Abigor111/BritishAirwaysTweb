@@ -4,55 +4,73 @@ $secondary-color: #2e5c99;
 $terciary-color: white;
 $link-color: #2671d3;
 $white-gray: #ECECED;
-$font-open-sans: "Open sans", helvetica, arial, sans-serif;
 $font-mylius-modern: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
 $search-buttons-width: 250px;
 $search-buttons-height: 50px;
 $main-fontsize: 1rem;
 
-$breakpoints: (
-  'md': 475px, // Tablet screens start just above 768px
-  'xl': 1024px // Extra large screens
-);
-
 // Mix-ins
-@mixin no-internal-spacement {
-    padding: 0px 0px;
-}
-
-@mixin no-external-spacement {
-    -ms-margin: 0 0px;
-    margin: 0px 0px;
-}
-
-@mixin form-bottom-border {
-    border-bottom: 1px solid #b6b7bd;
-}
-
 @mixin arrow-icon-sizing {
     width: 15px;
     height: 15px;
 }
+@mixin typography($font-family, $font-weight, $font-size, $line-height, $letter-spacing) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
 
-@mixin centralize {
-    margin: 0 auto;
+@mixin button-style($background-color, $text-color, $border: none) {
+  background-color: $background-color;
+  color: $text-color;
+  border: $border;
+  padding: 16px 24px;
+  font-family: $font-mylius-modern;
+  font-size: $main-fontsize;
+  line-height: 1.5;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+@mixin flex-setup($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position($type: absolute, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: $type;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
 }
 
 // General Config
 * {
-    @include no-external-spacement;
-    appearance: none;
-    color: $main-color;
+  -ms-margin: 0 0px;
+  margin: 0px 0px;
+  appearance: none;
+  color: $main-color;
+  box-sizing: border-box;
+  color: $main-color;
 }
 
 html {
-    font-family: $font-open-sans;
-    font-size: $main-fontsize;
-    font-weight: 300;
-    line-height: 1.5;
-    letter-spacing: 0.004em;
+  @include typography($font-mylius-modern, 300, $main-fontsize, 1.5, 0.004em);
 }
-
+body {
+  font-family: $font-mylius-modern;
+}
 
 
 
@@ -116,29 +134,28 @@ $gap: 1rem; // Default gap
 
 
 p, ul, ol {
-	font-family: $font-open-sans;
-	font-weight: 300;
-	font-size: $main-fontsize;
-	line-height: 1.5;
-	letter-spacing: 0.004em;
+	@include typography($font-mylius-modern, 300, $main-fontsize, 1.5, 0.004em);
 }
 p, ol {
 	max-width: 75ch;
 }
-
-
 a {
 	transition: color .2s cubic-bezier(.645,.045,.355,1);
 	color: $link-color;
 }
+h2 {
+  @include typography($font-mylius-modern, 300, 2.25rem, 1.33, 0.012em);
+  max-width: none;
+
+  @media (min-width: 1024px) {
+    font-size: 2.75rem;
+    line-height: 1.27;
+  }
+}
 .link {
-  display: -ms-flexbox;
-  display: flex;
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
+  @include flex-setup(row, flex-start, center);
   width: fit-content;
   -ms-flex-align: center;
-  align-items: center;
   color: $link-color;
   -webkit-transition: color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -147,20 +164,6 @@ a {
   padding-bottom: 4px;
   -webkit-box-shadow: 0 1px currentColor;
   box-shadow: currentcolor 0px -1px inset;
-}
-
-h2 {
-  font-family: $font-mylius-modern;
-  font-weight: 300;
-  font-size: 2.25rem;
-  line-height: 1.33;
-  letter-spacing: 0.012em;
-  max-width: none;
-
-  @media (min-width: 1024px) {
-    font-size: 2.75rem;
-    line-height: 1.27;
-  }
 }
 
 // MARGENS E GAPS DINÂMICAS
@@ -218,7 +221,7 @@ h2 {
 }
 
 .small-print {
-	font-family: $font-open-sans;
+	font-family: $font-mylius-modern;
 	font-weight: 300;
 	font-size: 0.75rem;
 	line-height: 1.67;
@@ -226,17 +229,13 @@ h2 {
 }
 
 button {
-    font-family: $font-open-sans;
+    @include button-style($terciary-color, $main-color);
     font-weight: 400;
-    font-size: $main-fontsize;
-    line-height: 1.5;
     letter-spacing: 0.004em;
     cursor: pointer;
-    border: medium;
     border-radius: 2px;
     width: 100%;
     text-wrap: balance;
-    padding: 16px 24px;
     transition: background-color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 
     &.btn {
@@ -318,7 +317,7 @@ img {
 
 // Header
 .header {
-  border-bottom: 1px solid rgb(236, 236, 237);
+  border-bottom: 1px solid $white-gray;
   background: rgb(255, 255, 255);
   position: relative;
   &.header-full {
@@ -425,8 +424,7 @@ img {
 
   &.mobile {
     display: block;
-    width: 91px;
-    height: 50px;
+    @include size(91px, 50px);
   }
 }
 // Nav
@@ -502,6 +500,7 @@ img {
   cursor: pointer;
 }
 .nav-section-title {
+  white-space: nowrap;
   font-family: $font-mylius-modern;
   font-weight: 300;
   font-size: $main-fontsize;
@@ -518,7 +517,7 @@ img {
   padding: 0px;
 }
 #nav_list {
-  @include no-internal-spacement;
+  padding: 0px 0px;
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -545,16 +544,12 @@ img {
   grid-template-columns: 1fr;
 }
 .nav_button {
-  display: flex;
-  justify-content: space-between;
+  @include flex-setup(row, space-between, center);
   position: relative;
-  flex-direction: row;
-  width: 100%;
-  height: 48px;
+  @include size(100%, 48px);
   padding: 0px 12px;
   background-color: $terciary-color;
   border: none;
-  align-items: center;
 
   &:active {
     .arrow-icon {
@@ -627,7 +622,7 @@ img {
               display: block;
               color: $link-color;
               text-decoration: none;
-              font-family: $font-open-sans;
+              font-family: $font-mylius-modern;
               font-weight: 300;
               font-size: $main-fontsize;
               line-height: 1.5;
@@ -651,8 +646,7 @@ img {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 0;
-  height: 4px;
+  @include size(0px, 4px);
   background: $secondary-color;
   transition: width 0.5s ease, right 0.5s ease;
 }
@@ -662,8 +656,7 @@ img {
   left: 0;
 }
 #nav_countryselector img {
-  width: 22px;
-  height: 16px;
+  @include size(22px, 16px);
   margin-right: 10px;
   object-fit: cover;
 }
@@ -677,7 +670,7 @@ img {
   height: fit-content;
   background-color: $secondary-color;
   color: $terciary-color;
-  font-family: $font-open-sans;
+  font-family: $font-mylius-modern;
   font-weight: 400;
   font-size: $main-fontsize;
   line-height: 1.5;
@@ -690,6 +683,11 @@ img {
   padding: 16px 24px;
   transition: background-color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   align-self: end;
+
+  &:hover{
+    background-color: rgb(38, 113, 211);
+    color: white;
+  }
 }
 #double_buttons {
   display: grid;
@@ -701,6 +699,7 @@ img {
 // Form
 #banner-radio-grid{
   display: grid;
+  row-gap: 24px;
   grid-template-columns: minmax(0, 1fr);
   border-bottom: 1px solid #b6b7bd;
   margin-bottom: 16px;
@@ -746,7 +745,7 @@ img {
   padding: 24px;
   form {
       fieldset {
-          @include no-internal-spacement;
+          padding: 0px 0px;
           border: 0;
           margin-left: 2px;
           legend {
@@ -773,7 +772,7 @@ img {
   flex-wrap: wrap;
   padding-bottom: 16px;
   margin-bottom: 16px;
-  @include form-bottom-border;
+  border-bottom: 1px solid #b6b7bd;
 }
 .banner-radio-wrapper {
   display: flex;
@@ -784,8 +783,7 @@ img {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 30px;
-  height: 30px;
+  @include size(30px, 30px);
   margin-right: 16px;
   border: 1px solid rgb(113, 115, 127);
   border-radius: 50%;
@@ -795,8 +793,7 @@ img {
       border-color: black;
       &::before {
           content: '';
-          width: 12px;
-          height: 12px;
+          @include size(12px, 12px);
           background-color: black;
           border-radius: 50%;
           position: absolute;
@@ -809,8 +806,7 @@ img {
 
 .checkbox {
   border: 1px solid #71737f;
-  width: 28px;
-  height: 28px;
+  @include size(28px, 28px);
   margin-right: 16px;
   -webkit-box-shadow: 0 2px 4px $white-gray;
   box-shadow: 0 2px 4px $white-gray;
@@ -829,8 +825,7 @@ img {
           content: "";
           pointer-events: none;
           display: inline-block;
-          width: 28px;
-          height: 28px;
+          @include size(28px, 28px);
           -webkit-transition: background 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), border 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
           transition: background 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), border 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
           border: 1px solid #71737f;
@@ -881,20 +876,15 @@ img {
 }
 
 .banner-search-button {
-  width: $search-buttons-width;
-  height: $search-buttons-height;
-  font-size: $main-fontsize;
+  @include button-style($secondary-color, $terciary-color);
+  @include size($search-buttons-width, $search-buttons-height);
   border-radius: 2px;
-  background-color: $secondary-color;
-  color: $terciary-color;
-  border: none;
   border-radius: 2.5px;
 }
 
 // Banner Grids
 .schedule-grid {
   display: grid;
-  column-gap: 24px;
   row-gap: 24px;
   max-width: 944px;
 
@@ -927,7 +917,7 @@ img {
   position: relative;
   
   p {
-      font-family: $font-open-sans;
+      font-family: $font-mylius-modern;
       font-weight: 300;
       font-size: 0.75rem;
       line-height: 1.67;
@@ -951,7 +941,7 @@ img {
       border-bottom: 1px solid #71737f;
       border-radius: 0;
       background: transparent;
-      font-family: $font-open-sans;
+      font-family: $font-mylius-modern;
       font-size: 20px;
       font-weight: 300;
       line-height: 30px;
@@ -1011,8 +1001,7 @@ img {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
-      width: 30px;
-      height: 30px;
+      @include size(30px, 30px);
       margin-right: 16px;
       border: 1px solid rgb(113, 115, 127);
       border-radius: 50%;
@@ -1021,11 +1010,10 @@ img {
   }
 
   button {
-      height: 59px;
+      @include size(100%, 59px);
       padding: 0 20px 8px 0;
       background: transparent;
       border: none;
-      width: 100%;
       margin: 0;
       text-align: left;
       border-bottom-width: 1px;
@@ -1045,19 +1033,16 @@ img {
           opacity: 1;
       }*/
       &:not(hover) + .option_dropdown_container {
-        
-          position: static;
           display: none;
           padding: 16px 24px 24px 24px;
           filter: blur(0.1rem);
           opacity: 0;
       }
       &.option-submit {
-          width: fit-content;
           background-color: $secondary-color;
           color: $terciary-color;
           width: auto;
-          font-family: $font-open-sans;
+          font-family: $font-mylius-modern;
           font-weight: 400;
           font-size: $main-fontsize;
           line-height: 1.5;
@@ -1086,7 +1071,6 @@ img {
 
       
       background-color: rgb(255, 255, 255);
-      position: absolute;
       top: 56px;
       left: 0px;
       right: 0px;
@@ -1095,7 +1079,7 @@ img {
       box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
 
       p {
-          font-family: $font-open-sans;
+          font-family: $font-mylius-modern;
           font-weight: 300;
           font-size: 0.75rem;
           line-height: 1.67;
@@ -1116,8 +1100,7 @@ img {
           .button-icon {
               padding: 22px 22px;
               color: #71737f;
-              width: 28px;
-              height: 28px;
+              @include size(28px, 28px);
               position: absolute;
               display: -ms-flexbox;
               display: flex;
@@ -1164,6 +1147,7 @@ img {
               
           } 
           input {
+              @include size(100%, 48px);
               font-size: 20px;
               line-height: 30px;
               font-family: $font-mylius-modern;
@@ -1171,7 +1155,6 @@ img {
               font-weight: 200;
               line-height: 28px;
               text-align: center;
-              height: 48px;
               padding: 0 48px;
               border-color: #71737f;
               border-width: 1px;
@@ -1179,7 +1162,6 @@ img {
               -webkit-box-sizing: border-box;
               box-sizing: border-box;
               border-radius: 8px;
-              width: 100%;
               text-overflow: ellipsis;
               letter-spacing: 0.1em;
               
@@ -1218,7 +1200,7 @@ img {
 }
 .option-span-fill {
   color: black;
-  font-family: $font-open-sans;
+  font-family: $font-mylius-modern;
 }
 .option-label-inside {
   color: #71737f;
@@ -1256,7 +1238,7 @@ img {
   font-size: 0.875rem;
   position: absolute;
   color: rgb(113, 115, 127);
-  font-family: $font-open-sans;
+  font-family: $font-mylius-modern;
 }
 .option-link {
   padding-top: 10px;
@@ -1272,7 +1254,7 @@ img {
   box-shadow: currentcolor 0px -1px inset;
   span {
       color: currentColor;
-      font-family: $font-open-sans;
+      font-family: $font-mylius-modern;
       font-weight: 400;
       font-size: $main-fontsize;
       line-height: 1.5;
@@ -1280,17 +1262,15 @@ img {
   }
 
   svg {
+      @include size(16px, 16px);
       color: currentColor;
       fill: currentColor;
-      width: 16px;
-      height: 16px;
       margin-left: 8px;
 
       path {
-          color: currentColor;
-          fill: currentColor;
-          width: 16px;
-          height: 16px;
+        @include size(16px, 16px);
+        color: currentColor;
+        fill: currentColor;
       }
   }
   
@@ -1300,17 +1280,17 @@ img {
 }
 #option-partnership {
   .option-logos {
-      height: 24px;
-      display: flex;
-      img {
-        position: static;
-        max-width: 100%;
-        max-height: 100%;
-      }
+    flex-direction: row;
+    height: 24px;
+    display: flex;
+    img {
+      position: static;
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
   .option-partners {
-      color: red;
-      text-align: right;
+      text-align: left;
   }
 }
 
@@ -1334,7 +1314,7 @@ img {
 
 // Topic
 .topic-grid {
-    @include centralize;
+    margin: 0 auto;
     margin-bottom: 60px;
     display: grid;
     align-content: center;
@@ -1350,8 +1330,7 @@ img {
   position: static;
 }
 #footer_world_logo {
-  width: 40px;
-  height: 40px;
+  @include size(40px, 40px);
 }
 .footer-logos-grid {
   align-items: center;
@@ -1401,14 +1380,12 @@ footer {
     fill: $terciary-color
   }
   li a svg {
-    width: 22px;
-    height: 22px;
+    @include size(22px, 22px);
     fill: $terciary-color
   }
 }
 #footer_ba_logo {
-  width: 91px;
-  height: 24px
+  @include size(91px, 24px);
 }
 #footer-legal {
   font-size: 0.75rem;
@@ -1427,6 +1404,11 @@ footer {
 @media (min-width: 640px) {
   .grid {
     gap: 24px;
+  }
+  #option-partnership {
+    .option-partners {
+        text-align: right;
+    }
   }
 }
 @media (min-width: 800px) {
@@ -1570,11 +1552,23 @@ footer {
     }  
   }
   
+  #nav_gerir_dropdown, #nav_checkin_dropdown {
+    grid-template-columns: repeat((3, 1fr));
+  }
+  #nav_ajuda_dropdown {
+    grid-template-columns: repeat((5, 1fr));
+  }
+
+
+
+  .schedule-grid {
+    column-gap: 24px;
+  }
   .topic-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   
-  .option_dropdown_container {
+  .option-container .option_dropdown_container{
     position: absolute;
   }
 

@@ -5,14 +5,20 @@
      -moz-appearance: none;
           appearance: none;
   color: #021b41;
+  box-sizing: border-box;
+  color: #021b41;
 }
 
 html {
-  font-family: "Open sans", helvetica, arial, sans-serif;
-  font-size: 1rem;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-weight: 300;
+  font-size: 1rem;
   line-height: 1.5;
   letter-spacing: 0.004em;
+}
+
+body {
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
 }
 
 .grid-cols-1 {
@@ -275,7 +281,7 @@ html {
 }
 
 p, ul, ol {
-  font-family: "Open sans", helvetica, arial, sans-serif;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.5;
@@ -291,19 +297,6 @@ a {
   color: #2671d3;
 }
 
-.link {
-  display: flex;
-  width: -moz-fit-content;
-  width: fit-content;
-  align-items: center;
-  color: #2671d3;
-  transition: color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
-  position: relative;
-  text-decoration: none;
-  padding-bottom: 4px;
-  box-shadow: currentcolor 0px -1px inset;
-}
-
 h2 {
   font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-weight: 300;
@@ -317,6 +310,22 @@ h2 {
     font-size: 2.75rem;
     line-height: 1.27;
   }
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  -ms-flex-align: center;
+  color: #2671d3;
+  transition: color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 4px;
+  box-shadow: currentcolor 0px -1px inset;
 }
 
 :root {
@@ -367,7 +376,7 @@ h2 {
 }
 
 .small-print {
-  font-family: "Open sans", helvetica, arial, sans-serif;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-weight: 300;
   font-size: 0.75rem;
   line-height: 1.67;
@@ -375,17 +384,22 @@ h2 {
 }
 
 button {
-  font-family: "Open sans", helvetica, arial, sans-serif;
-  font-weight: 400;
+  background-color: white;
+  color: #021b41;
+  border: none;
+  padding: 16px 24px;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.4s, color 0.4s;
+  font-weight: 400;
   letter-spacing: 0.004em;
   cursor: pointer;
-  border: medium;
   border-radius: 2px;
   width: 100%;
   text-wrap: balance;
-  padding: 16px 24px;
   transition: background-color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 button.btn {
@@ -461,7 +475,7 @@ img {
 }
 
 .header {
-  border-bottom: 1px solid rgb(236, 236, 237);
+  border-bottom: 1px solid #ECECED;
   background: rgb(255, 255, 255);
   position: relative;
 }
@@ -645,6 +659,7 @@ img {
 }
 
 .nav-section-title {
+  white-space: nowrap;
   font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-weight: 300;
   font-size: 1rem;
@@ -700,15 +715,15 @@ img {
 
 .nav_button {
   display: flex;
-  justify-content: space-between;
-  position: relative;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
   width: 100%;
   height: 48px;
   padding: 0px 12px;
   background-color: white;
   border: none;
-  align-items: center;
 }
 .nav_button:active .arrow-icon {
   transform: rotate(180deg);
@@ -777,7 +792,7 @@ img {
   display: block;
   color: #2671d3;
   text-decoration: none;
-  font-family: "Open sans", helvetica, arial, sans-serif;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.5;
@@ -800,7 +815,7 @@ img {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 0;
+  width: 0px;
   height: 4px;
   background: #2e5c99;
   transition: width 0.5s ease, right 0.5s ease;
@@ -832,7 +847,7 @@ img {
   height: fit-content;
   background-color: #2e5c99;
   color: white;
-  font-family: "Open sans", helvetica, arial, sans-serif;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
@@ -846,6 +861,10 @@ img {
   transition: background-color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   align-self: end;
 }
+.nav_button2:hover {
+  background-color: rgb(38, 113, 211);
+  color: white;
+}
 
 #double_buttons {
   display: grid;
@@ -857,6 +876,7 @@ img {
 
 #banner-radio-grid {
   display: grid;
+  row-gap: 24px;
   grid-template-columns: minmax(0, 1fr);
   border-bottom: 1px solid #b6b7bd;
   margin-bottom: 16px;
@@ -1033,20 +1053,24 @@ img {
 }
 
 .banner-search-button {
-  width: 250px;
-  height: 50px;
-  font-size: 1rem;
-  border-radius: 2px;
   background-color: #2e5c99;
   color: white;
   border: none;
+  padding: 16px 24px;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.4s, color 0.4s;
+  width: 250px;
+  height: 50px;
+  border-radius: 2px;
   border-radius: 2.5px;
 }
 
 .schedule-grid {
   display: grid;
-  -moz-column-gap: 24px;
-       column-gap: 24px;
   row-gap: 24px;
   max-width: 944px;
 }
@@ -1079,7 +1103,7 @@ img {
   position: relative;
 }
 .option-container p {
-  font-family: "Open sans", helvetica, arial, sans-serif;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-weight: 300;
   font-size: 0.75rem;
   line-height: 1.67;
@@ -1101,7 +1125,7 @@ img {
   border-bottom: 1px solid #71737f;
   border-radius: 0;
   background: transparent;
-  font-family: "Open sans", helvetica, arial, sans-serif;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-size: 20px;
   font-weight: 300;
   line-height: 30px;
@@ -1166,11 +1190,11 @@ img {
   position: relative;
 }
 .option-container button {
+  width: 100%;
   height: 59px;
   padding: 0 20px 8px 0;
   background: transparent;
   border: none;
-  width: 100%;
   margin: 0;
   text-align: left;
   border-bottom-width: 1px;
@@ -1188,19 +1212,16 @@ img {
   }*/
 }
 .option-container button:not(hover) + .option_dropdown_container {
-  position: static;
   display: none;
   padding: 16px 24px 24px 24px;
   filter: blur(0.1rem);
   opacity: 0;
 }
 .option-container button.option-submit {
-  width: -moz-fit-content;
-  width: fit-content;
   background-color: #2e5c99;
   color: white;
   width: auto;
-  font-family: "Open sans", helvetica, arial, sans-serif;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
@@ -1221,7 +1242,6 @@ img {
   background-color: white;
   padding: 16px 24px 24px 24px;
   background-color: rgb(255, 255, 255);
-  position: absolute;
   top: 56px;
   left: 0px;
   right: 0px;
@@ -1230,7 +1250,7 @@ img {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
 }
 .option-container .option_dropdown_container p {
-  font-family: "Open sans", helvetica, arial, sans-serif;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-weight: 300;
   font-size: 0.75rem;
   line-height: 1.67;
@@ -1286,6 +1306,8 @@ img {
   background-image: url("./img/plus_grey.png");
 }
 .option-container .option_dropdown_container .option-counter input {
+  width: 100%;
+  height: 48px;
   font-size: 20px;
   line-height: 30px;
   font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
@@ -1293,14 +1315,12 @@ img {
   font-weight: 200;
   line-height: 28px;
   text-align: center;
-  height: 48px;
   padding: 0 48px;
   border-color: #71737f;
   border-width: 1px;
   border-style: solid;
   box-sizing: border-box;
   border-radius: 8px;
-  width: 100%;
   text-overflow: ellipsis;
   letter-spacing: 0.1em;
 }
@@ -1335,7 +1355,7 @@ img {
 
 .option-span-fill {
   color: black;
-  font-family: "Open sans", helvetica, arial, sans-serif;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
 }
 
 .option-label-inside {
@@ -1373,7 +1393,7 @@ img {
   font-size: 0.875rem;
   position: absolute;
   color: rgb(113, 115, 127);
-  font-family: "Open sans", helvetica, arial, sans-serif;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
 }
 
 .option-link {
@@ -1392,30 +1412,31 @@ img {
 }
 .option-link span {
   color: currentColor;
-  font-family: "Open sans", helvetica, arial, sans-serif;
+  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
   letter-spacing: 0.004em;
 }
 .option-link svg {
-  color: currentColor;
-  fill: currentColor;
   width: 16px;
   height: 16px;
+  color: currentColor;
+  fill: currentColor;
   margin-left: 8px;
 }
 .option-link svg path {
-  color: currentColor;
-  fill: currentColor;
   width: 16px;
   height: 16px;
+  color: currentColor;
+  fill: currentColor;
 }
 .option-link:hover {
   color: #021b41;
 }
 
 #option-partnership .option-logos {
+  flex-direction: row;
   height: 24px;
   display: flex;
 }
@@ -1425,8 +1446,7 @@ img {
   max-height: 100%;
 }
 #option-partnership .option-partners {
-  color: red;
-  text-align: right;
+  text-align: left;
 }
 
 #london-segment {
@@ -1540,6 +1560,9 @@ footer {
 @media (min-width: 640px) {
   .grid {
     gap: 24px;
+  }
+  #option-partnership .option-partners {
+    text-align: right;
   }
 }
 @media (min-width: 800px) {
@@ -1668,10 +1691,20 @@ footer {
     visibility: visible;
     opacity: 1;
   }
+  #nav_gerir_dropdown, #nav_checkin_dropdown {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #nav_ajuda_dropdown {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .schedule-grid {
+    -moz-column-gap: 24px;
+         column-gap: 24px;
+  }
   .topic-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .option_dropdown_container {
+  .option-container .option_dropdown_container {
     position: absolute;
   }
   #banner-radio-grid {
