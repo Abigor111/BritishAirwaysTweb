@@ -1,7 +1,8 @@
 // * Template de cada quarto
 function criarQuarto(numero) {
     const quarto = document.createElement('div');
-    quarto.classList.add('option-container', 'room' + numero, 'rooms');
+    quarto.classList.add('option-container', 'room' + numero, 'rooms', 'banner-dropdown-button');
+    
 
     quarto.innerHTML = `
     <label for="flighthotel-option-roomoccupants- ${numero}" class="option-label-top">Quarto ${numero}</label>
@@ -141,6 +142,8 @@ function alterarValorQuartos(botao, incremento, event) {
     if (totalPessoasEmTodosOsQuartos + incremento > 9) {
         warning1.style.display = 'block';
         warning3.style.display = 'none';
+        botao.classList.add('disabled');
+
         return;
     }
 
@@ -148,18 +151,32 @@ function alterarValorQuartos(botao, incremento, event) {
 
     if (novoValor < 0) {
         warning3.style.display = 'block';
+        botao.classList.add('disabled');
+
     } else {
         // Se o valor de adultos, crianças ou bebês mudar, vamos atualizar apenas o contador correspondente
         if (input.classList.contains('adulto_room') && novoValor == 0 && nadulto == 1) {
             input.value = 1;
+        botao.classList.add('disabled');
+
             warning3.style.display = 'block';
         } else if (input.classList.contains('bebe_room') && novoValor > nadulto) {
             warning2.style.display = 'block';
             warning3.style.display = 'none';
+        botao.classList.add('disabled');
+
         } else if (input.classList.contains('adulto_room') && novoValor < nbebe) {
             warning2.style.display = 'block';
             warning3.style.display = 'none';
+        botao.classList.add('disabled');
+
         } else {
+            document.querySelectorAll('button').forEach(button => {
+                button.classList.remove('disabled');
+            });
+            if (novoValor == 0){
+                botao.classList.add('disabled');
+            }
             input.value = novoValor;
             warning1.style.display = 'none';
             warning2.style.display = 'none';
@@ -308,7 +325,7 @@ inputFly.addEventListener('change', function () {
         passengers_div.style.display = 'block';
         cabin_div.style.display = 'block';
         rooms_div.style.display = 'none';
-        return_div.style.display = 'block';
+        return_div.style.display = 'flex';
         fromTo.style.display = 'grid';
         destiny.style.display = 'none';
         carRetrieval.style.display = 'none';
@@ -338,7 +355,7 @@ inputFlyHotel.addEventListener('change', function () {
         passengers_div.style.display = 'none';
         rooms_div.style.display = 'block';
         cabin_div.style.display = 'block';
-        return_div.style.display = 'block';
+        return_div.style.display = 'flex';
         fromTo.style.display = 'grid';
         destiny.style.display = 'none';
         carRetrieval.style.display = 'none';
@@ -368,7 +385,7 @@ inputFlyVehicle.addEventListener('change', function () {
         passengers_div.style.display = 'block';
         rooms_div.style.display = 'none';
         cabin_div.style.display = 'block';
-        return_div.style.display = 'block';
+        return_div.style.display = 'flex';
         fromTo.style.display = 'grid';
         destiny.style.display = 'none';
         To.style.display = 'grid';
@@ -398,7 +415,7 @@ inputHotel.addEventListener('change', function () {
         passengers_div.style.display = 'none';
         rooms_div.style.display = 'block';
         cabin_div.style.display = 'none';
-        return_div.style.display = 'block';
+        return_div.style.display = 'flex';
         fromTo.style.display = 'none';
         destiny.style.display = 'grid';
         carRetrieval.style.display = 'none';
@@ -426,7 +443,7 @@ inputVehicle.addEventListener('change', function () {
         passengers_div.style.display = 'none';
         rooms_div.style.display = 'none';
         cabin_div.style.display = 'none';
-        return_div.style.display = 'block';
+        return_div.style.display = 'flex';
         fromTo.style.display = 'none';
         destiny.style.display = 'none';
         carRetrieval.style.display = 'grid';
@@ -556,7 +573,7 @@ document.getElementById('schedule-form').addEventListener('submit', function(eve
 });
 
 
-// Passageiros contador
+// * Passageiros contador
 function alterarValor(botao, incremento, event) {
     if (event) event.preventDefault();
     const input = botao.parentNode.querySelector('.contador');
@@ -577,24 +594,36 @@ function alterarValor(botao, incremento, event) {
     const warning3 = botao.parentNode.parentNode.querySelector('.warning-3');
     // "!" nega a expressão (inverso)
     if (!input.classList.contains('bebe') && totalpassageiros > 9) {
+        input.classList.add('disabled');
         warning1.style.display = 'block';
         warning3.style.display = 'none';
         return;
     }
     const novoValor = valorAtual + incremento;
     if (input.classList.contains('adulto') && novoValor == 0 && nadulto == 1) {
+        botao.classList.add('disabled');
         input.value = 1;
         warning3.style.display = 'block';
-    } else if (input.classList.contains('bebe') && novoValor > nadulto) { 
+    } else if (input.classList.contains('bebe') && novoValor > nadulto) {
+        botao.classList.add('disabled');
         warning2.style.display = 'block';
         warning3.style.display = 'none';
     } else if(input.classList.contains('adulto') && novoValor < nbebe){
+        botao.classList.add('disabled');
         warning2.style.display = 'block';
         warning3.style.display = 'none';
     }else if (novoValor < 0) {
+        botao.classList.add('disabled');
         warning3.style.display = 'block';
 
     } else {
+        document.querySelectorAll('button').forEach(button => {
+            button.classList.remove('disabled');
+        });
+        if (novoValor == 0){
+            botao.classList.add('disabled');
+
+        }
         input.value = novoValor;
         let span_fill = botao.closest('.option-container').querySelector('.option-span-fill');
         warning1.style.display = 'none';
@@ -644,10 +673,10 @@ tariff.addEventListener('change', function () {
             return_div.style.display = 'none';
         }
         else {
-            return_div.style.display = 'block';
+            return_div.style.display = 'flex';
     }}
 });
-// Alterar o value do option-span-fill da cabine
+// * Alterar o value do option-span-fill da cabine
 function atualizarCabine() {
     const radios = document.querySelectorAll('input[name="cabin-type"]');
     const span = document.querySelector('.option-span-fill');

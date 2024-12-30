@@ -461,7 +461,7 @@
     <main>
         <section id="scheduling-travels-menu">
             <div class="page-segment" id="scheduling-travels-segment">
-                <div class="banner">
+                <div class="banner">        
                     <div class="form-legend">
                         <legend class="small-print">Estou a pesquisar para:</legend>
                     </div>
@@ -548,15 +548,15 @@
                             <div class="grid-cols-4 schedule-grid" id="second_row">
                                 <!-- Span 1 -->
                                 <div class="option-container">
-                                    <label for="departure-date" class="option-label-top" id="go_label">Partida</label>
                                     <input type="date" pattern="\d{2}\/\d{2}\/\d{4}" placeholder="DD/MM/YYYY"
                                         id="departure-date" name="departure-date">
+                                        <label for="departure-date" class="option-label-top" id="go_label">Partida</label>
                                 </div>
                                 <div class="option-container return">
-                                    <label for="return-date" class="option-label-top" id="return_label">Regresso</label>
                                     <input type="date" id="return-date" name="return-date">
+                                    <label for="return-date" class="option-label-top" id="return_label">Regresso</label>
                                 </div>
-                                <div class="option-container" id="cabin">
+                                <div class="option-container banner-dropdown-button" id="cabin">
                                     <!-- This element creates a dropdown div with two radio buttons and a checkbox-->
                                     <label for="option-cabin" class="option-label-top">Cabine</label>
                                     <button id="cabin-button" name="option-cabin"
@@ -581,7 +581,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="option-container" id="passengers">
+                                <div class="option-container  banner-dropdown-button" id="passengers">
                                     <!-- This is for selecting number of people -->
                                     <label for="option-passengers" class="option-label-top">Passageiros</label>
                                     <button id="passenger-button" name="option-passengers"
@@ -681,7 +681,7 @@
                             <div class="grid-cols-4 schedule-grid room-container" id="third_row_1"
                                 style="display: none;">
 
-                                <div class="option-container room1 rooms    ">
+                                <div class="option-container room1 rooms banner-dropdown-button">
                                     <label for="flighthotel-option-roomoccupants-1" class="option-label-top">Quarto
                                         1</label>
                                     <button id="flighthotel-roomoccupants-button-1"
@@ -754,7 +754,7 @@
                             </div>
                             <!-- Hidden at page Load -->
                             <div class="schedule-grid" id="third_row_2" style="display: none;">
-                                <div class="option-container"> <!-- This is for checking age -->
+                                <div class="option-container" id="agecheck"> <!-- This is for checking age -->
                                     <input type="checkbox" class="checkbox" name="agecheck-30to70" id="agecheck-30to70"
                                         checked>
                                     <span for="agecheck-30to70">Condutor entre 30 e 70 anos </span>
@@ -785,7 +785,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                                <div class="option-container flex-row-reverse">
+                                <div class="flex-row-reverse option-container">
                                     <button class="btn-primary option-submit" id="button-flight">Procurar Voos</button>
                                 </div>
                             </div>
