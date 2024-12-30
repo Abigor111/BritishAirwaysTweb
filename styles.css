@@ -9,7 +9,7 @@
 
 html {
   font-family: "Open sans", helvetica, arial, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.5;
   letter-spacing: 0.004em;
@@ -347,7 +347,7 @@ h2 {
   display: grid;
   grid-template-columns: [full-start] minmax(var(--segment-page-margin), 1fr) [content-start] minmax(0, 992px) [content-end] minmax(var(--segment-page-margin), 1fr) [full-end];
   padding: var(--segment-padding-top) 0 var(--segment-padding-bottom);
-  background-color: #ffffff;
+  background-color: white;
   color: #021b41;
 }
 .page-segment > * {
@@ -367,7 +367,7 @@ h2 {
 }
 
 .small-print {
-  font-family: Open Sans, helvetica, arial, sans-serif;
+  font-family: "Open sans", helvetica, arial, sans-serif;
   font-weight: 300;
   font-size: 0.75rem;
   line-height: 1.67;
@@ -375,7 +375,7 @@ h2 {
 }
 
 button {
-  font-family: Open Sans, helvetica, arial, sans-serif;
+  font-family: "Open sans", helvetica, arial, sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
@@ -393,11 +393,11 @@ button.btn {
 }
 button.btn-primary {
   background-color: #2e5c99;
-  color: #ffffff;
+  color: white;
 }
 button.btn-primary:hover {
   background-color: #2671d3;
-  color: #ffffff;
+  color: white;
 }
 button.btn-secondary {
   background-color: transparent;
@@ -521,7 +521,7 @@ img {
   margin-left: 0px;
   padding: 24px 0;
   display: block;
-  border-bottom: 1px solid #ececed;
+  border-bottom: 1px solid #ECECED;
 }
 
 .account-controls_control {
@@ -572,7 +572,7 @@ img {
 
 .nav {
   display: none;
-  border-top: 1px solid #ececed;
+  border-top: 1px solid #ECECED;
   position: relative;
   opacity: 0;
   visibility: hidden;
@@ -594,7 +594,7 @@ img {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 55px);
-  background: #ffffff;
+  background: white;
   z-index: 100;
 }
 
@@ -831,7 +831,7 @@ img {
   height: -moz-fit-content;
   height: fit-content;
   background-color: #2e5c99;
-  color: #ffffff;
+  color: white;
   font-family: "Open sans", helvetica, arial, sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -977,7 +977,7 @@ img {
   width: 28px;
   height: 28px;
   margin-right: 16px;
-  box-shadow: 0 2px 4px #ececed;
+  box-shadow: 0 2px 4px #ECECED;
   cursor: pointer;
   vertical-align: bottom;
   -webkit-appearance: none;
@@ -1038,7 +1038,7 @@ img {
 .banner-search-button {
   width: 250px;
   height: 50px;
-  font-size: 16px;
+  font-size: 1rem;
   border-radius: 2px;
   background-color: #2e5c99;
   color: white;
@@ -1061,6 +1061,14 @@ img {
   background-repeat: no-repeat;
   background-position: top 26px right 0;
 }
+.schedule-grid .nrooms-select {
+  padding: 20px 20px 8px 0px;
+  display: block;
+  position: relative;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='16' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: top 26px right 0;
+}
 .schedule-grid .small-gap {
   -moz-column-gap: 8px;
        column-gap: 8px;
@@ -1072,7 +1080,7 @@ img {
   position: relative;
 }
 .option-container p {
-  font-family: Open Sans, helvetica, arial, sans-serif;
+  font-family: "Open sans", helvetica, arial, sans-serif;
   font-weight: 300;
   font-size: 0.75rem;
   line-height: 1.67;
@@ -1143,7 +1151,7 @@ img {
   -moz-appearance: none;
   appearance: none;
   text-align: left;
-  background-color: #ffffff;
+  background-color: white;
   min-height: 57px;
 }
 .option-container .radio[type=radio] {
@@ -1190,7 +1198,7 @@ img {
   width: -moz-fit-content;
   width: fit-content;
   background-color: #2e5c99;
-  color: #ffffff;
+  color: white;
   width: auto;
   font-family: "Open sans", helvetica, arial, sans-serif;
   font-weight: 400;
@@ -1206,7 +1214,7 @@ img {
 }
 .option-container button.option-submit:hover {
   background-color: #2671d3;
-  color: #ffffff;
+  color: white;
 }
 .option-container .option_dropdown_container {
   background-color: white;
@@ -1371,7 +1379,7 @@ img {
 }
 .option-link span {
   color: currentColor;
-  font-family: Open Sans, helvetica, arial, sans-serif;
+  font-family: "Open sans", helvetica, arial, sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.5;
@@ -1420,7 +1428,7 @@ img {
 }
 #london-flight-search:hover {
   background-color: #2671d3;
-  color: #ffffff;
+  color: white;
 }
 
 .topic-grid {

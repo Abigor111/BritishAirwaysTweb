@@ -3,12 +3,12 @@ $main-color: #021b41;
 $secondary-color: #2e5c99;
 $terciary-color: white;
 $link-color: #2671d3;
-$schedule-menu-text-color: rgb(113, 115, 127);
+$white-gray: #ECECED;
 $font-open-sans: "Open sans", helvetica, arial, sans-serif;
 $font-mylius-modern: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
 $search-buttons-width: 250px;
 $search-buttons-height: 50px;
-$main-fontsize: 16px;
+$main-fontsize: 1rem;
 
 $breakpoints: (
   'md': 475px, // Tablet screens start just above 768px
@@ -118,7 +118,7 @@ $gap: 1rem; // Default gap
 p, ul, ol {
 	font-family: $font-open-sans;
 	font-weight: 300;
-	font-size: 1rem;
+	font-size: $main-fontsize;
 	line-height: 1.5;
 	letter-spacing: 0.004em;
 }
@@ -139,7 +139,7 @@ a {
   width: fit-content;
   -ms-flex-align: center;
   align-items: center;
-  color: #2671d3;
+  color: $link-color;
   -webkit-transition: color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   position: relative;
@@ -197,8 +197,8 @@ h2 {
   display: grid;
   grid-template-columns: [full-start] minmax(var(--segment-page-margin), 1fr) [content-start] minmax(0, 992px) [content-end] minmax(var(--segment-page-margin), 1fr) [full-end];
   padding: var(--segment-padding-top) 0 var(--segment-padding-bottom);
-  background-color: #ffffff;
-  color: #021b41;
+  background-color: $terciary-color;
+  color: $main-color;
 
   > * {
     grid-column: content;
@@ -218,7 +218,7 @@ h2 {
 }
 
 .small-print {
-	font-family: Open Sans, helvetica, arial, sans-serif;
+	font-family: $font-open-sans;
 	font-weight: 300;
 	font-size: 0.75rem;
 	line-height: 1.67;
@@ -226,9 +226,9 @@ h2 {
 }
 
 button {
-    font-family: Open Sans, helvetica, arial, sans-serif;
+    font-family: $font-open-sans;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: $main-fontsize;
     line-height: 1.5;
     letter-spacing: 0.004em;
     cursor: pointer;
@@ -243,17 +243,17 @@ button {
       width: 100%;
     }
     &.btn-primary {
-      background-color: #2e5c99;
-      color: #ffffff;
+      background-color: $secondary-color;
+      color: $terciary-color;
       &:hover {
-        background-color: #2671d3;
-        color: #ffffff;
+        background-color: $link-color;
+        color: $terciary-color;
       }
     }
     &.btn-secondary {
       background-color: transparent;
-      color: #2e5c99;
-      border-color: #2e5c99;
+      color: $secondary-color;
+      border-color: $secondary-color;
       border-width: 1px;
       border-style: solid;
       padding-top: 15px;
@@ -374,7 +374,7 @@ img {
   margin-left: 0px;
   padding: 24px 0;
   display: block;
-  border-bottom: 1px solid #ececed;
+  border-bottom: 1px solid $white-gray;
 }
 .account-controls_control {
   display: flex;
@@ -433,7 +433,7 @@ img {
 
 .nav {
   display: none;
-  border-top: 1px solid #ececed;
+  border-top: 1px solid $white-gray;
   position: relative;
   opacity: 0;
   visibility: hidden;
@@ -456,7 +456,7 @@ img {
   -ms-flex-direction: column;
   flex-direction: column;
   height: calc(100vh - 55px);
-  background: #ffffff;
+  background: $terciary-color;
   z-index: 100;
 }
 .nav-menu {
@@ -502,9 +502,9 @@ img {
   cursor: pointer;
 }
 .nav-section-title {
-  font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
+  font-family: $font-mylius-modern;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: $main-fontsize;
   line-height: 1.75;
   letter-spacing: 0.012em;
   color: rgb(2, 27, 65);
@@ -529,7 +529,7 @@ img {
   right: auto;
 }
 .nav_button span {
-  font-size: 1rem;
+  font-size: $main-fontsize;
   font-weight: 300px;
   font-family: $font-mylius-modern;
 }
@@ -619,7 +619,7 @@ img {
               margin: 0px;
               font-family: $font-mylius-modern;
               font-weight: 300;
-              font-size: 1rem;
+              font-size: $main-fontsize;
               line-height: 1.75;
               letter-spacing: 0.012em;
           }
@@ -629,7 +629,7 @@ img {
               text-decoration: none;
               font-family: $font-open-sans;
               font-weight: 300;
-              font-size: 1rem;
+              font-size: $main-fontsize;
               line-height: 1.5;
               letter-spacing: .004em;
               padding-top: 8px;
@@ -675,11 +675,11 @@ img {
   margin: 25px 0px;
   width: fit-content;
   height: fit-content;
-  background-color: #2e5c99;
-  color: #ffffff;
+  background-color: $secondary-color;
+  color: $terciary-color;
   font-family: $font-open-sans;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: $main-fontsize;
   line-height: 1.5;
   letter-spacing: 0.004em;
   cursor: pointer;
@@ -815,8 +815,8 @@ img {
   width: 28px;
   height: 28px;
   margin-right: 16px;
-  -webkit-box-shadow: 0 2px 4px #ececed;
-  box-shadow: 0 2px 4px #ececed;
+  -webkit-box-shadow: 0 2px 4px $white-gray;
+  box-shadow: 0 2px 4px $white-gray;
   cursor: pointer;
   vertical-align: bottom;
   -webkit-appearance: none;
@@ -838,11 +838,11 @@ img {
           transition: background 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), border 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
           border: 1px solid #71737f;
           border-radius: 2px;
-          background: white;
+          background: $terciary-color;
           background-repeat: no-repeat;
           background-position: center;
-          border-color: #021b41;
-          background-color: #021b41;
+          border-color: $main-color;
+          background-color: $main-color;
       }
       &::after {            
           content: "";
@@ -909,7 +909,14 @@ img {
       background-repeat: no-repeat;
       background-position: top 26px right 0;
   }
-
+  .nrooms-select{
+    padding: 20px 20px 8px 0px;
+    display: block;
+    position: relative;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='16' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M33.522 47.3c1.136-1.116 2.224-2.278 3.338-3.417l3.26-3.491c2.164-2.337 4.267-4.73 6.4-7.093 2.076-2.42 4.188-4.805 6.233-7.25 2.047-2.445 4.082-4.9 6.038-7.431a1.004 1.004 0 00-1.466-1.36c-2.378 2.137-4.677 4.348-6.963 6.57-2.288 2.22-4.51 4.504-6.768 6.752-2.2 2.303-4.43 4.578-6.6 6.908l-3.24 3.51c-.563.639-1.131 1.272-1.697 1.907-.566-.635-1.135-1.268-1.698-1.907l-3.24-3.51c-2.16-2.34-4.38-4.625-6.597-6.91-2.238-2.268-4.475-4.537-6.77-6.752l-3.443-3.32c-1.175-1.082-2.325-2.187-3.521-3.248a1.005 1.005 0 00-1.466 1.36c.97 1.273 1.988 2.5 2.98 3.75l3.056 3.682c2.039 2.452 4.136 4.85 6.232 7.25 2.115 2.382 4.23 4.764 6.402 7.092l3.26 3.49c1.115 1.14 2.203 2.302 3.339 3.419a2.088 2.088 0 002.93 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: top 26px right 0;
+  }
   .small-gap {
       column-gap: 8px;
       align-items: center;
@@ -921,7 +928,7 @@ img {
   position: relative;
   
   p {
-      font-family: Open Sans, helvetica, arial, sans-serif;
+      font-family: $font-open-sans;
       font-weight: 300;
       font-size: 0.75rem;
       line-height: 1.67;
@@ -955,6 +962,7 @@ img {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
+      
   }
 
   input:not(.checkbox) {
@@ -996,7 +1004,7 @@ img {
       -moz-appearance: none;
       appearance: none;
       text-align: left;
-      background-color: #ffffff;
+      background-color: $terciary-color;
       min-height: 57px;  
   }
 
@@ -1045,12 +1053,12 @@ img {
       }
       &.option-submit {
           width: fit-content;
-          background-color: #2e5c99;
-          color: #ffffff;
+          background-color: $secondary-color;
+          color: $terciary-color;
           width: auto;
           font-family: $font-open-sans;
           font-weight: 400;
-          font-size: 1rem;
+          font-size: $main-fontsize;
           line-height: 1.5;
           letter-spacing: 0.004em;
           cursor: pointer;
@@ -1060,14 +1068,14 @@ img {
           padding: 16px 24px;
           transition: background-color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
           &:hover {
-            background-color: #2671d3;
-            color: #ffffff;
+            background-color: $link-color;
+            color: $terciary-color;
           }
       }
   }
 
   .option_dropdown_container {
-      background-color: white;
+      background-color: $terciary-color;
       
       //display: none;
       padding: 16px 24px 24px 24px;
@@ -1118,7 +1126,7 @@ img {
               background: none;
               border: none;
               border-radius: 8px;
-              color: #2e5c99;
+              color: $secondary-color;
               -webkit-transition: -webkit-transform 0.15s ease-in-out;
               transition: -webkit-transform 0.15s ease-in-out;
               transition: transform 0.15s ease-in-out;
@@ -1211,7 +1219,7 @@ img {
       overflow: hidden;
       font-weight: 200;
       color: rgb(113, 115, 127);
-      font-family: "Mylius Modern", "Open Sans", helvetica, arial, sans-serif;
+      font-family: $font-mylius-modern;
       font-size: 12px;
       line-height: 28px;
       pointer-events: none;
@@ -1230,7 +1238,7 @@ img {
   height: 20px;
   font-size: 0.875rem;
   position: absolute;
-  color: $schedule-menu-text-color;
+  color: rgb(113, 115, 127);
   font-family: $font-open-sans;
 }
 .option-link {
@@ -1239,7 +1247,7 @@ img {
   display: flex;
   width: fit-content;
   align-items: center;
-  color: #2671d3;
+  color: $link-color;
   transition: color 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
   position: relative;
   text-decoration: none;
@@ -1247,9 +1255,9 @@ img {
   box-shadow: currentcolor 0px -1px inset;
   span {
       color: currentColor;
-      font-family: Open Sans, helvetica, arial, sans-serif;
+      font-family: $font-open-sans;
       font-weight: 400;
-      font-size: 1rem;
+      font-size: $main-fontsize;
       line-height: 1.5;
       letter-spacing: 0.004em;
   }
@@ -1270,7 +1278,7 @@ img {
   }
   
   &:hover {
-      color: #021b41;
+      color: $main-color;
   }
 }
 #option-partnership {
@@ -1291,7 +1299,7 @@ img {
 
 // London
 #london-segment {
-  background-color: #ECECED;
+  background-color: $white-gray;
 
   .london-calling {
     &>*+*{ // Este seletor aplica a todos os filhos diretos do parente com um sibling
@@ -1302,8 +1310,8 @@ img {
 #london-flight-search {
   width: auto;
   &:hover {
-    background-color: #2671d3;
-    color:  #ffffff;
+    background-color: $link-color;
+    color:  $terciary-color;
   }
 }
 
@@ -1319,7 +1327,7 @@ img {
 // Footer
 
 #footer-legal {
-  color: white;
+  color: $terciary-color;
 }
 #footer_ba_logo {
   position: static;
@@ -1353,7 +1361,7 @@ footer {
   a {
     color: #fff;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: $main-fontsize;
     position: relative;
     display: flex;
     padding-left: 12px;

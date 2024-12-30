@@ -1,4 +1,4 @@
-// Evitar o código de criação de novo quartos
+// * Template de cada quarto
 function criarQuarto(numero) {
     const quarto = document.createElement('div');
     quarto.classList.add('option-container', 'room' + numero, 'rooms');
@@ -56,12 +56,11 @@ function criarQuarto(numero) {
     `;
     return quarto;
 }
-// Idade da Criança Input
-// Adicionar um quarto consoante o numero de quartos
+// ** Handler para adicionar um quarto consoante o numero de quartos pedido no nrooms-select
 let roomSelector = document.querySelector('.nrooms-select');
 roomSelector.addEventListener('change', function () {
     const container = document.querySelector('.room-container');
-    // Limpar o conteúdo existente
+    // * Limpar o conteúdo existente
     container.innerHTML = '';
     if (roomSelector.value == 'oneroom') {
         container.appendChild(criarQuarto(1));
@@ -81,7 +80,7 @@ roomSelector.addEventListener('change', function () {
 });
 function criarIdadeCrianca(numero, contexto) {
     const container = contexto.parentNode.querySelector('.div_criancaidade');
-    container.innerHTML = '';  // Limpa os selects criados anteriormente
+    container.innerHTML = '';
     let htmlContent = '';
     for (let i = 1; i <= numero; i++) {
         htmlContent += `
@@ -117,18 +116,19 @@ function criarIdadeCrianca(numero, contexto) {
 function alterarValorQuartos(botao, incremento, event) {
     if (event) event.preventDefault();
     const input = botao.parentNode.querySelector('.contador');
-    let valorAtual = parseInt(input.value, 10); // Converte a string para número
+    let valorAtual = parseInt(input.value, 10); // * Converte a string para número
     const room = botao.closest('.rooms');
     const adulto = room.querySelector('.adulto_room');
     const crianca = room.querySelector('.crianca_room');
     const bebe = room.querySelector('.bebe_room');
-    let nadulto = parseInt(adulto.value, 10); // Número de adultos
-    let nbebe = parseInt(bebe.value, 10); // Número de bebês
+    let nadulto = parseInt(adulto.value, 10); // * Número de adultos
+    let ncrianca = parseInt(crianca.value, 10); // * Número de crianças
+    let nbebe = parseInt(bebe.value, 10); // * Número de bebês
     const warning1 = room.querySelector('.warning-1_room');
     const warning2 = room.querySelector('.warning-2_room') || room.querySelector('.warning-3');
     const warning3 = room.querySelector('.warning-3_room');
 
-    // Cálculo do total de pessoas em todos os quartos
+    // * Cálculo do total de pessoas em todos os quartos
     let totalPessoasEmTodosOsQuartos = 0;
     const quartos = document.querySelectorAll('.rooms');
     quartos.forEach(q => {
@@ -164,44 +164,30 @@ function alterarValorQuartos(botao, incremento, event) {
             warning1.style.display = 'none';
             warning2.style.display = 'none';
             warning3.style.display = 'none';
-
+            let nadulto = parseInt(adulto.value, 10); // * Número de adultos
+            let ncrianca = parseInt(crianca.value, 10); // * Número de crianças
+            let nbebe = parseInt(bebe.value, 10); // * Número de bebês
             let span_fill = room.querySelector('.option-span-fill');
             let texto = '';
+            input.value = novoValor;
 
-            // Atualiza somente o valor do contador alterado
-            if (input.classList.contains('adulto_room')) {
-                nadulto = novoValor;
-                texto = nadulto == 1 ? '1 Adulto' : nadulto + ' Adultos';
-            } else if (input.classList.contains('crianca_room')) {
-                ncrianca = novoValor;
-                texto = ncrianca == 0 ? '' : (ncrianca == 1 ? ', 1 Criança' : ', ' + ncrianca + ' Crianças');
+            texto = nadulto == 1 ? '1 Adulto' : nadulto + ' Adultos';
+            texto += ncrianca == 0 ? '' : (ncrianca == 1 ? ', 1 Criança' : ', ' + ncrianca + ' Crianças');
+            texto += nbebe == 0 ? '' : (nbebe == 1 ? ', 1 Bebé' : ', ' + nbebe + ' Bebés');
+            if (input.classList.contains('crianca_room')) {
                 criarIdadeCrianca(ncrianca, botao.closest('.div_crianca'));
-            } else if (input.classList.contains('bebe_room')) {
-                nbebe = novoValor;
-                texto = nbebe == 0 ? '' : (nbebe == 1 ? ', 1 Bebé' : ', ' + nbebe + ' Bebés');
             }
 
-            // Atualiza o texto do span_fill
+            // * Atualiza o texto do span_fill
             span_fill.textContent = texto;
 
-            // Atualiza o texto completo com os valores de adultos, crianças e bebês
-            if (ncrianca || nbebe) {
-                let fullText = texto;
-                if (ncrianca > 0) {
-                    fullText += ', ' + ncrianca + ' Crianças';
-                    criarIdadeCrianca(ncrianca, room);
-                }
-                if (nbebe > 0) {
-                    fullText += ', ' + nbebe + ' Bebés';
-                }
-                span_fill.textContent = fullText;
-            }
+
         }
     }
 }
 
 
-// Rendering the arrow templates
+// ** Arrow Templates Rendering
 document.addEventListener("DOMContentLoaded", () => {
     const iconTemplate = document.getElementById('link-arrow-icon-template');
     if (iconTemplate) {
@@ -225,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Template with id 'arrow-icon' not found.");
     }
 });
-// Aparecer container dropdown
+// ** Dropdown Logic Appear
 function appear_option_dropdown_container(event) {
     event.preventDefault();
 
@@ -245,11 +231,11 @@ function appear_option_dropdown_container(event) {
     }
 }
 
-// Fechar o dropdown container (só fechara se o utilizador clicar fora do container)
+// ** Close Dropdown Logic -> Fecha o dropdown container (só fechara se o utilizador clicar fora do container)
 document.addEventListener('click', function (event) {
     let dropdownContainers = document.querySelectorAll('.option_dropdown_container');
     dropdownContainers.forEach(container => {
-        // Verifica se `event.target.closest` não retorna null
+        // * Verifica se `event.target.closest` não retorna null
         const optionContainer = event.target.closest('.option-container');
         if (!container.contains(event.target) && (!optionContainer || !optionContainer.contains(event.target))) {
             container.style.display = 'none';
@@ -269,19 +255,19 @@ function updateLabel(input) {
     }
 }
 optionToInput.forEach((input) => {
-    input.addEventListener('focus', () => updateLabel(input));  // Quando o input for focado
-    input.addEventListener('blur', () => updateLabel(input));   // Quando o input perder o foco
-    input.addEventListener('input', () => updateLabel(input));  // Quando o conteúdo do input mudar
+    input.addEventListener('focus', () => updateLabel(input));  // * Quando o input for focado
+    input.addEventListener('blur', () => updateLabel(input));   // * Quando o input perder o foco
+    input.addEventListener('input', () => updateLabel(input));  // * Quando o conteúdo do input mudar
     updateLabel(input);
 });
 optionFromInput.forEach((input) => {
-    input.addEventListener('focus', () => updateLabel(input));  // Quando o input for focado
-    input.addEventListener('blur', () => updateLabel(input));   // Quando o input perder o foco
-    input.addEventListener('input', () => updateLabel(input));  // Quando o conteúdo do input mudar
+    input.addEventListener('focus', () => updateLabel(input));  // * Quando o input for focado
+    input.addEventListener('blur', () => updateLabel(input));   // * Quando o input perder o foco
+    input.addEventListener('input', () => updateLabel(input));  // * Quando o conteúdo do input mudar
     updateLabel(input);
 });
 
-// Dynamic Form
+// ** Dynamic Form
 // Radio Buttons
 let inputFly = document.getElementById('schedule_fly');
 let inputFlyHotel = document.getElementById('schedule_flyhotel');
@@ -683,7 +669,7 @@ document.querySelectorAll('input[name="cabin-type"]').forEach((radio) => {
 });
 document.querySelector('.flexible_ticket').addEventListener('change', atualizarCabine);
 
-// Colocar data default dos datepickers
+// * Colocar data default dos datepickers
 const departure_date_input = document.getElementById('departure-date');
 const return_date_input = document.getElementById('return-date');
 const today = new Date();
@@ -697,10 +683,15 @@ window.onload = () => {
     document.querySelectorAll('a').forEach(link => {
         link.href = 'index.html';
     });
+    const radios = document.querySelectorAll('input[name="schedule_input"]');
+    radios.forEach(radio => {
+        radio.checked = false; // Desmarca todos
+    });
+    radios[0].checked = true; // Marca o primeiro
 };
 
 
-//Hamburguer icon swap
+// * Hamburguer icon swap
 let hamburguer_icon = document.getElementById("mobile-hamburguer");
 hamburguer_icon.addEventListener("click", () => {
     // Use window.getComputedStyle to get the current background image URL
@@ -734,7 +725,7 @@ navButtons.forEach((navButton, index) => {
 
 function toggleDropdown(index) {
     const dropdownContainer = dropdownContainers[index];
-    if (dropdownContainer.classList.contains("is-open") === false && window.matchMedia('(max-width: 1024px)').matches) { 
+    if (dropdownContainer.classList.contains("is-open") === false && window.matchMedia('(max-width: 1024px)').matches) {
         dropdownContainer.classList.add('is-open');
     } else {
         dropdownContainer.classList.remove('is-open');
