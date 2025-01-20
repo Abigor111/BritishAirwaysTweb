@@ -116,7 +116,18 @@ $gap: 1rem; // Default gap
     grid-column: span #{$k};
   }
 }
+.col1{
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  row-gap: 20px;
 
+}
+.col2{
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  row-gap: 20px;
+
+}
 // Row Spans
 @for $l from 1 through 12 {
   .row-span-#{$l} {

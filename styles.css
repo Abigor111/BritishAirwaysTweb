@@ -225,6 +225,18 @@ body {
   grid-column: span 12;
 }
 
+.col1 {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  row-gap: 20px;
+}
+
+.col2 {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  row-gap: 20px;
+}
+
 .row-span-1 {
   grid-row: span 1;
 }

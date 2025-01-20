@@ -302,6 +302,7 @@ let fourthRow1 = document.getElementById('fourth_row_1');
 let fourthRow2 = document.getElementById('fourth_row_2');
 let fourthRow3 = document.getElementById('fourth_row_3');
 // Form Inputs
+let formId = document.getElementById('schedule-form');
 let tariff_div = document.getElementById('tariff');
 let optionReturn = document.getElementById('option_return');
 let optionOneway = document.getElementById('option_oneway');
@@ -336,6 +337,7 @@ inputFly.addEventListener('change', function () {
         buttonFlight.textContent = 'Procurar Voos';
         optionReturn.textContent = 'Regresso';
         optionOneway.textContent = 'Só Ida';
+        formId.classList.remove('hotel');
         // Rows
         return_vehicleRow.style.display = 'none';
         firstRow.className = 'grid-cols-6 schedule-grid';
@@ -351,6 +353,8 @@ inputFly.addEventListener('change', function () {
 inputFlyHotel.addEventListener('change', function () {
     if (inputFlyHotel.checked) {
         // Inputs
+        formId.classList.remove('hotel');
+
         tariff_div.style.display = 'none';
         passengers_div.style.display = 'none';
         rooms_div.style.display = 'block';
@@ -381,6 +385,8 @@ inputFlyHotel.addEventListener('change', function () {
 inputFlyVehicle.addEventListener('change', function () {
     if (inputFlyVehicle.checked) {
         // Inputs
+        formId.classList.remove('hotel');
+
         tariff_div.style.display = 'none';
         passengers_div.style.display = 'block';
         rooms_div.style.display = 'none';
@@ -411,6 +417,8 @@ inputFlyVehicle.addEventListener('change', function () {
 inputHotel.addEventListener('change', function () {
     if (inputHotel.checked) {
         // Inputs
+        console.log("Tsste")
+        formId.className= 'hotel';
         tariff_div.style.display = 'none';
         passengers_div.style.display = 'none';
         rooms_div.style.display = 'block';
@@ -434,11 +442,14 @@ inputHotel.addEventListener('change', function () {
         fourthRow3.style.display = 'none';
         buttonHotel.textContent = 'Procurar hotéis';
     }
+
 });
 
 inputVehicle.addEventListener('change', function () {
     if (inputVehicle.checked) {
         // Inputs
+        formId.classList.remove('hotel');
+
         tariff_div.style.display = 'none';
         passengers_div.style.display = 'none';
         rooms_div.style.display = 'none';
@@ -467,6 +478,8 @@ inputVehicle.addEventListener('change', function () {
 flightStatus.addEventListener('change', function () {
     if (flightStatus.checked) {
         // Inputs
+        formId.classList.remove('hotel');
+
         tariff_div.style.display = 'block';
         passengers_div.style.display = 'none';
         cabin_div.style.display = 'none';
@@ -508,6 +521,7 @@ function flightStatusDiv(flightNumber, day, hour, type, airport, date, status) {
     `;
     return divFligtStatus;
     }
+
     // Estado do Voo
 document.getElementById('schedule-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the form from actually submitting
@@ -531,7 +545,7 @@ document.getElementById('schedule-form').addEventListener('submit', function(eve
     else {
         horas = ['12:10', '20:10']
     }
-    if (flightType == 'return'){
+    if (flightType == 'oneway'){
         if (day % 2 == 0){
             status = 'No Horário';
         }
@@ -540,12 +554,12 @@ document.getElementById('schedule-form').addEventListener('submit', function(eve
 
         }
     }
-    else if (flightType == 'oneway'){
+    else if (flightType == 'return'){
         if (month % 2 == 0){
             status = 'No Horário';
         }
         else if (month % 2 == 1){
-            status = 'Atrasado';
+            status = 'Chegou';
         }
     }
     let type;
@@ -556,6 +570,9 @@ document.getElementById('schedule-form').addEventListener('submit', function(eve
         type = 'Partida';
 
     }
+    console.log(document.getElementById('schedule-form').classList)
+if (!document.getElementById('schedule-form').classList.contains('hotel')){
+    console.log('Erro')
     for (let y = 0; y <= 1; y++) {
         document.getElementById('fligt-status-section').style.display = 'block';
         container.style.padding  = '64px 0px';
@@ -569,8 +586,31 @@ document.getElementById('schedule-form').addEventListener('submit', function(eve
         });
     } else {
         console.log("Coming Back to Life é a melhor música dos Pink Floyd")
+    }}
+    else if (document.getElementById('schedule-form').classList.contains('hotel')){
+            if (year % 2 != 0){
+                const divFligtStatus = document.createElement('div');
+                divFligtStatus.classList.add('flight-status');
+                divFligtStatus.innerHTML = `
+                <p>Número do Voo: <span>TP3</span></p>
+                <p>Ano do Voo: <span>Ímpar</span></p>
+                </div>
+                `;
+                container.appendChild(divFligtStatus);
+
+            }
+            else {
+                const divFligtStatus = document.createElement('div');
+                divFligtStatus.classList.add('flight-status');
+                divFligtStatus.innerHTML = `
+                <p>Número do Voo: <span>TP3</span></p>
+                <p>Ano do Voo: <span>Par</span></p>
+                </div>
+                `;
+                container.appendChild(divFligtStatus);
+            }
     }
-});
+}); 
 
 
 // * Passageiros contador
